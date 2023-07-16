@@ -27,3 +27,7 @@ main {
 .btnVerMas:hover {
     background-color: #c59a00;
 }
+
+.btnVerMas:active {
+    background-color: #D96C06 !important;
+}

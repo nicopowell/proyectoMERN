@@ -16,7 +16,7 @@ const CardProducto = () => {
                         <Card.Text className="text-secondary">$1.600</Card.Text>
                     </div>
                     <div>
-                        <Button className="btnVerMas fw-semibold p-sm-3 p-lg-2">Ver mas</Button>
+                        <Button className="btnVerMas fw-semibold p-sm-3 p-lg-2 text-light">Ver mas</Button>
                     </div>
                 </Card.Body>
             </Card>
