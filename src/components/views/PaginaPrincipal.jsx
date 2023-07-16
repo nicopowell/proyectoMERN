@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import ProductosPopulares from './productos/ProductosPopulares';
+import GrillaProductos from './productos/GrillaProductos';
+import InputProductos from './productos/InputProductos';
 
 const PaginaPrincipal = () => {
     return (
@@ -12,6 +14,11 @@ const PaginaPrincipal = () => {
             </section>
             <Container>
                 <h3>Productos populares</h3>
+                <ProductosPopulares></ProductosPopulares>
+                <h3 className='mt-5'>Todos nuestros productos</h3>
+                <InputProductos></InputProductos>
+                <GrillaProductos></GrillaProductos>
+                <ProductosPopulares></ProductosPopulares>
                 <ProductosPopulares></ProductosPopulares>
             </Container>
         </>
