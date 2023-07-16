@@ -8,3 +8,22 @@ main {
     flex-grow: 1;
     background-color: #D5C9DF;
 }
+
+#bannerIndex {
+    height: 250px;
+    object-fit: cover;
+}
+
+.seccionInfoRestaurante {
+    background: #0081A7;
+}
+
+
+.btnVerMas {
+    background-color: #EEB902;
+    border: none;
+}
+
+.btnVerMas:hover {
+    background-color: #c59a00;
+}

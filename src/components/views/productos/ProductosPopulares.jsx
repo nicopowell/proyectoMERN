@@ -1,0 +1,16 @@
+import React from 'react';
+import CardProducto from './CardProducto';
+import { Row } from 'react-bootstrap';
+
+const ProductosPopulares = () => {
+    return (
+        <Row className='px-4'>
+            <CardProducto></CardProducto>    
+            <CardProducto></CardProducto>    
+            <CardProducto></CardProducto>    
+            <CardProducto></CardProducto>    
+        </Row>
+    );
+};
+
+export default ProductosPopulares;
