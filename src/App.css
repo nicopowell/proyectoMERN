@@ -27,15 +27,25 @@ main {
     transition: ease 0.2s;
 }
 
-.btnVerMas {
+.btnCard {
     background-color: #EEB902;
     border: none;
 }
 
-.btnVerMas:hover {
+.btnCard:hover {
     background-color: #c59a00;
 }
 
-.btnVerMas:active {
+.btnCard:active {
     background-color: #D96C06 !important;
+}
+
+.btnAgregarAlPedido {
+    position: absolute;
+    border-radius: 50%;
+    height: 3.3rem;
+    width: 3.3rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    box-shadow: 0px 0px 10px black;
 }

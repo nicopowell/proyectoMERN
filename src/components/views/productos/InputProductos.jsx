@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Dropdown, DropdownButton, Form, InputGroup } from "react-bootstrap";
-import { useForm } from "react-hook-form";
 
 const InputProductos = () => {
     return (
