@@ -4,7 +4,7 @@ import { Row } from 'react-bootstrap';
 
 const ProductosPopulares = () => {
     return (
-        <Row className='px-4'>
+        <Row>
             <CardProducto></CardProducto>    
             <CardProducto></CardProducto>    
             <CardProducto></CardProducto>    

@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 
 const InputProductos = () => {
     return (
-        <Form>
-            <InputGroup controlId="producto">
+        <Form className="my-3">
+            <InputGroup>
                 <Form.Control type="text" placeholder="Buscar productos" maxLength={100} />
                 <DropdownButton
                     variant="outline-secondary"
