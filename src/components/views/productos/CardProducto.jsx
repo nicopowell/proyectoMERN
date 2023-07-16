@@ -5,7 +5,7 @@ import { CardImage } from "react-bootstrap-icons";
 const CardProducto = () => {
     return (
         <Col md={6} lg={3} className="my-2">
-            <Card>
+            <Card className="cardProducto">
                 <Card.Img
                     variant="top"
                     src="https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg"

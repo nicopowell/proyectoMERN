@@ -18,6 +18,14 @@ main {
     background: #0081A7;
 }
 
+.cardProducto {
+    transition: ease 0.2s;
+}
+
+.cardProducto:hover {
+    scale: 1.05;
+    transition: ease 0.2s;
+}
 
 .btnVerMas {
     background-color: #EEB902;
