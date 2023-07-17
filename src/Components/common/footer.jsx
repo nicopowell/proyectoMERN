@@ -1,3 +1,4 @@
+import { Row, Container, Col} from 'react-bootstrap';
 import './footer.css'
 import { Facebook } from 'react-bootstrap-icons';
 import { Instagram } from 'react-bootstrap-icons';
@@ -8,11 +9,12 @@ const Footer = () => {
 
     return (
         <footer className="p-3 text-white text-center text-lg-start" id="foot">
-            <section className="d-flex ">
-                <aside className="col-md-4 ps-lg-5 col-xs-12">
+            <Container>
+            <Row>
+                <Col className="col-md-4 ps-lg-5 col-xs-12">
                     <img src="" alt="" />
-                </aside>
-                <aside className="col-md-4 text-md-center col-xs-12">
+                </Col>
+                <Col className="col-md-4 text-md-center col-xs-12">
                     <h6>Paginas que puede visitar</h6>
                         <ul>
                             <li>
@@ -36,15 +38,16 @@ const Footer = () => {
                                 </a>
                             </li>
                         </ul>
-                </aside>
-                <aside className="col-md-4 text-md-start col-xs-12">
+                </Col>
+                <Col className="col-md-4 text-md-start col-xs-12">
                     <h6>Siguenos en nuestras redes sociales</h6>
                     <a href=""><Facebook/></a>
                     <a href=""><Twitter/></a>
                     <a href=""><Whatsapp/></a>
                     <a href=""><Instagram/></a>
-                </aside>
-            </section>
+                </Col>
+            </Row>
+            </Container>
         </footer>
     );
 };

@@ -1,4 +1,5 @@
 import './App.css'
+import 'react-bootstrap'
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Footer from './Components/common/footer';
 
