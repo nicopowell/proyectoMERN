@@ -1,4 +1,4 @@
-import { Row, Container, Col} from 'react-bootstrap';
+
 import './footer.css'
 import { Facebook } from 'react-bootstrap-icons';
 import { Instagram } from 'react-bootstrap-icons';
@@ -8,13 +8,13 @@ import { Whatsapp } from 'react-bootstrap-icons';
 const Footer = () => {
 
     return (
-        <footer className="padding-3 text-white text-center text-lg-start" id="foot">
-            <Container>
-            <Row>
-                <Col md={4} ps lg={5} xs={12}>
+        <footer className="p-3 mb-2 text-white text-center text-lg-start" id="foot">
+
+            <section className='row'>
+                <aside className='col-md-4 ps-lg-5 col-xs-12'>
                     <img src="" alt="" />
-                </Col>
-                <Col className="col-md-4 text-md-center col-xs-12">
+                </aside>
+                <aside className="col-md-4 text-md-center col-xs-12">
                     <h6>Paginas que puede visitar</h6>
                         <ul>
                             <li>
@@ -38,18 +38,17 @@ const Footer = () => {
                                 </a>
                             </li>
                         </ul>
-                </Col>
-                <Col className="col-md-4 text-md-start col-xs-12">
+                </aside>
+                <aside className="col-md-4 text-md-start col-xs-12">
                     <h6>Siguenos en nuestras redes sociales</h6>
                     <a href=""><Facebook/></a>
                     <a href=""><Twitter/></a>
                     <a href=""><Whatsapp/></a>
                     <a href=""><Instagram/></a>
-                </Col>
-            </Row>
-            </Container>
-            <section>
-                
+                </aside>
+            </section>
+            <section className='text-light text-center'>
+             <p>&copy; Todos los derechos reservados</p>
             </section>
         </footer>
     );
