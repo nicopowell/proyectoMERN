@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import PaginaPrincipal from './components/views/PaginaPrincipal'
 import './App.css'
 import 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,14 +9,12 @@ import Footer from './Components/common/footer';
 
 function App() {
   return (
-    <>
     <BrowserRouter>
     <Routes>
       <Route exact path='/' element={<PaginaPrincipal></PaginaPrincipal>}></Route>
     </Routes>
     <Footer></Footer>
     </BrowserRouter>
-    </>
   )
 }
 
