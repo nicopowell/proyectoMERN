@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    background-color: #D5C9DF;
+}
+
+#bannerIndex {
+    height: 250px;
+    object-fit: cover;
+}
+
+.seccionInfoRestaurante {
+    background: #0081A7;
+}
+
+.cardProducto {
+    transition: ease 0.2s;
+}
+
+.cardProducto:hover {
+    scale: 1.05;
+    transition: ease 0.2s;
+}
+
+.btnCard {
+    background-color: #EEB902;
+    border: none;
+}
+
+.btnCard:hover {
+    background-color: #c59a00;
+}
+
+.btnCard:active {
+    background-color: #D96C06 !important;
+}
+
+.btnAgregarAlPedido {
+    position: absolute;
+    border-radius: 50%;
+    height: 3.3rem;
+    width: 3.3rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    box-shadow: 0px 0px 10px black;
+}
