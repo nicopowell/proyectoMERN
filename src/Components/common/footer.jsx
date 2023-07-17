@@ -8,10 +8,10 @@ import { Whatsapp } from 'react-bootstrap-icons';
 const Footer = () => {
 
     return (
-        <footer className="p-3 text-white text-center text-lg-start" id="foot">
+        <footer className="padding-3 text-white text-center text-lg-start" id="foot">
             <Container>
             <Row>
-                <Col className="col-md-4 ps-lg-5 col-xs-12">
+                <Col md={4} ps lg={5} xs={12}>
                     <img src="" alt="" />
                 </Col>
                 <Col className="col-md-4 text-md-center col-xs-12">
@@ -48,6 +48,9 @@ const Footer = () => {
                 </Col>
             </Row>
             </Container>
+            <section>
+                
+            </section>
         </footer>
     );
 };
