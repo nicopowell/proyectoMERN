@@ -23,7 +23,7 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="./pages/error404.html" className="fs-6">
+                                <a href="./pages/error404.html" className=" fs-6">
                                     Consultas
                                 </a>
                             </li>
