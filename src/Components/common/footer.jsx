@@ -1,9 +1,5 @@
-
 import './footer.css'
-import { Facebook } from 'react-bootstrap-icons';
-import { Instagram } from 'react-bootstrap-icons';
-import { Twitter } from 'react-bootstrap-icons';
-import { Whatsapp } from 'react-bootstrap-icons';
+import { Facebook,Twitter,Instagram,Whatsapp } from 'react-bootstrap-icons';
 
 const Footer = () => {
 
@@ -36,16 +32,18 @@ const Footer = () => {
                 </aside>
                 <aside className="col-md-4 text-md-start col-xs-12">
                     <h6>Siguenos en nuestras redes sociales</h6>
-                    <a href="" className='iconos mx-1'><Facebook/></a>
-                    <a href="" className='iconos mx-1'><Twitter/></a>
-                    <a href="" className='iconos mx-1'><Whatsapp/></a>
-                    <a href="" className='iconos mx-1'><Instagram/></a>
+                    <a href="" className='bs-light mx-1'><Facebook></Facebook></a>
+                    <a href="" className='bs-light mx-1'><Twitter></Twitter></a>
+                    <a href="" className='bs-light mx-1'><Instagram></Instagram></a>
+                    <a href="" className='cbs-light mx-1'><Whatsapp></Whatsapp></a>
                 </aside>
             </section>
             <section className='text-light text-center'>
              <p>&copy; Todos los derechos reservados</p>
             </section>
         </footer>
+        
+        
     );
 };
 export default Footer;
