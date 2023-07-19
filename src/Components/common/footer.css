@@ -1,0 +1,16 @@
+svg{
+    height: 25px;
+    width: 25px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+#foot {
+    background-color: #272838;
+}
+ul{
+    list-style: none;
+    padding-right: 30px;
+}
