@@ -4,8 +4,7 @@ import './App.css'
 import 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import PaginaPrincipal from './components/views/PaginaPrincipal'
-import Footer from './Components/common/footer';
+import Footer from './components/common/footer';
 
 function App() {
   return (
