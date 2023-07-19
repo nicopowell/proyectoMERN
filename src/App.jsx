@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import PaginaPrincipal from './components/views/PaginaPrincipal'
 import './App.css'
 import 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
