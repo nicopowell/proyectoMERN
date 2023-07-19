@@ -8,7 +8,7 @@ import { Whatsapp } from 'react-bootstrap-icons';
 const Footer = () => {
 
     return (
-        <footer className="p-3 mb-2 text-white text-center text-lg-start" id="foot">
+        <footer className="p-3 text-white text-center text-lg-start" id="foot">
 
             <section className='row'>
                 <aside className='col-md-4 ps-lg-5 col-xs-12'>
@@ -29,11 +29,6 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a href="./pages/error404.html" className="fs-6">
-                                    Categorías
-                                </a>
-                            </li>
-                            <li>
-                                <a href="./pages/error404.html" className="fs-6">
                                     Política de Privacidad
                                 </a>
                             </li>
@@ -41,10 +36,10 @@ const Footer = () => {
                 </aside>
                 <aside className="col-md-4 text-md-start col-xs-12">
                     <h6>Siguenos en nuestras redes sociales</h6>
-                    <a href=""><Facebook/></a>
-                    <a href=""><Twitter/></a>
-                    <a href=""><Whatsapp/></a>
-                    <a href=""><Instagram/></a>
+                    <a href="" className='iconos mx-1'><Facebook/></a>
+                    <a href="" className='iconos mx-1'><Twitter/></a>
+                    <a href="" className='iconos mx-1'><Whatsapp/></a>
+                    <a href="" className='iconos mx-1'><Instagram/></a>
                 </aside>
             </section>
             <section className='text-light text-center'>
