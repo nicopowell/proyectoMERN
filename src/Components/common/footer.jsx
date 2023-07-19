@@ -32,10 +32,10 @@ const Footer = () => {
                 </aside>
                 <aside className="col-md-4 text-md-start col-xs-12">
                     <h6>Siguenos en nuestras redes sociales</h6>
-                    <a href="" className='bs-light mx-1'><Facebook></Facebook></a>
-                    <a href="" className='bs-light mx-1'><Twitter></Twitter></a>
-                    <a href="" className='bs-light mx-1'><Instagram></Instagram></a>
-                    <a href="" className='cbs-light mx-1'><Whatsapp></Whatsapp></a>
+                    <a href="" className='bs-light mx-2'><Facebook></Facebook></a>
+                    <a href="" className='bs-light mx-2'><Twitter></Twitter></a>
+                    <a href="" className='bs-light mx-2'><Instagram></Instagram></a>
+                    <a href="" className='bs-light mx-2'><Whatsapp></Whatsapp></a>
                 </aside>
             </section>
             <section className='text-light text-center'>
