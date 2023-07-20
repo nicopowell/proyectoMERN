@@ -45,12 +45,10 @@ const MenuNavegacion = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link
-              href="#carrito"
               id="carrito"
               className="d-flex flex-column align-items-center"
             >
               <Cart size={35}></Cart>
-              {/* <p className="my-1">Tu carrito</p> */}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
