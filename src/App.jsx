@@ -3,8 +3,8 @@ import PaginaPrincipal from './components/views/PaginaPrincipal'
 import './App.css'
 import 'react-bootstrap'
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Footer from './Components/common/footer';
 import MenuNavegacion from "./components/common/menuNavegacion";
+import Footer from './components/common/footer';
 
 function App() {
   return (
