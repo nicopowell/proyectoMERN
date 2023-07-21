@@ -1,23 +1,37 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import PaginaPrincipal from './components/views/PaginaPrincipal'
-import './App.css'
-import 'react-bootstrap'
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import PaginaPrincipal from "./components/views/PaginaPrincipal";
+import "./App.css";
+import "react-bootstrap";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MenuNavegacion from "./components/common/menuNavegacion";
-import Footer from './components/common/footer';
+import Footer from "./components/common/footer";
+import RutasAdministrador from "./components/routes/RutasAdministrador";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
 
 function App() {
-  return (
-    <>
-    <BrowserRouter>
-    <MenuNavegacion></MenuNavegacion>
-    <Routes>
-      <Route exact path='/' element={<PaginaPrincipal></PaginaPrincipal>}></Route>
-    </Routes>
-    <Footer></Footer>
-    </BrowserRouter>
-    </>
-  )
+    return (
+        <>
+            <BrowserRouter>
+                <MenuNavegacion></MenuNavegacion>
+                <Routes>
+                    <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}></Route>
+                    <Route exact path="/detalle" element={<></>}></Route>
+                    <Route exact path="/pedidos" element={<></>}></Route>
+                    <Route exact path="/acerca-de-nosotros" element={<></>}></Route>
+                    <Route
+                        path="/administrador/*"
+                        element={
+                          <RutasProtegidas>
+                                <RutasAdministrador></RutasAdministrador>
+                            </RutasProtegidas>
+                        }
+                    ></Route>
+                    <Route path="*" element={<></>}></Route> {/* 404 */}
+                </Routes>
+                <Footer></Footer>
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;
