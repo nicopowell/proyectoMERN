@@ -28,7 +28,6 @@ const MenuNavegacion = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#">Administrador</Nav.Link>
-
             <NavDropdown title="Login" className="dropMenu">
               <NavDropdown.Item>
                 <Person></Person> Iniciar Sesión
