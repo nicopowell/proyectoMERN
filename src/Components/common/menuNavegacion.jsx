@@ -8,7 +8,7 @@ const MenuNavegacion = () => {
       <Container className="d-flex justify-content-between">
         <Navbar.Brand href="#home">
           <img
-            src="../../src/assets/LogoConLemaNaranja.png"
+            src="../../src/assets/16.png"
             className="logoNavbar"
           ></img>
         </Navbar.Brand>
