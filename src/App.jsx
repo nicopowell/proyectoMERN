@@ -15,9 +15,9 @@ function App() {
                 <MenuNavegacion></MenuNavegacion>
                 <Routes>
                     <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}></Route>
-                    <Route exact path="/detalle" element={<></>}></Route>
-                    <Route exact path="/pedidos" element={<></>}></Route>
-                    <Route exact path="/acerca-de-nosotros" element={<></>}></Route>
+                    <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
+                    <Route exact path="/pedidos" element={<h1>Pedidos</h1>}></Route>
+                    <Route exact path="/acerca-de-nosotros" element={<h1>Acerca de nosotros</h1>}></Route>
                     <Route
                         path="/administrador/*"
                         element={
@@ -26,7 +26,7 @@ function App() {
                             </RutasProtegidas>
                         }
                     ></Route>
-                    <Route path="*" element={<></>}></Route> {/* 404 */}
+                    <Route path="*" element={<h1>404</h1>}></Route> {/* 404 */}
                 </Routes>
                 <Footer></Footer>
             </BrowserRouter>
