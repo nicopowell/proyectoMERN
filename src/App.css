@@ -58,3 +58,17 @@ main {
     right: 0.75rem;
     box-shadow: 0px 0px 10px black;
 }
+
+.btnTablas {
+    background-color: var(--color6);
+    border: none;
+}
+
+.btnTablas:hover {
+    background-color: #d3ab1c !important;
+
+}
+
+.btnTablasSelected {
+    background-color: var(--color5) !important
+}
