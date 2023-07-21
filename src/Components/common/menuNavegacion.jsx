@@ -9,7 +9,7 @@ const MenuNavegacion = () => {
         <Navbar.Brand href="#home">
           <img
             src="../../src/assets/LogoConLemaNaranja.png"
-            className="logoNavbar p-3"
+            className="logoNavbar"
           ></img>
         </Navbar.Brand>
 
@@ -27,10 +27,7 @@ const MenuNavegacion = () => {
                 Bebidas con alcohol
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Administrador" className="dropMenu">
-              <NavDropdown.Item href="#usuarios">Usuarios</NavDropdown.Item>
-              <NavDropdown.Item href="#productos">Productos</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="#">Administrador</Nav.Link>
 
             <NavDropdown title="Login" className="dropMenu">
               <NavDropdown.Item>
