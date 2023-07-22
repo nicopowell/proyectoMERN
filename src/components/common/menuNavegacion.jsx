@@ -109,19 +109,8 @@ const MenuNavegacion = () => {
         <Modal.Footer className="text-center mt-4">
                 <p>
                   ¿Aún no tienes cuenta?
-                  <button
-                    
-                    id="btnRegistro"
-                    data-bs-target="#modalRegistro"
-                    data-bs-toggle="modal"
-                  >
-                    
-                  </button>
                 </p>
-          <Button variant="secondary" onClick={loginhandleClose}>
-            Close
-          </Button>
-          <Button variant="primary" className="text-decoration-underline btn" onClick={loginhandleClose}>
+          <Button variant="primary" className="text-decoration-underline btn" onClick={loginhandleClose} >
             Regístrarse
           </Button>
         </Modal.Footer>
