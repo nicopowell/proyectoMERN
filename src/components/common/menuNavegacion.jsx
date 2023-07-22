@@ -1,7 +1,6 @@
-import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container, Button ,Modal,Form} from "react-bootstrap";
 import { Person, Cart } from "react-bootstrap-icons";
 import { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
 import "./menuNavegacion.css";
 
 const MenuNavegacion = () => {
@@ -65,13 +64,65 @@ const MenuNavegacion = () => {
         <Modal.Header closeButton>
           <Modal.Title>Iniciar Sesión</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
+        <Modal.Body>
+        <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Correo electronico</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                maxlength="25"
+                minlength="8"
+                autoFocus
+              />
+              <Form.Control.Feedback type="invalid">
+                Ingrese un email valido
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Contraseña"
+                autoFocus
+              />
+            <Form.Control.Feedback type="invalid">
+              Ingrese una contraseña valida: 8 caracteres minimos, una
+              mayuscula, una minuscula y un simbolo.
+            </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="d-flex justify-content-between mt-4">
+                  <div>
+                    <input type="checkbox"/> Recordarme
+                  </div>
+                  <div>
+                  <a href="/pages/error404.html" className="text-dark"
+                    >¿Has olvidado tu contraseña?</a
+                  >
+                  </div>
+            </Form.Group>
+            <Button variant="primary" className="mt-4 d-block m-auto" type="submit">
+                Iniciar Sesion
+              </Button>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer className="text-center mt-4">
+                <p>
+                  ¿Aún no tienes cuenta?
+                  <button
+                    
+                    id="btnRegistro"
+                    data-bs-target="#modalRegistro"
+                    data-bs-toggle="modal"
+                  >
+                    
+                  </button>
+                </p>
           <Button variant="secondary" onClick={loginhandleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={loginhandleClose}>
-            Save Changes
+          <Button variant="primary" className="text-decoration-underline btn" onClick={loginhandleClose}>
+            Regístrarse
           </Button>
         </Modal.Footer>
       </Modal>
