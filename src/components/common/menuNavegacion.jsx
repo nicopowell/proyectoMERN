@@ -118,15 +118,76 @@ const MenuNavegacion = () => {
         <Modal.Header closeButton>
           <Modal.Title>Regístrarse</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={registerhandleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={registerhandleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+        <Modal.Body>
+        <Form>
+        <Form.Group className="mb-3">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="nombre"
+                maxlength="25"
+                minlength="2"
+                autoFocus
+              />
+              <Form.Control.Feedback type="invalid">
+                Ingrese un nombre valido
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Apellido</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="apellido"
+                maxlength="25"
+                minlength="2"
+                autoFocus
+              />
+              <Form.Control.Feedback type="invalid">
+                Ingrese un apellido valido
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Correo electronico</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                maxlength="25"
+                minlength="8"
+                autoFocus
+              />
+              <Form.Control.Feedback type="invalid">
+                Ingrese un email valido
+                </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="contraseña"
+                autoFocus
+              />
+            <Form.Control.Feedback type="invalid">
+              Ingrese una contraseña valida: 8 caracteres minimos, una
+              mayuscula, una minuscula y un simbolo.
+            </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Repetir contraseña</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="contraseña"
+                autoFocus
+              />
+            <Form.Control.Feedback type="invalid">
+              Ingrese una contraseña valida: 8 caracteres minimos, una
+              mayuscula, una minuscula y un simbolo.
+            </Form.Control.Feedback>
+            </Form.Group>
+            <Button variant="primary" className="mt-4 d-block m-auto" type="submit">
+                Registrarse
+              </Button>
+          </Form>
+        </Modal.Body>
       </Modal>
     </Navbar>
   );
