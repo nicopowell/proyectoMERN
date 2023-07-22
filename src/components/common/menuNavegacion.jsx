@@ -5,10 +5,13 @@ import Modal from 'react-bootstrap/Modal';
 import "./menuNavegacion.css";
 
 const MenuNavegacion = () => {
-  const [show, setShow] = useState(false);
+  const [loginshow, loginsetShow] = useState(false);
+  const [registershow, registersetShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const loginhandleClose = () => loginsetShow(false);
+  const registerhandleClose = () => registersetShow(false);
+  const loginhandleShow = () => loginsetShow(true);
+  const registerhandleShow = () => registersetShow(true);
 
 
   return (
@@ -37,14 +40,14 @@ const MenuNavegacion = () => {
             </NavDropdown>
             <Nav.Link href="#">Administrador</Nav.Link>
             <NavDropdown title="Login" className="dropMenu">
-              <NavDropdown.Item onClick={handleShow}>
+              <NavDropdown.Item onClick={loginhandleShow}>
                 <Person></Person> Iniciar Sesión
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <div className="dropdown-header">
                 ¿No tienes cuenta? Regístrate.
               </div>
-              <NavDropdown.Item className="text-center">
+              <NavDropdown.Item className="text-center" onClick={registerhandleShow}>
                 <Button className="btnRegistro btn">Registro</Button>
               </NavDropdown.Item>
             </NavDropdown>
@@ -58,16 +61,30 @@ const MenuNavegacion = () => {
         </Navbar.Collapse>
       </Container>
       
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={loginshow} onHide={loginhandleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={loginhandleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={loginhandleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      <Modal show={registershow} onHide={registerhandleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={registerhandleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={registerhandleClose}>
             Save Changes
           </Button>
         </Modal.Footer>
