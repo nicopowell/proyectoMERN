@@ -12,7 +12,6 @@ const MenuNavegacion = () => {
   const loginhandleShow = () => loginsetShow(true);
   const registerhandleShow = () => registersetShow(true);
 
-
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">
       <Container className="d-flex justify-content-between">
@@ -106,11 +105,11 @@ const MenuNavegacion = () => {
               </Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer className="text-center mt-4">
+        <Modal.Footer className="justify-content-center mt-4">
                 <p>
                   ¿Aún no tienes cuenta?
                 </p>
-          <Button variant="primary" className="text-decoration-underline btn" onClick={loginhandleClose} >
+          <Button variant="primary" onClick={registerhandleShow} >
             Regístrarse
           </Button>
         </Modal.Footer>
