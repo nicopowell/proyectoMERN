@@ -63,7 +63,7 @@ const MenuNavegacion = () => {
       
       <Modal show={loginshow} onHide={loginhandleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Iniciar Sesión</Modal.Title>
         </Modal.Header>
         <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
         <Modal.Footer>
@@ -77,7 +77,7 @@ const MenuNavegacion = () => {
       </Modal>
       <Modal show={registershow} onHide={registerhandleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Regístrarse</Modal.Title>
         </Modal.Header>
         <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
         <Modal.Footer>
