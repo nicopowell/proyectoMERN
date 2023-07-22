@@ -1,8 +1,16 @@
 import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import { Person, Cart } from "react-bootstrap-icons";
+import { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
 import "./menuNavegacion.css";
 
 const MenuNavegacion = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">
       <Container className="d-flex justify-content-between">
@@ -29,7 +37,7 @@ const MenuNavegacion = () => {
             </NavDropdown>
             <Nav.Link href="#">Administrador</Nav.Link>
             <NavDropdown title="Login" className="dropMenu">
-              <NavDropdown.Item>
+              <NavDropdown.Item onClick={handleShow}>
                 <Person></Person> Iniciar Sesión
               </NavDropdown.Item>
               <NavDropdown.Divider />
@@ -49,6 +57,21 @@ const MenuNavegacion = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Navbar>
   );
 };
