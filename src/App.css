@@ -1,3 +1,12 @@
+:root {
+    --color1: #272838;
+    --color2: #0081a7;
+    --color3: #00afb9;
+    --color4: #d5c9df;
+    --color5: #eeb902;
+    --color6: #d96c06;
+  }
+
 body {
     display: flex;
     flex-direction: column;

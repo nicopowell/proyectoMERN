@@ -1,0 +1,49 @@
+:root {
+  --color1: #272838;
+  --color2: #0081a7;
+  --color3: #00afb9;
+  --color4: #d5c9df;
+  --color5: #eeb902;
+  --color6: #d96c06;
+}
+
+#menuNavbar {
+  background-color: var(--color1) !important;
+}
+
+.logoNavbar {
+  max-width: 160px;
+}
+
+.dropMenu .dropdown-menu {
+    background-color: var(--color1);
+    color: white;
+}
+#btnRegistro {
+    width: 90%;
+}
+
+  .nav-link {
+    color: white !important;
+  }
+  .nav-link:hover {
+    color: var(--color6) !important;
+  }
+  .nav-link:active {
+    color: var(--color5) !important;
+  }
+  
+  .dropdown-item:active {
+    background-color: var(--color6);
+  }
+  
+  .dropdown-item {
+    color: white;
+  }
+
+ 
+  @media (max-width: 576px) {
+    .logoNavbar {
+      max-width: 150px;
+    }
+  }
