@@ -17,6 +17,7 @@ const TablaPedidos = () => {
             </thead>
             <tbody>
                 <ItemPedido></ItemPedido>
+                <ItemPedido></ItemPedido>
             </tbody>
         </Table>
     );

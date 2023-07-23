@@ -6,7 +6,7 @@ import TablaUsuarios from "./administrador/TablaUsuarios";
 import TablaPedidos from "./administrador/TablaPedidos";
 
 const Administrador = () => {
-    const [radioValue, setRadioValue] = useState("Productos");
+    const [tablaSeleccionada, setTablaSeleccionada] = useState("Productos");
 
     const tablas = [
         { name: "Usuarios", value: "Usuarios" },
@@ -14,8 +14,21 @@ const Administrador = () => {
         { name: "Pedidos", value: "Pedidos" },
     ];
 
+    const renderizarTablaSeleccionada = () => {
+        switch (tablaSeleccionada) {
+          case "Usuarios":
+            return <TablaUsuarios />;
+          case "Productos":
+            return <TablaProductos />;
+          case "Pedidos":
+            return <TablaPedidos />;
+          default:
+            return null;
+        }
+      };
+
     return (
-        <Container>
+        <Container className="mainSection">
             <div className="d-flex justify-content-center">
                 <ButtonGroup className="mt-5 mb-4">
                     {tablas.map((tabla, id) => (
@@ -23,22 +36,20 @@ const Administrador = () => {
                             key={id}
                             id={`btnTabla${tabla.value}`}
                             className={`btnTablas fw-bold p-3 py-2 ${
-                                radioValue === tabla.value ? "btnTablasSelected" : ""
+                                tablaSeleccionada === tabla.value ? "btnTablasSelected" : ""
                             }`}
                             type="radio"
                             name="radio"
                             value={tabla.value}
-                            checked={radioValue === tabla.value}
-                            onChange={(e) => setRadioValue(e.currentTarget.value)}
+                            checked={tablaSeleccionada === tabla.value}
+                            onChange={(e) => setTablaSeleccionada(e.currentTarget.value)}
                         >
                             {tabla.name}
                         </ToggleButton>
                     ))}
                 </ButtonGroup>
             </div>
-            <TablaUsuarios></TablaUsuarios>
-            <TablaProductos></TablaProductos>
-            <TablaPedidos></TablaPedidos>
+           {renderizarTablaSeleccionada()}
         </Container>
     );
 };

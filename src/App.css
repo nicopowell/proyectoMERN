@@ -7,14 +7,14 @@
     --color6: #d96c06;
   }
 
-body {
+#root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: #D5C9DF;
 }
 
-main {
+.mainSection {
     flex-grow: 1;
 }
 
@@ -71,4 +71,10 @@ main {
 
 .btnTablasSelected {
     background-color: var(--color5) !important
+}
+
+#input-categorias{
+    background: #fff !important;
+    color: #333;
+    border: 1px solid #aaa
 }

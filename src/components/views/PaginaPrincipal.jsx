@@ -6,7 +6,7 @@ import InputProductos from "./productos/InputProductos";
 
 const PaginaPrincipal = () => {
     return (
-        <>
+        <div className="mainSection">
             <img
                 src="https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
                 alt="Banner con platos de comida"
@@ -17,7 +17,7 @@ const PaginaPrincipal = () => {
                 <h1>Nombre del restaurante</h1>
                 <p>Informacion extra</p>
             </section>
-            <Container>
+            <Container className="mb-5">
                 <h3>Productos populares</h3>
                 <Container>
                     <ProductosPopulares></ProductosPopulares>
@@ -28,7 +28,7 @@ const PaginaPrincipal = () => {
                     <GrillaProductos></GrillaProductos>
                 </Container>
             </Container>
-        </>
+        </div>
     );
 };
 
