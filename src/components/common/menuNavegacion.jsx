@@ -70,8 +70,6 @@ const MenuNavegacion = () => {
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
-                maxlength="25"
-                minlength="8"
                 autoFocus
               />
               <Form.Control.Feedback type="invalid">
