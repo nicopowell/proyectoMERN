@@ -15,6 +15,9 @@ const ItemProducto = () => {
             </td>
             <td>Activo</td>
             <td className="text-center">
+            <Button variant="primary">
+                    Suspender
+                </Button>
                 <Button variant="warning my-1 mx-1">Editar</Button>
                 <Button variant="danger">Borrar</Button>
             </td>

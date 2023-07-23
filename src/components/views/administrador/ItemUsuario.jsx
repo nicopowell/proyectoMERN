@@ -10,9 +10,8 @@ const ItemUsuario = () => {
             <td>Usuario</td>
             <td>Activo</td>
             <td className="text-center">
-                <Button variant="danger">
-                    Borrar
-                </Button>
+                <Button variant="primary my-1 mx-1">Suspender</Button>
+                <Button variant="danger">Borrar</Button>
             </td>
         </tr>
     );
