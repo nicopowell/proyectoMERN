@@ -70,8 +70,6 @@ const MenuNavegacion = () => {
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
-                maxlength="25"
-                minlength="8"
                 autoFocus
               />
               <Form.Control.Feedback type="invalid">
@@ -125,8 +123,6 @@ const MenuNavegacion = () => {
               <Form.Control
                 type="text"
                 placeholder="nombre"
-                maxlength="25"
-                minlength="2"
                 autoFocus
               />
               <Form.Control.Feedback type="invalid">
@@ -138,8 +134,6 @@ const MenuNavegacion = () => {
               <Form.Control
                 type="text"
                 placeholder="apellido"
-                maxlength="25"
-                minlength="2"
                 autoFocus
               />
               <Form.Control.Feedback type="invalid">
@@ -151,8 +145,6 @@ const MenuNavegacion = () => {
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
-                maxlength="25"
-                minlength="8"
                 autoFocus
               />
               <Form.Control.Feedback type="invalid">
