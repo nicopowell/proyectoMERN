@@ -1,7 +1,9 @@
 import React from "react";
 import { ButtonGroup, Container, Table, ToggleButton } from "react-bootstrap";
 import { useState } from "react";
-import ItemUsuario from "./administrador/ItemUsuario";
+import TablaProductos from "./administrador/TablaProductos";
+import TablaUsuarios from "./administrador/TablaUsuarios";
+import TablaPedidos from "./administrador/TablaPedidos";
 
 const Administrador = () => {
     const [radioValue, setRadioValue] = useState("Productos");
@@ -34,21 +36,9 @@ const Administrador = () => {
                     ))}
                 </ButtonGroup>
             </div>
-            <Table responsive striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Usuario</th>
-                        <th>Email</th>
-                        <th>Perfil</th>
-                        <th>Estado</th>
-                        <th>Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <ItemUsuario></ItemUsuario>
-                </tbody>
-            </Table>
+            <TablaUsuarios></TablaUsuarios>
+            <TablaProductos></TablaProductos>
+            <TablaPedidos></TablaPedidos>
         </Container>
     );
 };
