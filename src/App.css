@@ -7,15 +7,15 @@
     --color6: #d96c06;
   }
 
-body {
+#root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #D5C9DF;
 }
 
-main {
+.mainSection {
     flex-grow: 1;
-    background-color: #D5C9DF;
 }
 
 #bannerIndex {
@@ -57,4 +57,30 @@ main {
     bottom: 0.75rem;
     right: 0.75rem;
     box-shadow: 0px 0px 10px black;
+}
+
+.btnTablas {
+    background-color: var(--color6);
+    border: none;
+}
+
+.btnTablas:hover {
+    background-color: #d3ab1c !important;
+
+}
+
+.btnTablasSelected {
+    background-color: var(--color5) !important
+}
+
+#input-categorias{
+    background: #fff !important;
+    color: #333;
+    border: 1px solid #aaa
+}
+
+#logoIndex{
+    width: 100%;
+    max-width: 500px;
+    filter: drop-shadow(0 0 10px black);
 }

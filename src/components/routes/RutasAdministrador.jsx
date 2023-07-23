@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Administrador from "../views/Administrador";
 
 const RutasAdministrador = () => {
   return (
@@ -7,7 +8,7 @@ const RutasAdministrador = () => {
         <Route
           exact
           path="/"
-          element={<h1>Administrador</h1>}
+          element={<Administrador></Administrador>}
         ></Route>
       </Routes>
     </>
