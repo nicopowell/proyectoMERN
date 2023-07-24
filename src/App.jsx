@@ -7,6 +7,7 @@ import MenuNavegacion from "./components/common/menuNavegacion";
 import Footer from "./components/common/footer";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
+import SobreNosotros from "./components/views/SobreNosotros";
 
 function App() {
     return (
@@ -17,7 +18,7 @@ function App() {
                     <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}></Route>
                     <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
                     <Route exact path="/pedidos" element={<h1>Pedidos</h1>}></Route>
-                    <Route exact path="/acerca-de-nosotros" element={<h1>Acerca de nosotros</h1>}></Route>
+                    <Route exact path="/SobreNosotros" element={<SobreNosotros></SobreNosotros>}></Route>
                     <Route
                         path="/administrador/*"
                         element={

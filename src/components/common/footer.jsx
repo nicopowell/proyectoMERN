@@ -14,7 +14,7 @@ const Footer = () => {
                     <h6>Paginas que puede visitar</h6>
                         <ul>
                             <li>
-                                <a href="./pages/acercaDeNosotros.html" className="fs-6">
+                                <a href="./views/SobreNosotros.jsx" className="fs-6">
                                     ¿Quienes Somos?
                                 </a>
                             </li>
