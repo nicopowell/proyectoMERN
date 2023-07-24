@@ -8,3 +8,7 @@
     height: 20em;
     margin-bottom: 2em;
   }
+
+  #volverAInicio:hover {
+    color: var(--color1);
+  }

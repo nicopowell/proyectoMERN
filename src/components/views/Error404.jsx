@@ -9,7 +9,7 @@ const Error404 = () => {
         <h1 className="my-5 titulo">¡Eso aún se está cocinando!</h1>
         
         <img src="../../src/assets/404.gif" alt="error404" className="imgError align-items-center"></img>
-        <Link to="/" className="mb-3 titulo fs-4">
+        <Link to="/" className="mb-5 titulo fs-3" id="volverAInicio">
           Volver a la Página Principal
         </Link>
         
