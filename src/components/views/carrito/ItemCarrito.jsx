@@ -1,5 +1,6 @@
 import React from "react";
 import { Trash3 } from "react-bootstrap-icons";
+import { Button } from "react-bootstrap";
 
 const ItemCarrito = () => {
   return (
@@ -9,7 +10,9 @@ const ItemCarrito = () => {
         <td>Pizza</td>
         <td>2500</td>
         <td>
-          <Trash3></Trash3>
+        <Button variant="danger btn-sm">
+            <Trash3 />
+          </Button>
         </td>
       </tr>
     </>
