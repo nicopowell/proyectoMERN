@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
-import { Trash2 } from 'react-bootstrap-icons';
+import { Trash3 } from 'react-bootstrap-icons';
 
 const ItemCarrito = () => {
     return (
@@ -8,8 +7,8 @@ const ItemCarrito = () => {
             <tr>
 <td>1</td>
 <td>Pizza</td>
-<td>$2500</td>
-<td><Trash2></Trash2></td>
+<td>2500</td>
+<td><Trash3></Trash3></td>
 
             </tr>
         </>
