@@ -7,6 +7,7 @@ import MenuNavegacion from "./components/common/menuNavegacion";
 import Footer from "./components/common/footer";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
+import Error404 from "./components/views/Error404";
 
 function App() {
     return (
@@ -26,7 +27,7 @@ function App() {
                             </RutasProtegidas>
                         }
                     ></Route>
-                    <Route path="*" element={<h1>404</h1>}></Route> {/* 404 */}
+                    <Route path="*" element={<Error404></Error404>}></Route>
                 </Routes>
                 <Footer></Footer>
             </BrowserRouter>
