@@ -1,0 +1,18 @@
+:root {
+    --color1: #272838;
+    --color2: #0081a7;
+    --color3: #00afb9;
+    --color4: #d5c9df;
+    --color5: #eeb902;
+    --color6: #d96c06;
+  }
+
+.titulo{
+    color: var(--color6);
+    margin-left: auto;
+
+}
+
+th, td {
+    text-align: center;
+}
