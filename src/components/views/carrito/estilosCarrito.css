@@ -8,17 +8,22 @@
   }
 
 .titulo{
-    color: var(--color6);
+    color: white;
     margin-left: auto;
+    filter: drop-shadow(0 0 6px var(--color1));
 
 }
 
 th, td {
     text-align: center;
 }
+
+tr:hover{
+    background-color: var(--color6);
+}
 .sombra {
     
     width: 75%;
     max-width: 300px;
-    filter: drop-shadow(0 0 10px black);
+    filter: drop-shadow(0 0 8px var(--color1));
   }
