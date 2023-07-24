@@ -10,7 +10,7 @@ const ItemCarrito = () => {
         <td>Pizza</td>
         <td>2500</td>
         <td>
-        <Button variant="danger btn-sm">
+          <Button variant="danger btn-sm" id="btnEliminarProducto">
             <Trash3 />
           </Button>
         </td>
