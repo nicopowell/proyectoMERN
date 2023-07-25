@@ -9,11 +9,11 @@ const RutasAdministrador = () => {
           path="/"
           element={<h1>Administrador</h1>}
         ></Route>
-         {/* <Route
+       <Route
           exact
           path="/SobreNosotros"
-          element={<SobreNosotros></SobreNosotros>}
-        ></Route> */}
+          element={<h1>SobreNosotros</h1>}
+        ></Route> 
       </Routes>
     </>
   );

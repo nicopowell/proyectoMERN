@@ -1,6 +1,6 @@
 import './footer.css'
 import { Facebook,Twitter,Instagram,Whatsapp } from 'react-bootstrap-icons';
-
+import { NavLink} from 'react-router-dom';
 const Footer = () => {
 
     return (
@@ -14,8 +14,8 @@ const Footer = () => {
                     <h6>Paginas que puede visitar</h6>
                         <ul>
                             <li>
-                                <a href="./views/SobreNosotros.jsx" className="fs-6">
-                                    ¿Quienes Somos?
+                                <a href="/SobreNosotros" className="fs-6">
+                                    SobreNosotros
                                 </a>
                             </li>
                             <li>

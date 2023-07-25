@@ -21,7 +21,7 @@ const SobreNosotros = () => {
         <p>Se agradeze a RollingCode por la gran opportunidad junto a la Municipalidad de San Miguel de Tucumnan</p>
       </section>
       <Container>
-        <Row md={6} lg={3} className="my-2" >
+        <Row md={4} ld={3} className="mb-3" >
         <Card border="primary"  style={{ width: "18rem" }}>
             <Card.Img variant="top" src="./src/assets/jmg.jpeg"/>
             <Card.Body>
