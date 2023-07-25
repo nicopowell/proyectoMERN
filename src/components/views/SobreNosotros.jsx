@@ -23,7 +23,7 @@ const SobreNosotros = () => {
       <Container>
         <Row md={4} ld={3} className="mb-3" >
         <Card border="primary"  style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="./src/assets/jmg.jpeg"/>
+            <Card.Img variant="top" src="./src/assets/hack.png"/>
             <Card.Body>
               <Card.Title>Intregrante : Marisa Garat </Card.Title>
               <Card.Text>
@@ -55,7 +55,7 @@ const SobreNosotros = () => {
              </Card>
 
              <Card border="primary"  style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="./src/assets/jmg.jpeg"/>
+            <Card.Img variant="top" src="./src/assets/powell.jpeg"/>
             <Card.Body>
               <Card.Title>Intregrante : Nicolas Powell </Card.Title>
               <Card.Text>
@@ -71,7 +71,7 @@ const SobreNosotros = () => {
 
 
            <Card border="primary"  style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="./src/assets/jmg.jpeg"/>
+            <Card.Img variant="top" src="./src/assets/hack.png"/>
             <Card.Body>
               <Card.Title>Intregrante : Julián Ignacio Montenegro</Card.Title>
               <Card.Text>
