@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-no-target-blank */
 import './footer.css'
-import { Facebook,Twitter,Instagram,Whatsapp } from 'react-bootstrap-icons';
+
+import { Facebook,Twitter,Instagram,Whatsapp} from 'react-bootstrap-icons';
 
 const Footer = () => {
 
@@ -8,23 +10,25 @@ const Footer = () => {
 
             <section className='row'>
                 <aside className='col-md-4 ps-lg-5 col-xs-12'>
-                    <img src="" alt="" />
+                    <a href={'/'}>
+                    <img src="../../src/assets/8.png" id="logoFooter" alt='logoFooter'></img>
+                    </a>
                 </aside>
                 <aside className="col-md-4 text-md-center col-xs-12">
                     <h6>Paginas que puede visitar</h6>
                         <ul>
                             <li>
-                                <a href="./pages/acercaDeNosotros.html" className="fs-6">
+                                <a href={'/acerca-de-nosotros'} className="fs-6">
                                     ¿Quienes Somos?
                                 </a>
                             </li>
                             <li>
-                                <a href="./pages/error404.html" className=" fs-6">
+                                <a href={'*'}  className=" fs-6">
                                     Consultas
                                 </a>
                             </li>
                             <li>
-                                <a href="./pages/error404.html" className="fs-6">
+                                <a href={'*'}  className="fs-6">
                                     Política de Privacidad
                                 </a>
                             </li>
@@ -32,10 +36,10 @@ const Footer = () => {
                 </aside>
                 <aside className="col-md-4 text-md-start col-xs-12">
                     <h6>Siguenos en nuestras redes sociales</h6>
-                    <a href="" className='bs-light mx-2'><Facebook></Facebook></a>
-                    <a href="" className='bs-light mx-2'><Twitter></Twitter></a>
-                    <a href="" className='bs-light mx-2'><Instagram></Instagram></a>
-                    <a href="" className='bs-light mx-2'><Whatsapp></Whatsapp></a>
+                    <a href={'*'} className='bs-light mx-2' target='_blank'><Facebook></Facebook></a>
+                    <a href={'*'} className='bs-light mx-2' target='_blank'><Twitter></Twitter></a>
+                    <a href={'*'} className='bs-light mx-2' target='_blank'><Instagram></Instagram></a>
+                    <a href={'*'} className='bs-light mx-2' target='_blank'><Whatsapp></Whatsapp></a>
                 </aside>
             </section>
             <section className='text-light text-center'>
