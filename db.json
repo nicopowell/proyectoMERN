@@ -2,7 +2,7 @@
     "productos": [
       {
         "nombre": "Gaseosa 500cc.",
-        "estado": "disponible",
+        "estado": "Activo",
         "precio": 450,
         "detalle": "Bebida gasificada sabor Pomelo.",
         "categoría": "Bebidas sin alcohol",
@@ -10,7 +10,7 @@
       },
       {
         "nombre": "Cerveza artesanal",
-        "estado": "disponible",
+        "estado": "Activo",
         "precio": 750,
         "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
         "categoría": "Bebidas con alcohol",
@@ -18,7 +18,7 @@
       },
       {
         "nombre": "Pizza Calabresa",
-        "estado": "disponible",
+        "estado": "Activo",
         "precio": 1850,
         "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
         "categoría": "Pizzas",
@@ -26,7 +26,7 @@
       },
       {
         "nombre": "Lasagna de carne",
-        "estado": "disponible",
+        "estado": "Activo",
         "precio": 2150,
         "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
         "categoría": "Pastas",
