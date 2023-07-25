@@ -35,12 +35,40 @@ const MenuNavegacion = () => {
               Pagina Principal
             </NavLink>
             <NavDropdown title="Nuestros Productos" className="dropMenu">
-              <NavDropdown.Item href="#pizzas">Pizzas</NavDropdown.Item>
-              <NavDropdown.Item href="#pastas">Pastas</NavDropdown.Item>
-              <NavDropdown.Item href="#bebidas-sin-alcohol">
+              <NavDropdown.Item
+                end
+                className={"nav-item nav-link"}
+                as={NavLink}
+                to="/*"
+                id="linkPizzas"
+              >
+                Pizzas
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                end
+                className={"nav-item nav-link"}
+                as={NavLink}
+                to="/*"
+                id="linkPastas"
+              >
+                Pastas
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                end
+                className={"nav-item nav-link"}
+                as={NavLink}
+                to="/*"
+                id="linkBebidasSinAlcohol"
+              >
                 Bebidas sin alcohol
               </NavDropdown.Item>
-              <NavDropdown.Item href="#bebidas-con-alcohol">
+              <NavDropdown.Item
+                end
+                className={"nav-item nav-link"}
+                as={NavLink}
+                to="/*"
+                id="linkBebidasConAlcohol"
+              >
                 Bebidas con alcohol
               </NavDropdown.Item>
             </NavDropdown>
