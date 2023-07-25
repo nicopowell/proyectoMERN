@@ -7,11 +7,9 @@ import MenuNavegacion from "./components/common/menuNavegacion";
 import Footer from "./components/common/footer";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
-<<<<<<< HEAD
 import Error404 from "./components/views/Error404";
-=======
 import CarritoPedidos from "./components/views/CarritoPedidos";
->>>>>>> 4971ac55b69ea872bd995bca269ccb7140c75a72
+
 
 function App() {
     return (
