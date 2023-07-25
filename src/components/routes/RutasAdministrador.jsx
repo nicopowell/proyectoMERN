@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import SobreNosotros from "../views/SobreNosotros";
 
 const RutasAdministrador = () => {
   return (
@@ -10,11 +9,11 @@ const RutasAdministrador = () => {
           path="/"
           element={<h1>Administrador</h1>}
         ></Route>
-         <Route
+         {/* <Route
           exact
           path="/SobreNosotros"
           element={<SobreNosotros></SobreNosotros>}
-        ></Route>
+        ></Route> */}
       </Routes>
     </>
   );
