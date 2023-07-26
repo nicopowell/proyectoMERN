@@ -1,6 +1,7 @@
 import React from "react";
-import { ButtonGroup, Container, Table, ToggleButton,Button } from "react-bootstrap";
+import { ButtonGroup, Container, Table, ToggleButton} from "react-bootstrap";
 import { useState } from "react";
+import {Link} from "react-router-dom";
 import TablaProductos from "./administrador/TablaProductos";
 import TablaUsuarios from "./administrador/TablaUsuarios";
 import TablaPedidos from "./administrador/TablaPedidos";
@@ -48,9 +49,9 @@ const Administrador = () => {
                         </ToggleButton>
                     ))}
                 </ButtonGroup>
-                <Button variant="success mx-5 h-25 mt-5">
-                        Agregar
-                </Button>
+                <Link className="btn btn-success mx-5 h-25 mt-5" to="./productos/CrearProducto.jsx">
+                    Agregar
+                </Link>
             </div>
            {renderizarTablaSeleccionada()}
         </Container>
