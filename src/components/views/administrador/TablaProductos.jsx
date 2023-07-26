@@ -1,6 +1,5 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
-import ItemUsuario from './ItemUsuario';
+import {Table } from 'react-bootstrap';
 import ItemProducto from './ItemProducto';
 
 const TablaProductos = () => {
