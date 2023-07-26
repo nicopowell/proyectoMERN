@@ -1,7 +1,6 @@
 .imagenProductoCard{
     height: 250px;
     object-fit: cover;
-    width: ;
 }
 
 @media screen and (max-width:767px){

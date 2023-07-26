@@ -14,6 +14,7 @@ const CardProducto = ({producto}) => {
                     <Card.Img
                         variant="top"
                         src={producto.imagen}
+                        alt={producto.nombre}
                         className="position-relative imagenProductoCard"
                     />
                     <Button className="btnCard btnAgregarAlPedido">
@@ -23,8 +24,8 @@ const CardProducto = ({producto}) => {
 
                 <Card.Body className="d-flex align-items-center justify-content-between">
                     <div>
-                        <Card.Title>Pizza</Card.Title>
-                        <Card.Text className="text-secondary">$1.600</Card.Text>
+                        <Card.Title>{producto.nombre}</Card.Title>
+                        <Card.Text className="text-secondary">${producto.precio}</Card.Text>
                     </div>
                     <div>
                         <Button className="btnCard fw-semibold p-3 p-lg-2 text-light">
