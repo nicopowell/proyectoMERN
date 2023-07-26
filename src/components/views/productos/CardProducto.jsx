@@ -1,10 +1,14 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import { CartFill } from "react-bootstrap-icons";
+import './cardProducto.css'
 
 const CardProducto = ({producto, onAgregarAlCarrito}) => {
-    const agregarAlCarrito = () => {
-        onAgregarAlCarrito(producto);
+    if (!producto) {
+        return null;
+      }
+    const agregarAlCarrito = ({producto}) => {
+            onAgregarAlCarrito(producto);
     }
     return (
         <Col md={6} lg={3} className="my-2">
@@ -12,8 +16,9 @@ const CardProducto = ({producto, onAgregarAlCarrito}) => {
                 <div className="position-relative">
                     <Card.Img
                         variant="top"
-                        src="https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg"
-                        className="position-relative"
+                        src={producto.imagen}
+                        alt={producto.nombre}
+                        className="position-relative imagenProductoCard"
                     />
                     <Button className="btnCard btnAgregarAlPedido" onClick={agregarAlCarrito}>
                         <CartFill size={23}></CartFill>
@@ -22,8 +27,8 @@ const CardProducto = ({producto, onAgregarAlCarrito}) => {
 
                 <Card.Body className="d-flex align-items-center justify-content-between">
                     <div>
-                        <Card.Title>Pizza</Card.Title>
-                        <Card.Text className="text-secondary">$1.600</Card.Text>
+                        <Card.Title>{producto.nombre}</Card.Title>
+                        <Card.Text className="text-secondary">${producto.precio}</Card.Text>
                     </div>
                     <div>
                         <Button className="btnCard fw-semibold p-3 p-lg-2 text-light">

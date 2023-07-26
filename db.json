@@ -1,6 +1,7 @@
 {
     "productos": [
       {
+        "id": 1,
         "nombre": "Gaseosa 500cc.",
         "estado": "Activo",
         "precio": 450,
@@ -9,6 +10,7 @@
         "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg"
       },
       {
+        "id": 2,
         "nombre": "Cerveza artesanal",
         "estado": "Activo",
         "precio": 750,
@@ -17,6 +19,7 @@
         "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg"
       },
       {
+        "id": 3,
         "nombre": "Pizza Calabresa",
         "estado": "Activo",
         "precio": 1850,
@@ -25,6 +28,7 @@
         "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
       },
       {
+        "id": 4,
         "nombre": "Lasagna de carne",
         "estado": "Activo",
         "precio": 2150,
