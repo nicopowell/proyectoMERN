@@ -5,11 +5,15 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const CarritoPedidos = ({ carritoProp }) => {
-  const [carrito, setCarrito] = useState(carritoProp);
+  
+  const [carrito, setCarrito] = useState(() => {
+    const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || carritoProp || [];
+    return carritoGuardado;
+  });
 
-  useEffect(() => {
-    setCarrito(carritoProp);
-  }, [carritoProp]);
+   useEffect(() => {
+     setCarrito(carritoProp);
+   }, [carritoProp]);
 
   useEffect(() => {
     // Guardo el carrito en localStorage
