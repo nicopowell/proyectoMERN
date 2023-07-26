@@ -4,6 +4,13 @@ import { Container, Col, Row, Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const CarritoPedidos = () => {
+  const calcularTotal = () => {
+    return CarritoPedidos.reduce(
+      (total, producto) => total + producto.precio,
+      0
+    );
+  };
+
   return (
     <>
       <section className="my-4">
@@ -37,8 +44,7 @@ const CarritoPedidos = () => {
                     alt="logoRB"
                     className="logoConSombra"
                   />
-                  <h5>Total a pagar: ${3000}</h5>
-                  {/*agregar luego funcion para sumar productos (state)*/}
+                  <h5>Total a pagar: ${calcularTotal()}</h5>
 
                   <Button id="btnConfirmarPedido" className="mt-2">
                     Confirmar pedido

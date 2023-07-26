@@ -2,7 +2,10 @@ import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import { CartFill } from "react-bootstrap-icons";
 
-const CardProducto = () => {
+const CardProducto = ({producto, onAgregarAlCarrito}) => {
+    const agregarAlCarrito = () => {
+        onAgregarAlCarrito(producto);
+    }
     return (
         <Col md={6} lg={3} className="my-2">
             <Card className="cardProducto">
@@ -12,7 +15,7 @@ const CardProducto = () => {
                         src="https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg"
                         className="position-relative"
                     />
-                    <Button className="btnCard btnAgregarAlPedido">
+                    <Button className="btnCard btnAgregarAlPedido" onClick={agregarAlCarrito}>
                         <CartFill size={23}></CartFill>
                     </Button>
                 </div>

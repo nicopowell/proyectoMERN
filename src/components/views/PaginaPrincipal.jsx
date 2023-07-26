@@ -2,8 +2,14 @@ import { Container } from "react-bootstrap";
 import ProductosPopulares from "./productos/ProductosPopulares";
 import GrillaProductos from "./productos/GrillaProductos";
 import InputProductos from "./productos/InputProductos";
+import { useState } from "react";
 
 const PaginaPrincipal = () => {
+    const [carrito, setCarrito] = useState([]);
+    const agregarAlCarrito = (producto) => {
+        setCarrito([...carrito, producto]);
+    }
+
     return (
         <div className="mainSection">
             <img
