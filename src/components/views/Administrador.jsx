@@ -49,7 +49,7 @@ const Administrador = () => {
                         </ToggleButton>
                     ))}
                 </ButtonGroup>
-                <Link className="btn btn-success mx-5 h-25 mt-5" to="./productos/CrearProducto.jsx">
+                <Link className="btn btn-success mx-5 h-25 mt-5" to='/administrador/CrearProducto'>
                     Agregar
                 </Link>
             </div>
