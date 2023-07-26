@@ -3,12 +3,13 @@ import ItemCarrito from "./carrito/ItemCarrito";
 import { Container, Col, Row, Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const CarritoPedidos = () => {
+const CarritoPedidos = ({ carrito }) => {
   const calcularTotal = () => {
-    return CarritoPedidos.reduce(
-      (total, producto) => total + producto.precio,
-      0
-    );
+    return carrito.reduce((total, producto) => total + producto.precio, 0);
+  };
+
+  const eliminarProducto = (id) => {
+    // logica para eliminar el producto por id
   };
 
   return (
@@ -29,9 +30,13 @@ const CarritoPedidos = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <ItemCarrito></ItemCarrito>
-                    <ItemCarrito></ItemCarrito>
-                    <ItemCarrito></ItemCarrito>
+                    {carrito.map((producto) => (
+                      <ItemCarrito
+                        key={producto.id}
+                        producto={producto}
+                        eliminarProducto={eliminarProducto}
+                      />
+                    ))}
                   </tbody>
                 </Table>
               </div>
