@@ -3,7 +3,7 @@
     {
       "nombre": "Gaseosa 500cc.",
       "estado": "Activo",
-      "precio": 450,
+      "precio": "450",
       "detalle": "Bebida gasificada sabor Pomelo.",
       "categoría": "Bebidas sin alcohol",
       "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg",
@@ -12,7 +12,7 @@
     {
       "nombre": "Cerveza artesanal",
       "estado": "Activo",
-      "precio": 750,
+      "precio": "750",
       "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
       "categoría": "Bebidas con alcohol",
       "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg",
@@ -21,7 +21,7 @@
     {
       "nombre": "Pizza Calabresa",
       "estado": "Activo",
-      "precio": 1850,
+      "precio": "1850",
       "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
       "categoría": "Pizzas",
       "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg",
@@ -30,11 +30,20 @@
     {
       "nombre": "Lasagna de carne",
       "estado": "Activo",
-      "precio": 2150,
+      "precio": "2150",
       "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
       "categoría": "Pastas",
       "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
       "id": 4
+    },
+    {
+      "nombreProducto": "Pizza Napolitana",
+      "estado": "activo",
+      "precio": "900",
+      "detalle": "Pizza Napolitana Tradicional",
+      "categoria": "Pizzas",
+      "imagen": "https://pics.filmaffinity.com/love_again-825975399-mmed.jpg",
+      "id": 5
     }
   ]
 }
