@@ -1,16 +1,20 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import { CartFill } from "react-bootstrap-icons";
+import './cardProducto.css'
 
-const CardProducto = () => {
+const CardProducto = ({producto}) => {
+    if (!producto) {
+        return null;
+      }
     return (
         <Col md={6} lg={3} className="my-2">
             <Card className="cardProducto">
                 <div className="position-relative">
                     <Card.Img
                         variant="top"
-                        src="https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg"
-                        className="position-relative"
+                        src={producto.imagen}
+                        className="position-relative imagenProductoCard"
                     />
                     <Button className="btnCard btnAgregarAlPedido">
                         <CartFill size={23}></CartFill>

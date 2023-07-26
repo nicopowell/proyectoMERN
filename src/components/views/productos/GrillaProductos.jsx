@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
 import CardProducto from "./CardProducto";
+import { consultaListaProductos } from "../../helpers/queris";
 
 const GrillaProductos = () => {
     const [productos, setProductos] = useState([])
@@ -20,4 +21,3 @@ const GrillaProductos = () => {
     );
 };
 export default GrillaProductos;
-
