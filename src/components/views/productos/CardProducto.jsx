@@ -7,7 +7,7 @@ const CardProducto = ({producto, onAgregarAlCarrito}) => {
     if (!producto) {
         return null;
       }
-    const agregarAlCarrito = ({producto}) => {
+    const agregarAlCarrito = () => {
             onAgregarAlCarrito(producto);
     }
     return (

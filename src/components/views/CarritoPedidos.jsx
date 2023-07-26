@@ -2,14 +2,20 @@ import "./carrito/estilosCarrito.css";
 import ItemCarrito from "./carrito/ItemCarrito";
 import { Container, Col, Row, Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 
 const CarritoPedidos = ({ carrito }) => {
+  // useEffect(()=>{
+  //   setCarritoState(carrito);
+  // }, [carrito]);
   const calcularTotal = () => {
     return carrito.reduce((total, producto) => total + producto.precio, 0);
   };
 
   const eliminarProducto = (id) => {
-    // logica para eliminar el producto por id
+    const carritoModificado = carrito.filter((producto) => producto.id !== id);
+    setCarrito(carritoModificado);
   };
 
   return (

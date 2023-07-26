@@ -4,7 +4,8 @@ import CardProducto from "./CardProducto";
 import { consultaListaProductos } from "../../helpers/queris";
 
 const GrillaProductos = ({onAgregarAlCarrito}) => {
-    /* Aqui al agregar el read, hay que poner un prop que diga: onAgregarAlCarrito={onAgregarAlCarrito} */
+    
+    const [productos, setProductos] = useState([]);
     useEffect(()=>{
         consultaListaProductos().then((respuesta)=>{
           setProductos(respuesta)
@@ -13,7 +14,7 @@ const GrillaProductos = ({onAgregarAlCarrito}) => {
     return (
         <Row>
             {productos.map((producto) => (
-                <CardProducto key={producto.id} producto={producto}></CardProducto>
+                <CardProducto key={producto.id} producto={producto}  onAgregarAlCarrito={onAgregarAlCarrito}></CardProducto>
             ))}
         </Row>
     );
