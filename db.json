@@ -35,16 +35,6 @@
       "categoría": "Pastas",
       "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
       "id": 4
-    },
-    {
-      "nombreProducto": "Pizza Napolitana",
-      "categoria": "Pizzas",
-      "precio": "500",
-      "descripcion": "",
-      "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg",
-      "estado": "activo",
-      "detalle": "Pizza Napolitana Tradicional",
-      "id": 5
     }
   ]
 }
