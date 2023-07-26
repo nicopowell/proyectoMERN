@@ -7,7 +7,7 @@ function ModalDetalleProducto({ show, handleClose }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Detalle de (id)Pizza Napolitana</Modal.Title>
+          <Modal.Title>Detalle: Pizza Napolitana</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <Image
@@ -18,7 +18,9 @@ function ModalDetalleProducto({ show, handleClose }) {
          <br />
           Tomate, mozzarella, anchoas, orégano, alcaparras y aceite de oliva.
           <br />
-          8 porciones Precio: $1.600,00-
+          Presentacion: 8 porciones 
+           <br />
+           Precio: $1.600,00-
            <br />
            1 (una) unidad por pedido.
         </Modal.Body>

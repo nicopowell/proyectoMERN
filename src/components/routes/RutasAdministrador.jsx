@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
 const RutasAdministrador = () => {
   return (
     <>

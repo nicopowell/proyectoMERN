@@ -71,7 +71,7 @@ const SobreNosotros = () => {
 
 
            <Card border="primary"  style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="./src/assets/hack.png"/>
+            <Card.Img variant="top" src="./src/assets/julianmontenegro.jpeg"/>
             <Card.Body>
               <Card.Title>Intregrante : Julián Ignacio Montenegro</Card.Title>
               <Card.Text>
