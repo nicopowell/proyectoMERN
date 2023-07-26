@@ -52,6 +52,20 @@ const CrearProducto = () => {
             {errors.nombreProducto?.message}
           </Form.Text>
         </Form.Group>
+        <Form.Group className="mb-3" controlId="formNombreProducto">
+          <Form.Label>Estado*</Form.Label>
+          <Form.Select {...register("estado", {
+              required: "El estado es obligatorio",
+            })}
+            >
+            <option value="">Seleccione una opcion</option>
+            <option value="activo">activo</option>
+            <option value="de baja">De baja</option>
+          </Form.Select>
+          <Form.Text className="text-danger">
+            {errors.estado?.message}
+          </Form.Text>
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formPrecio">
           <Form.Label>Precio*</Form.Label>
           <Form.Control
@@ -74,12 +88,12 @@ const CrearProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formDescripcion">
-          <Form.Label>Descripcion*</Form.Label>
+          <Form.Label>Detalle*</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Pizza Napolitana"
-            {...register("descripcion", {
-              required: "la descripcion del producto es obligatoria",
+            {...register("detalle", {
+              required: "el detalle del producto es obligatorio",
               minLength: {
                 value: 2,
                 message: "La cantidad minima de caracteres es de 2 digitos",
@@ -91,9 +105,26 @@ const CrearProducto = () => {
             })}
           />
           <Form.Text className="text-danger">
-            {errors.descripcion?.message}
+            {errors.detalle?.message}
           </Form.Text>
         </Form.Group>
+            <Form.Group className="mb-3" controlId="formPrecio">
+              <Form.Label>Categoria*</Form.Label>
+              <Form.Select
+                {...register("categoria", {
+                  required: "La categoria es obligatoria",
+                })}
+              >
+                <option value="">Seleccione una opcion</option>
+                <option value="Bebida con alcohol">Bebida con alcohol</option>
+                <option value="Bebida sin">Bebida sin alcohol</option>
+                <option value="Pastas">Pastas</option>
+                <option value="Pizzas">Pizzas</option>
+              </Form.Select>
+              <Form.Text className="text-danger">
+                {errors.categoria?.message}
+              </Form.Text>
+            </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
@@ -105,24 +136,6 @@ const CrearProducto = () => {
           />
           <Form.Text className="text-danger">
             {errors.imagen?.message}
-          </Form.Text>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>Categoria*</Form.Label>
-          <Form.Select
-            {...register("categoria", {
-              required: "La categoria es obligatoria",
-            })}
-          >
-            <option value="">Seleccione una opcion</option>
-            <option value="bebida caliente">Bebida caliente</option>
-            <option value="bebida fria">Bebida fria</option>
-            <option value="dulce">Dulce</option>
-            <option value="salado">Salado</option>
-          </Form.Select>
-          <Form.Text className="text-danger">
-            {errors.categoria?.message}
-            
           </Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">
