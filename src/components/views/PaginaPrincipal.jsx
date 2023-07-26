@@ -6,10 +6,6 @@ import InputProductos from "./productos/InputProductos";
 
 const PaginaPrincipal = ({agregarProductoAlCarrito}) => {
 
-  const onAgregarAlCarrito = (producto) => {
-     agregarProductoAlCarrito(producto);
-      };
-
   return (
     <div className="mainSection">
       <img
@@ -39,7 +35,7 @@ const PaginaPrincipal = ({agregarProductoAlCarrito}) => {
         <h3 className="mt-5">Todos nuestros productos</h3>
         <Container>
           <InputProductos></InputProductos>
-          <GrillaProductos onAgregarAlCarrito={onAgregarAlCarrito}></GrillaProductos>
+          <GrillaProductos onAgregarAlCarrito={agregarProductoAlCarrito}></GrillaProductos>
         </Container>
       </Container>
     </div>

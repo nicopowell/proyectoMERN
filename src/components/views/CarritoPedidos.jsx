@@ -2,20 +2,30 @@ import "./carrito/estilosCarrito.css";
 import ItemCarrito from "./carrito/ItemCarrito";
 import { Container, Col, Row, Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
+const CarritoPedidos = ({ carritoProp }) => {
+  const [carrito, setCarrito] = useState(carritoProp)
 
-const CarritoPedidos = ({ carrito }) => {
-  // useEffect(()=>{
-  //   setCarritoState(carrito);
-  // }, [carrito]);
+  useEffect(() => {
+    // Guardo el carrito en localStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }, [carrito]);
+
   const calcularTotal = () => {
     return carrito.reduce((total, producto) => total + producto.precio, 0);
   };
 
+ 
+
   const eliminarProducto = (id) => {
-    const carritoModificado = carrito.filter((producto) => producto.id !== id);
-    setCarrito(carritoModificado);
+    const indiceProducto = carrito.findIndex((producto) => producto.id === id);
+  
+    if (indiceProducto !== -1) {
+      const carritoModificado = [...carrito];
+      carritoModificado.splice(indiceProducto, 1);
+      setCarrito(carritoModificado);
+    }
   };
 
   return (

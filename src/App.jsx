@@ -9,11 +9,18 @@ import RutasAdministrador from "./components/routes/RutasAdministrador";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import Error404 from "./components/views/Error404";
 import CarritoPedidos from "./components/views/CarritoPedidos";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 function App() {
     const [carrito, setCarrito] = useState([]);
+
+    useEffect(() => {
+        const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
+        setCarrito(carritoGuardado);
+      }, []);
+    
+
     const agregarProductoAlCarrito = (producto) => {
         setCarrito([...carrito, producto]);
       };
@@ -23,8 +30,8 @@ function App() {
                 <MenuNavegacion></MenuNavegacion>
                 <Routes>
                     <Route exact path="/" element={<PaginaPrincipal agregarProductoAlCarrito={agregarProductoAlCarrito}></PaginaPrincipal>}></Route>
-                    <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
-                    <Route exact path="/pedidos" element={<CarritoPedidos carrito={carrito}></CarritoPedidos>}></Route>
+                    <Route exact path="/detalle" element={ <h1>Detalle</h1>}></Route>
+                    <Route exact path="/pedidos" element={<CarritoPedidos carritoProp={carrito}></CarritoPedidos>}></Route>
                     <Route exact path="/acerca-de-nosotros" element={<h1>Acerca de nosotros</h1>}></Route>
                     <Route
                         path="/administrador/*"
