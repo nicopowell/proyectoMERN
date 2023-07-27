@@ -1,67 +1,70 @@
 {
     "productos": [
-      {
-        "id": 1,
-        "nombre": "Gaseosa 500cc.",
-        "estado": "Activo",
-        "precio": 450,
-        "detalle": "Bebida gasificada sabor Pomelo.",
-        "categoria": "Bebidas sin alcohol",
-        "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg"
-      },
-      {
-        "id": 2,
-        "nombre": "Cerveza artesanal",
-        "estado": "Activo",
-        "precio": 750,
-        "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
-        "categoría": "Bebidas con alcohol",
-        "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg"
-      },
-      {
-        "id": 3,
-        "nombre": "Pizza Calabresa",
-        "estado": "Activo",
-        "precio": 1850,
-        "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
-        "categoría": "Pizzas",
-        "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
-      },
-      {
-        "id": 4,
-        "nombre": "Lasagna de carne",
-        "estado": "Activo",
-        "precio": 2150,
-        "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
-        "categoría": "Pastas",
-        "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg"
-      }
+        {
+            "id": 1,
+            "nombre": "Gaseosa 500cc.",
+            "estado": "Activo",
+            "precio": 450,
+            "detalle": "Bebida gasificada sabor Pomelo.",
+            "categoria": "Bebidas sin alcohol",
+            "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg"
+        },
+        {
+            "id": 2,
+            "nombre": "Cerveza artesanal",
+            "estado": "Activo",
+            "precio": 750,
+            "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
+            "categoría": "Bebidas con alcohol",
+            "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg"
+        },
+        {
+            "id": 3,
+            "nombre": "Pizza Calabresa",
+            "estado": "Activo",
+            "precio": 1850,
+            "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
+            "categoría": "Pizzas",
+            "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
+        },
+        {
+            "id": 4,
+            "nombre": "Lasagna de carne",
+            "estado": "Activo",
+            "precio": 2150,
+            "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
+            "categoría": "Pastas",
+            "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg"
+        }
     ],
     "usuarios": [
-      {
-        "id": 1,
-        "nombreUsuario": "Nico",
-        "email": "nico@rollingcode.com",
-        "perfil": "Admin",
-        "estado": "Activo"
-      },
-      {
-        "id": 1,
-        "nombreUsuario": "Marisa",
-        "email": "marisa@rollingcode.com",
-        "perfil": "Admin",
-        "estado": "Activo"
-      },{
-        "id": 1,
-        "nombreUsuario": "Julian",
-        "email": "julian@rollingcode.com",
-        "perfil": "Admin",
-        "estado": "Activo"
-      },{
-        "id": 1,
-        "nombreUsuario": "Juan",
-        "email": "juan@rollingcode.com",
-        "perfil": "Admin",
-        "estado": "Activo"
-      }
-  }
+        {
+            "id": 1,
+            "nombreUsuario": "Nico",
+            "email": "nico@rollingcode.com",
+            "perfil": "Admin",
+            "estado": "Activo"
+        },
+        {
+            "id": 1,
+            "nombreUsuario": "Marisa",
+            "email": "marisa@rollingcode.com",
+            "perfil": "Admin",
+            "estado": "Activo"
+        },
+        {
+            "id": 1,
+            "nombreUsuario": "Julian",
+            "email": "julian@rollingcode.com",
+            "perfil": "Admin",
+            "estado": "Activo"
+        },
+        {
+            "id": 1,
+            "nombreUsuario": "Juan",
+            "email": "juan@rollingcode.com",
+            "perfil": "Admin",
+            "estado": "Activo"
+        }
+    ]
+}
