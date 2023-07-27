@@ -21,7 +21,7 @@ function App() {
                     <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
                     <Route exact path="/pedidos" element={<h1>Pedidos</h1>}></Route>
                     <Route exact path="/SobreNosotros" element={<SobreNosotros></SobreNosotros>}></Route>
-                    <Routeexact path="/CarritoPedidos" element={<CarritoPedidos></CarritoPedidos>}>  </Routeexact>
+                    <Route exact path="/CarritoPedidos" element={<CarritoPedidos></CarritoPedidos>}>  </Route>
                     <Route
                         path="/administrador/*"
                         element={
