@@ -66,5 +66,21 @@
             "perfil": "Admin",
             "estado": "Activo"
         }
+    ],
+    "pedidos": [
+        {
+            "id": 1,
+            "usuario": "Nico",
+            "fecha": "28/7/2023",
+            "productos": ["Gaseosa 500cc.", "Pizza Calabresa"],
+            "estado": "Activo"
+        },
+        {
+            "id": 2,
+            "usuario": "Marisa",
+            "fecha": "28/7/2023",
+            "productos": ["Gaseosa 500cc.", "Pizza Calabresa"],
+            "estado": "Activo"
+        }
     ]
 }
