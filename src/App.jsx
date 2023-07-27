@@ -7,10 +7,10 @@ import MenuNavegacion from "./components/common/menuNavegacion";
 import Footer from "./components/common/footer";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
+import SobreNosotros from "./components/views/SobreNosotros";
 import Error404 from "./components/views/Error404";
 import CarritoPedidos from "./components/views/CarritoPedidos";
 import { useState, useEffect } from "react";
-
 
 function App() {
     const [carrito, setCarrito] = useState([]);

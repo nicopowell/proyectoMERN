@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import './footer.css'
-
-import { Facebook,Twitter,Instagram,Whatsapp} from 'react-bootstrap-icons';
+import { Facebook,Twitter,Instagram,Whatsapp } from 'react-bootstrap-icons';
 
 const Footer = () => {
 
@@ -18,7 +17,10 @@ const Footer = () => {
                     <h6>Paginas que puede visitar</h6>
                         <ul>
                             <li>
-                                <a href={'/acerca-de-nosotros'} className="fs-6">
+                            <a href="./pages/error404.html" className=" fs-6">
+                                    Sobre Nosotros                                
+                                    </a>
+                                <a href={'/SobreNosotros'} className="fs-6">
                                     ¿Quienes Somos?
                                 </a>
                             </li>
