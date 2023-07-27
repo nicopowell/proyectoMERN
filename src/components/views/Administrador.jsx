@@ -27,6 +27,13 @@ const Administrador = () => {
             return null;
         }
       };
+      const agregarProducto = () => {
+        if(tablaSeleccionada == "Productos"){
+            return <Link className="btn btn-success mx-5 h-25" to='/administrador/CrearProducto'>
+                    Agregar
+                    </Link>;
+        }
+      }
 
     return (
         <Container className="mainSection">
@@ -49,11 +56,9 @@ const Administrador = () => {
                         </ToggleButton>
                     ))}
                 </ButtonGroup>
-                <Link className="btn btn-success mx-5 h-25 mt-5" to='/administrador/CrearProducto'>
-                    Agregar
-                </Link>
             </div>
            {renderizarTablaSeleccionada()}
+           {agregarProducto()};
         </Container>
     );
 };

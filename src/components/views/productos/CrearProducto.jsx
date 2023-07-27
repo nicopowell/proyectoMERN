@@ -16,10 +16,10 @@ const CrearProducto = () => {
     consultaAgregarProducto(productoNuevo).then((respuestaCreated)=>{
       console.log(respuestaCreated)
       if(respuestaCreated && respuestaCreated.status === 201){
-        Swal.fire('Producto creado', `El producto ${productoNuevo.nombreProducto} fue creado correctamente`, 'success');
+        Swal.fire('Producto creado', `El producto ${productoNuevo.nombre} fue creado correctamente`, 'success');
         reset();
       }else{
-        Swal.fire('Ocurrio un error', `El producto ${productoNuevo.nombreProducto} no fue creado, intentelo mas tarde`, 'error');
+        Swal.fire('Ocurrio un error', `El producto ${productoNuevo.nombre} no fue creado, intentelo mas tarde`, 'error');
       }
     })
    
@@ -36,7 +36,7 @@ const CrearProducto = () => {
           <Form.Control
             type="text"
             placeholder="Ej: Pizza"
-            {...register("nombreProducto", {
+            {...register("nombre", {
               required: "El nombre del producto es obligatorio",
               minLength: {
                 value: 2,
@@ -49,7 +49,7 @@ const CrearProducto = () => {
             })}
           />
           <Form.Text className="text-danger">
-            {errors.nombreProducto?.message}
+            {errors.nombre?.message}
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formNombreProducto">
