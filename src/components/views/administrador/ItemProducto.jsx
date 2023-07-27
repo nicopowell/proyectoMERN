@@ -2,18 +2,18 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import "./administrador.css";
 
-const ItemProducto = () => {
+const ItemProducto = ({producto, numeroDeProducto}) => {
     return (
         <tr>
-            <td>1</td>
-            <td>Pizza</td>
-            <td>Pizza de Masa madre</td>
-            <td>Pizzas</td>
-            <td>$1.600</td>
+            <td>{numeroDeProducto}</td>
+            <td>{producto.nombre}</td>
+            <td>{producto.detalle}</td>
+            <td>{producto.categoria}</td>
+            <td>${producto.precio}</td>
             <td className="columnaUrl">
-                https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg
+            {producto.imagen}
             </td>
-            <td>Activo</td>
+            <td>{producto.estado}</td>
             <td className="text-center">
             <Button variant="primary">
                     Suspender

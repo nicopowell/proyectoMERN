@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ButtonGroup, Container, Table, ToggleButton } from "react-bootstrap";
 import { useState } from "react";
 import TablaProductos from "./administrador/TablaProductos";
 import TablaUsuarios from "./administrador/TablaUsuarios";
 import TablaPedidos from "./administrador/TablaPedidos";
+import { consultaListaProductos } from "../helpers/queris";
 
 const Administrador = () => {
     const [tablaSeleccionada, setTablaSeleccionada] = useState("Productos");
+    const [productos, setProductos] = useState([]);
 
     const tablas = [
         { name: "Usuarios", value: "Usuarios" },
@@ -14,18 +16,24 @@ const Administrador = () => {
         { name: "Pedidos", value: "Pedidos" },
     ];
 
+    useEffect(() => {
+        consultaListaProductos().then((respuesta) => {
+            setProductos(respuesta);
+        });
+    }, []);
+
     const renderizarTablaSeleccionada = () => {
         switch (tablaSeleccionada) {
-          case "Usuarios":
-            return <TablaUsuarios />;
-          case "Productos":
-            return <TablaProductos />;
-          case "Pedidos":
-            return <TablaPedidos />;
-          default:
-            return null;
+            case "Usuarios":
+                return <TablaUsuarios />;
+            case "Productos":
+                return <TablaProductos productos={productos}/>;
+            case "Pedidos":
+                return <TablaPedidos />;
+            default:
+                return null;
         }
-      };
+    };
 
     return (
         <Container className="mainSection">
@@ -49,7 +57,7 @@ const Administrador = () => {
                     ))}
                 </ButtonGroup>
             </div>
-           {renderizarTablaSeleccionada()}
+            {renderizarTablaSeleccionada()}
         </Container>
     );
 };

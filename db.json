@@ -6,7 +6,7 @@
         "estado": "Activo",
         "precio": 450,
         "detalle": "Bebida gasificada sabor Pomelo.",
-        "categoría": "Bebidas sin alcohol",
+        "categoria": "Bebidas sin alcohol",
         "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg"
       },
       {
@@ -15,7 +15,7 @@
         "estado": "Activo",
         "precio": 750,
         "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
-        "categoría": "Bebidas con alcohol",
+        "categoria": "Bebidas con alcohol",
         "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg"
       },
       {
@@ -24,7 +24,7 @@
         "estado": "Activo",
         "precio": 1850,
         "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
-        "categoría": "Pizzas",
+        "categoria": "Pizzas",
         "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
       },
       {
@@ -33,7 +33,7 @@
         "estado": "Activo",
         "precio": 2150,
         "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
-        "categoría": "Pastas",
+        "categoria": "Pastas",
         "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg"
       }
     ]
