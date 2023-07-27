@@ -35,15 +35,6 @@
       "categoría": "Pastas",
       "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
       "id": 4
-    },
-    {
-      "nombreProducto": "Pizza Napolitana",
-      "estado": "activo",
-      "precio": "900",
-      "detalle": "Pizza Napolitana Tradicional",
-      "categoria": "Pizzas",
-      "imagen": "https://pics.filmaffinity.com/love_again-825975399-mmed.jpg",
-      "id": 5
     }
   ]
 }
