@@ -1,0 +1,19 @@
+.imagenProductoCard{
+    height: 250px;
+    object-fit: cover;
+}
+
+.cardProducto {
+    min-height: 370px;
+}
+
+@media screen and (max-width:767px){
+    .imagenProductoCard{
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .cardProducto {
+        height: auto;
+    }
+}
