@@ -15,7 +15,7 @@
             "estado": "Activo",
             "precio": 750,
             "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
-            "categoría": "Bebidas con alcohol",
+            "categoria": "Bebidas con alcohol",
             "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg"
         },
         {
@@ -24,7 +24,7 @@
             "estado": "Activo",
             "precio": 1850,
             "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
-            "categoría": "Pizzas",
+            "categoria": "Pizzas",
             "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
         },
         {
@@ -33,7 +33,7 @@
             "estado": "Activo",
             "precio": 2150,
             "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
-            "categoría": "Pastas",
+            "categoria": "Pastas",
             "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg"
         }
     ],
@@ -46,21 +46,21 @@
             "estado": "Activo"
         },
         {
-            "id": 1,
+            "id": 2,
             "nombreUsuario": "Marisa",
             "email": "marisa@rollingcode.com",
             "perfil": "Admin",
             "estado": "Activo"
         },
         {
-            "id": 1,
+            "id": 3,
             "nombreUsuario": "Julian",
             "email": "julian@rollingcode.com",
             "perfil": "Admin",
             "estado": "Activo"
         },
         {
-            "id": 1,
+            "id": 4,
             "nombreUsuario": "Juan",
             "email": "juan@rollingcode.com",
             "perfil": "Admin",

@@ -4,11 +4,12 @@ import { useState } from "react";
 import TablaProductos from "./administrador/TablaProductos";
 import TablaUsuarios from "./administrador/TablaUsuarios";
 import TablaPedidos from "./administrador/TablaPedidos";
-import { consultaListaProductos } from "../helpers/queris";
+import { consultaListaProductos, consultaListaUsuarios } from "../helpers/queris";
 
 const Administrador = () => {
     const [tablaSeleccionada, setTablaSeleccionada] = useState("Productos");
     const [productos, setProductos] = useState([]);
+    const [usuarios, setUsuarios] = useState([]);
 
     const tablas = [
         { name: "Usuarios", value: "Usuarios" },
@@ -20,12 +21,15 @@ const Administrador = () => {
         consultaListaProductos().then((respuesta) => {
             setProductos(respuesta);
         });
+        consultaListaUsuarios().then((respuesta) =>{
+            setUsuarios(respuesta);
+        })
     }, []);
 
     const renderizarTablaSeleccionada = () => {
         switch (tablaSeleccionada) {
             case "Usuarios":
-                return <TablaUsuarios />;
+                return <TablaUsuarios usuarios={usuarios}/>;
             case "Productos":
                 return <TablaProductos productos={productos}/>;
             case "Pedidos":
