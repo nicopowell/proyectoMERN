@@ -6,9 +6,11 @@ import { useState } from "react";
 
 const PaginaPrincipal = () => {
     const [filter, setFilter] = useState("");
+    const [categoria, setCategoria] = useState("");
 
-    const handleFilterChange = (value) => {
+    const handleFilterChange = (value, categoriaSeleccionada) => {
         setFilter(value);
+        setCategoria(categoriaSeleccionada);
     };
     return (
         <div className="mainSection">
@@ -37,8 +39,8 @@ const PaginaPrincipal = () => {
                 </Container>
                 <h3 className="mt-5">Todos nuestros productos</h3>
                 <Container>
-                    <InputProductos handleFilterChange={handleFilterChange}></InputProductos>
-                    <GrillaProductos filter={filter}></GrillaProductos>
+                    <InputProductos handleFilterChange={handleFilterChange} handleCategoria={setCategoria}></InputProductos>
+                    <GrillaProductos filter={filter} categoria={categoria}></GrillaProductos>
                 </Container>
             </Container>
         </div>
