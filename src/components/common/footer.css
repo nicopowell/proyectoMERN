@@ -14,3 +14,12 @@ ul{
     list-style: none;
     padding-right: 30px;
 }
+#logoFooter {
+    height: 125px;
+}
+
+@media all and (min-height:577px) and (max-height:768px){
+    #logoFooter{
+        margin-bottom: 1.5rem;
+    }
+}

@@ -8,7 +8,8 @@ import Footer from "./components/common/footer";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import SobreNosotros from "./components/views/SobreNosotros";
-
+import Error404 from "./components/views/Error404";
+import CarritoPedidos from "./components/views/CarritoPedidos";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
                     <Route exact path="/pedidos" element={<h1>Pedidos</h1>}></Route>
                     <Route exact path="/SobreNosotros" element={<SobreNosotros></SobreNosotros>}></Route>
+                    <Routeexact path="/CarritoPedidos" element={<CarritoPedidos></CarritoPedidos>}>  </Routeexact>
                     <Route
                         path="/administrador/*"
                         element={
@@ -28,7 +30,7 @@ function App() {
                             </RutasProtegidas>
                         }
                     ></Route>
-                    <Route path="*" element={<h1>404</h1>}></Route> {/* 404 */}
+                    <Route path="*" element={<Error404></Error404>}></Route>
                 </Routes>
                 <Footer></Footer>
             </BrowserRouter>

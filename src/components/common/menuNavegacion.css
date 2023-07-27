@@ -19,6 +19,9 @@
     background-color: var(--color1);
     color: white;
 }
+#linkPizzas, #linkPastas, #linkBebidasSinAlcohol, #linkBebidasConAlcohol {
+  background-color: #272838;
+}
 #btnRegistro {
     width: 90%;
 }

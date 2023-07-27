@@ -1,0 +1,43 @@
+:root {
+  --color1: #272838;
+  --color2: #0081a7;
+  --color3: #00afb9;
+  --color4: #d5c9df;
+  --color5: #eeb902;
+  --color6: #d96c06;
+}
+
+.titulo {
+  color: white;
+  margin-left: auto;
+  filter: drop-shadow(0 0 6px var(--color1));
+}
+
+th,
+td {
+  text-align: center;
+}
+
+.logoConSombra {
+  width: 75%;
+  max-width: 180px;
+  filter: drop-shadow(0 0 8px var(--color1));
+}
+
+#btnConfirmarPedido {
+  background-color: var(--color6);
+  border-color: var(--color6);
+  color: black;
+}
+
+#btnConfirmarPedido:hover {
+  background-color: var(--color5);
+  border-color: var(--color5);
+}
+#linkSeguirComprando {
+  filter: drop-shadow(0 0 6px black);
+}
+
+#linkSeguirComprando:hover {
+  color: #272838;
+}

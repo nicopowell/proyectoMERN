@@ -7,15 +7,15 @@ const InputProductos = () => {
             <InputGroup>
                 <Form.Control type="text" placeholder="Buscar productos" maxLength={100} />
                 <DropdownButton
-                    variant="outline-secondary"
+                    className="btnInputCategoria"
                     title="Categorias"
                     id="input-categorias"
                     align="end"
                 >
-                    <Dropdown.Item as={Button}>Sandwiches</Dropdown.Item>
-                    <Dropdown.Item as={Button}>Pizzas</Dropdown.Item>
-                    <Dropdown.Item as={Button}>Hamburguesas</Dropdown.Item>
-                    <Dropdown.Item as={Button}>Postres</Dropdown.Item>
+                    <Dropdown.Item as={Button} className="text-dark">Sandwiches</Dropdown.Item>
+                    <Dropdown.Item as={Button} className="text-dark">Pizzas</Dropdown.Item>
+                    <Dropdown.Item as={Button} className="text-dark">Hamburguesas</Dropdown.Item>
+                    <Dropdown.Item as={Button} className="text-dark">Postres</Dropdown.Item>
                 </DropdownButton>
             </InputGroup>
         </Form>

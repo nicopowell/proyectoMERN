@@ -2,27 +2,27 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Image from 'react-bootstrap/Image';
 
-function ModalDetalleProducto({ show, handleClose }) {
+function ModalDetalleProducto({ producto, show, handleClose }) {
   return (
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Detalle: Pizza Napolitana</Modal.Title>
+          <Modal.Title>Detalle: {producto.nombre}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-            <Image
-              src="https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg"
+        <Modal.Body >
+              <Image
+               src={producto.imagen}
               className="position-flex"  fluid
             />
          <br /> Que Contiene:
          <br />
-          Tomate, mozzarella, anchoas, orégano, alcaparras y aceite de oliva.
+         {producto.detalle}
           <br />
           Presentacion: 8 porciones 
            <br />
-           Precio: $1.600,00-
+           Precio: {producto.precio}
            <br />
-           1 (una) unidad por pedido.
+           Categoria: {producto.categoria}
         </Modal.Body>
         <Modal.Footer>
           <Button
