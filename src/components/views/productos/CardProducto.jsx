@@ -45,7 +45,7 @@ const CardProducto = ({producto}) => {
           </Card.Body>
         </Card>
       </Col>
-      <ModalDetalleProducto show={show} handleClose={handleClose} />
+      <ModalDetalleProducto producto={producto} show={show} handleClose={handleClose} />
     </>
   );
   }
