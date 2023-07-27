@@ -3,18 +3,22 @@ import { Row } from "react-bootstrap";
 import CardProducto from "./CardProducto";
 import { consultaListaProductos } from "../../helpers/queris";
 
-const GrillaProductos = () => {
-    const [productos, setProductos] = useState([])
+const GrillaProductos = ({filter}) => {
+    const [productos, setProductos] = useState([]);
 
-    useEffect(()=>{
-        consultaListaProductos().then((respuesta)=>{
-          setProductos(respuesta)
-        })
-      },[])
+    useEffect(() => {
+        consultaListaProductos().then((respuesta) => {
+            setProductos(respuesta);
+        });
+    }, []);
+
+    const filteredProductos = productos.filter((producto) =>
+        producto.nombre.toLowerCase().includes(filter.toLowerCase())
+    );
 
     return (
         <Row>
-            {productos.map((producto) => (
+            {filteredProductos.map((producto) => (
                 <CardProducto key={producto.id} producto={producto}></CardProducto>
             ))}
         </Row>
