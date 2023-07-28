@@ -2,7 +2,8 @@ import React from "react";
 import { Table } from "react-bootstrap";
 import ItemUsuario from "./ItemUsuario";
 
-const TablaUsuarios = () => {
+const TablaUsuarios = ({ usuarios }) => {
+    let contador = 0
     return (
         <Table responsive striped bordered hover>
             <thead>
@@ -16,8 +17,13 @@ const TablaUsuarios = () => {
                 </tr>
             </thead>
             <tbody>
-                <ItemUsuario></ItemUsuario>
-                <ItemUsuario></ItemUsuario>
+                {usuarios.map((usuario) => (
+                    <ItemUsuario
+                        key={usuario.id}
+                        usuario={usuario}
+                        numeroDeUsuario={++contador}
+                    ></ItemUsuario>
+                ))}
             </tbody>
         </Table>
     );

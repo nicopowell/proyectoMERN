@@ -1,3 +1,5 @@
+import React, { useEffect } from "react";
+import { ButtonGroup, Container, Table, ToggleButton } from "react-bootstrap";
 import React from "react";
 import { ButtonGroup, Container, Table, ToggleButton} from "react-bootstrap";
 import { useState } from "react";
@@ -5,10 +7,18 @@ import {Link} from "react-router-dom";
 import TablaProductos from "./administrador/TablaProductos";
 import TablaUsuarios from "./administrador/TablaUsuarios";
 import TablaPedidos from "./administrador/TablaPedidos";
+import {
+    consultaListaPedidos,
+    consultaListaProductos,
+    consultaListaUsuarios,
+} from "../helpers/queris";
 import "./administrador/administrador.css"
 
 const Administrador = () => {
     const [tablaSeleccionada, setTablaSeleccionada] = useState("Productos");
+    const [productos, setProductos] = useState([]);
+    const [usuarios, setUsuarios] = useState([]);
+    const [pedidos, setPedidos] = useState([]);
 
     const tablas = [
         { name: "Usuarios", value: "Usuarios" },
@@ -16,16 +26,28 @@ const Administrador = () => {
         { name: "Pedidos", value: "Pedidos" },
     ];
 
+    useEffect(() => {
+        consultaListaProductos().then((respuesta) => {
+            setProductos(respuesta);
+        });
+        consultaListaUsuarios().then((respuesta) => {
+            setUsuarios(respuesta);
+        });
+        consultaListaPedidos().then((respuesta) => {
+            setPedidos(respuesta);
+        });
+    }, []);
+
     const renderizarTablaSeleccionada = () => {
         switch (tablaSeleccionada) {
-          case "Usuarios":
-            return <TablaUsuarios />;
-          case "Productos":
-            return <TablaProductos />;
-          case "Pedidos":
-            return <TablaPedidos />;
-          default:
-            return null;
+            case "Usuarios":
+                return <TablaUsuarios usuarios={usuarios} />;
+            case "Productos":
+                return <TablaProductos productos={productos} />;
+            case "Pedidos":
+                return <TablaPedidos pedidos={pedidos} />;
+            default:
+                return null;
         }
       };
       const agregarProducto = () => {

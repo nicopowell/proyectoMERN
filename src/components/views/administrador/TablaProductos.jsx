@@ -1,8 +1,9 @@
-import React from 'react';
-import {Table } from 'react-bootstrap';
-import ItemProducto from './ItemProducto';
+import React from "react";
+import { Table } from "react-bootstrap";
+import ItemProducto from "./ItemProducto";
 
-const TablaProductos = () => {
+const TablaProductos = ({ productos }) => {
+    let contador = 0;
     return (
         <Table responsive striped bordered hover>
             <thead>
@@ -18,8 +19,13 @@ const TablaProductos = () => {
                 </tr>
             </thead>
             <tbody>
-                <ItemProducto></ItemProducto>
-                <ItemProducto></ItemProducto>
+                {productos.map((producto) => (
+                    <ItemProducto
+                        key={producto.id}
+                        producto={producto}
+                        numeroDeProducto={++contador}
+                    ></ItemProducto>
+                ))}
             </tbody>
         </Table>
     );
