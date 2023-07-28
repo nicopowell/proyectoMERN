@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Button, Dropdown, DropdownButton, Form, InputGroup } from "react-bootstrap";
 
 const InputProductos = ({ handleFilterChange }) => {
-    const [categoria, setCategoria] = useState("");
+    const [categoria, setCategoria] = useState(null); // Inicializar con null en lugar de ""
 
     const handleInputChange = (event) => {
         handleFilterChange(event.target.value, categoria);
     };
 
     const handleCategoria = (categoria) => {
-        setCategoria(categoria === "Todos" ? null : categoria);
-        handleFilterChange("", categoria === "Todos" ? null : categoria);
+        setCategoria(categoria === "Categorias" ? null : categoria); // Pasar null cuando es "Categorias"
+        handleFilterChange("", categoria === "Categorias" ? null : categoria);
     };
 
     return (
