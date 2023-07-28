@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./administrador.css";
 
 const ItemProducto = ({producto, numeroDeProducto}) => {
@@ -18,7 +19,7 @@ const ItemProducto = ({producto, numeroDeProducto}) => {
             <Button variant="primary">
                     Suspender
                 </Button>
-                <Button variant="warning my-1 mx-1">Editar</Button>
+                <Link className="btn btn-warning" to='/administrador/editarProducto'>Editar</Link>
                 <Button variant="danger">Borrar</Button>
             </td>
         </tr>
