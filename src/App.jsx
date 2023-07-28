@@ -7,9 +7,9 @@ import MenuNavegacion from "./components/common/menuNavegacion";
 import Footer from "./components/common/footer";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
+import SobreNosotros from "./components/views/SobreNosotros";
 import Error404 from "./components/views/Error404";
 import CarritoPedidos from "./components/views/CarritoPedidos";
-
 
 function App() {
     return (
@@ -19,8 +19,9 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={<PaginaPrincipal></PaginaPrincipal>}></Route>
                     <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
-                    <Route exact path="/pedidos" element={<CarritoPedidos></CarritoPedidos>}></Route>
-                    <Route exact path="/acerca-de-nosotros" element={<h1>Acerca de nosotros</h1>}></Route>
+                    <Route exact path="/pedidos" element={<h1>Pedidos</h1>}></Route>
+                    <Route exact path="/SobreNosotros" element={<SobreNosotros></SobreNosotros>}></Route>
+                    <Route exact path="/CarritoPedidos" element={<CarritoPedidos></CarritoPedidos>}>  </Route>
                     <Route
                         path="/administrador/*"
                         element={

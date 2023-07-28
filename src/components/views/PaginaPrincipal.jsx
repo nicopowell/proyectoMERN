@@ -2,8 +2,16 @@ import { Container } from "react-bootstrap";
 import ProductosPopulares from "./productos/ProductosPopulares";
 import GrillaProductos from "./productos/GrillaProductos";
 import InputProductos from "./productos/InputProductos";
+import { useState } from "react";
 
 const PaginaPrincipal = () => {
+    const [filter, setFilter] = useState("");
+    const [categoria, setCategoria] = useState("");
+
+    const handleFilterChange = (value, categoriaSeleccionada) => {
+        setFilter(value);
+        setCategoria(categoriaSeleccionada);
+    };
     return (
         <div className="mainSection">
             <img
@@ -19,9 +27,9 @@ const PaginaPrincipal = () => {
                     id="logoIndex"
                 />
                 <p className="lead fw-semibold px-5 my-4">
-                    ¡Bienvenido a Rolling Bites! Descubre sabores exquisitos con productos
-                    frescos y de calidad superior. Nuestro equipo de chefs apasionados te espera
-                    para brindarte una experiencia gastronómica inolvidable. ¡Ven y disfruta!
+                    ¡Bienvenido a Rolling Bites! Descubre sabores exquisitos con productos frescos y
+                    de calidad superior. Nuestro equipo de chefs apasionados te espera para
+                    brindarte una experiencia gastronómica inolvidable. ¡Ven y disfruta!
                 </p>
             </section>
             <Container className="mb-5">
@@ -31,8 +39,8 @@ const PaginaPrincipal = () => {
                 </Container>
                 <h3 className="mt-5">Todos nuestros productos</h3>
                 <Container>
-                    <InputProductos></InputProductos>
-                    <GrillaProductos></GrillaProductos>
+                    <InputProductos handleFilterChange={handleFilterChange} handleCategoria={setCategoria}></InputProductos>
+                    <GrillaProductos filter={filter} categoria={categoria}></GrillaProductos>
                 </Container>
             </Container>
         </div>
