@@ -1,6 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { consultaAgregarProducto } from "../../helpers/queries";
+import { consultaAgregarProducto } from "../../helpers/queris";
 import Swal from "sweetalert2";
 
 
@@ -14,7 +14,6 @@ const CrearProducto = () => {
 
   const onSubmit = (productoNuevo) => {
     consultaAgregarProducto(productoNuevo).then((respuestaCreated)=>{
-      console.log(respuestaCreated)
       if(respuestaCreated && respuestaCreated.status === 201){
         Swal.fire('Producto creado', `El producto ${productoNuevo.nombre} fue creado correctamente`, 'success');
         reset();
@@ -52,7 +51,7 @@ const CrearProducto = () => {
             {errors.nombre?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formNombreProducto">
+        <Form.Group className="mb-3" controlId="formEstado">
           <Form.Label>Estado*</Form.Label>
           <Form.Select {...register("estado", {
               required: "El estado es obligatorio",
