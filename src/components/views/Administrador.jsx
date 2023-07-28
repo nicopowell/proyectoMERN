@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import TablaProductos from "./administrador/TablaProductos";
 import TablaUsuarios from "./administrador/TablaUsuarios";
 import TablaPedidos from "./administrador/TablaPedidos";
+import "./administrador/administrador.css"
 
 const Administrador = () => {
     const [tablaSeleccionada, setTablaSeleccionada] = useState("Productos");
@@ -29,9 +30,9 @@ const Administrador = () => {
       };
       const agregarProducto = () => {
         if(tablaSeleccionada == "Productos"){
-            return <Link className="btn btn-success mx-5 h-25" to='/administrador/CrearProducto'>
+            return <Link className="btn btn-success" to='/administrador/CrearProducto'>
                     Agregar
-                    </Link>;
+                    </Link>
         }
       }
 
@@ -57,8 +58,10 @@ const Administrador = () => {
                     ))}
                 </ButtonGroup>
             </div>
+            <div className="d-flex justify-content-end my-1" id="boton-agregar">
+           {agregarProducto()}
+           </div>
            {renderizarTablaSeleccionada()}
-           {agregarProducto()};
         </Container>
     );
 };
