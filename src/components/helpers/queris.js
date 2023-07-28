@@ -4,6 +4,21 @@ const URLPedidos = import.meta.env.VITE_API_PEDIDOS;
 
 // PRODUCTO
 
+
+export const consultaAgregarProducto = async (producto) =>{
+    try{
+        const respuesta = await fetch(URLProducto, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(producto)
+            });
+        return respuesta;
+    }catch(error){
+        console.log(error);
+    }
+}
 export const consultaListaProductos = async () =>{
     try{
         const respuesta = await fetch(URLProducto);
@@ -48,3 +63,4 @@ export const consultaListaPedidos = async () =>{
         console.log(error);
     }
 }
+

@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { ButtonGroup, Container, Table, ToggleButton } from "react-bootstrap";
+import React from "react";
+import { ButtonGroup, Container, Table, ToggleButton} from "react-bootstrap";
 import { useState } from "react";
+import {Link} from "react-router-dom";
 import TablaProductos from "./administrador/TablaProductos";
 import TablaUsuarios from "./administrador/TablaUsuarios";
 import TablaPedidos from "./administrador/TablaPedidos";
@@ -9,6 +12,7 @@ import {
     consultaListaProductos,
     consultaListaUsuarios,
 } from "../helpers/queris";
+import "./administrador/administrador.css"
 
 const Administrador = () => {
     const [tablaSeleccionada, setTablaSeleccionada] = useState("Productos");
@@ -45,7 +49,14 @@ const Administrador = () => {
             default:
                 return null;
         }
-    };
+      };
+      const agregarProducto = () => {
+        if(tablaSeleccionada == "Productos"){
+            return <Link className="btn btn-success" to='/administrador/CrearProducto'>
+                    Agregar
+                    </Link>
+        }
+      }
 
     return (
         <Container className="mainSection">
@@ -69,7 +80,10 @@ const Administrador = () => {
                     ))}
                 </ButtonGroup>
             </div>
-            {renderizarTablaSeleccionada()}
+            <div className="d-flex justify-content-end my-1" id="boton-agregar">
+           {agregarProducto()}
+           </div>
+           {renderizarTablaSeleccionada()}
         </Container>
     );
 };

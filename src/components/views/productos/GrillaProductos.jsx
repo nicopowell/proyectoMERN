@@ -3,19 +3,25 @@ import { Row } from "react-bootstrap";
 import CardProducto from "./CardProducto";
 import { consultaListaProductos } from "../../helpers/queris";
 
-const GrillaProductos = () => {
-    const [productos, setProductos] = useState([])
+const GrillaProductos = ({ filter, categoria }) => {
+    const [productos, setProductos] = useState([]);
 
-    useEffect(()=>{
-        consultaListaProductos().then((respuesta)=>{
-          setProductos(respuesta)
-        })
-      },[])
+    useEffect(() => {
+        consultaListaProductos().then((respuesta) => {
+            setProductos(respuesta);
+        });
+    }, []);
+
+    const productosFiltrados = productos.filter((producto) => {
+        const nombreIncluido = producto.nombre.toLowerCase().includes(filter.toLowerCase()) || filter === "";
+        const categoriaCoincide = !categoria || producto.categoría === categoria;
+        return nombreIncluido && categoriaCoincide;
+    });
 
     return (
         <Row>
-            {productos.map((producto) => (
-                <CardProducto key={producto.id} producto={producto}></CardProducto>
+            {productosFiltrados.map((producto) => (
+                <CardProducto key={producto.id} producto={producto} />
             ))}
         </Row>
     );
