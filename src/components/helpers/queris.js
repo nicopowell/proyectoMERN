@@ -35,4 +35,3 @@ export const consultaBorrarProducto = async (id) =>{
         console.log(error);
     }
 }
-}
