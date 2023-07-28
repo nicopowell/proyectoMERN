@@ -14,6 +14,7 @@ const CrearProducto = () => {
 
   const onSubmit = (productoNuevo) => {
     consultaAgregarProducto(productoNuevo).then((respuestaCreated)=>{
+      console.log(productoNuevo);
       if(respuestaCreated && respuestaCreated.status === 201){
         Swal.fire('Producto creado', `El producto ${productoNuevo.nombre} fue creado correctamente`, 'success');
         reset();
