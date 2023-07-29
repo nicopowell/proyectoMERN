@@ -29,6 +29,16 @@ export const consultaListaProductos = async () =>{
     }
 }
 
+export const consultaProductoParaEditar = async (id) =>{
+    try{
+        const respuesta = await fetch(URLProducto+'/'+id);
+        const producto = await respuesta.json();
+        return producto;
+    }catch(error){
+        console.log(error);
+    }
+}
+
 export const consultaBorrarProducto = async (id) =>{
     try{
         const respuesta = await fetch(`${URLProducto}/${id}`, {

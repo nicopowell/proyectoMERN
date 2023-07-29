@@ -1,6 +1,9 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+import { consultaProductoParaEditar } from "../../helpers/queris";
 
 
 const EditarProducto = () => {
@@ -8,8 +11,28 @@ const EditarProducto = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
     reset,
   } = useForm();
+
+  const {id} = useParams();
+  useEffect(()=>{
+consultaProductoParaEditar(id).then((respuesta)=>{
+    if(respuesta){
+        console.log('cargar objeto en formulario');
+        console.log(respuesta);
+        setValue('nombre', respuesta.nombre);
+        setValue('estado', respuesta.estado);
+        setValue('precio', respuesta.precio);
+        setValue('detalle', respuesta.detalle);
+        setValue('categoria', respuesta.categoria);
+        setValue('imagen', respuesta.imagen);
+    } else {
+        Swal.fire('Ocurrió un error', 'No se puede editar el producto, inténtelo mas tarde.', 'error');
+    }
+})
+  }, [])
+
 
   const onSubmit = (productoNuevo) => {
     productoNuevo.precio = parseFloat(productoNuevo.precio);
@@ -58,8 +81,8 @@ const EditarProducto = () => {
             })}
             >
             <option value="">Seleccione una opcion</option>
-            <option value="activo">Activo</option>
-            <option value="de baja">De baja</option>
+            <option value="Activo">Activo</option>
+            <option value="De baja">De baja</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.estado?.message}
@@ -113,10 +136,11 @@ const EditarProducto = () => {
                 {...register("categoria", {
                   required: "La categoria es obligatoria",
                 })}
+                
               >
                 <option value="">Seleccione una opcion</option>
-                <option value="Bebida con alcohol">Bebida con alcohol</option>
-                <option value="Bebida sin">Bebida sin alcohol</option>
+                <option value="Bebidas con alcohol">Bebidas con alcohol</option>
+                <option value="Bebidas sin alcohol">Bebidas sin alcohol</option>
                 <option value="Pastas">Pastas</option>
                 <option value="Pizzas">Pizzas</option>
               </Form.Select>

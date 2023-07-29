@@ -59,8 +59,8 @@ const CrearProducto = () => {
             })}
             >
             <option value="">Seleccione una opcion</option>
-            <option value="activo">activo</option>
-            <option value="de baja">De baja</option>
+            <option value="Activo">Activo</option>
+            <option value="De baja">De baja</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.estado?.message}
@@ -116,8 +116,8 @@ const CrearProducto = () => {
                 })}
               >
                 <option value="">Seleccione una opcion</option>
-                <option value="Bebida con alcohol">Bebida con alcohol</option>
-                <option value="Bebida sin">Bebida sin alcohol</option>
+                <option value="Bebidas con alcohol">Bebidas con alcohol</option>
+                <option value="Bebidas sin alcohol">Bebidas sin alcohol</option>
                 <option value="Pastas">Pastas</option>
                 <option value="Pizzas">Pizzas</option>
               </Form.Select>
