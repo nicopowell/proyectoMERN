@@ -56,6 +56,7 @@
             "id": 3,
             "nombreUsuario": "Julian",
             "email": "julian@rollingcode.com",
+            "password": "123456aA",
             "perfil": "Admin",
             "estado": "Activo"
         },
