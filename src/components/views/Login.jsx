@@ -1,4 +1,4 @@
-import { Form, Button,Modal,NavItem} from "react-bootstrap";
+import { Form, Button,Modal,NavItem,NavDropdown} from "react-bootstrap";
 import { useState } from "react";
 import { Person } from "react-bootstrap-icons";
 import { login } from "../helpers/queris";
@@ -34,7 +34,7 @@ const Login = () => {
       }else{
         Swal.fire(
           'Error',
-          'Email o password incorrecto ',
+          'Email o contraseña incorrecto ',
           'error'
         )
       }
@@ -42,9 +42,11 @@ const Login = () => {
   }
   return (
     <>
+    <NavDropdown.Item >
     <NavItem onClick={loginhandleShow}>
     <Person></Person> Iniciar Sesión
     </NavItem>
+    </NavDropdown.Item>
 
     <Modal show={loginshow} onHide={loginhandleClose}>
     <Modal.Header closeButton>
@@ -74,7 +76,7 @@ const Login = () => {
           <Form.Control
             type="password"
             placeholder="Contraseña"
-            {...register('password', {
+            {...register("contraseña", {
               required: 'La contraseña es un dato obligatorio',
               pattern:{
                 value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,

@@ -14,8 +14,12 @@ import Login from "../views/Login";
 import "./menuNavegacion.css";
 
 const MenuNavegacion = () => {
+  const [loginshow, loginsetShow] = useState(false);
   const [registershow, registersetShow] = useState(false);
 
+
+  const loginhandleClose = () => loginsetShow(false);
+  const loginhandleShow = () => loginsetShow(true);
   const registerhandleClose = () => registersetShow(false);
   const registerhandleShow = () => registersetShow(true);
 
@@ -74,9 +78,7 @@ const MenuNavegacion = () => {
               Administrador
             </NavLink>
             <NavDropdown title="Login" className="dropMenu">
-              <NavDropdown.Item>
-                <Login></Login>
-              </NavDropdown.Item>
+              <Login></Login>
               <NavDropdown.Divider />
               <div className="dropdown-header">
                 ¿No tienes cuenta? Regístrate.
