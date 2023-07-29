@@ -39,7 +39,11 @@ const PaginaPrincipal = () => {
                 </Container>
                 <h3 className="mt-5">Todos nuestros productos</h3>
                 <Container>
-                    <InputProductos handleFilterChange={handleFilterChange} handleCategoria={setCategoria}></InputProductos>
+                    <InputProductos
+                        handleFilterChange={handleFilterChange}
+                        handleCategoria={setCategoria}
+                        categoriaSeleccionada={categoria}
+                    />
                     <GrillaProductos filter={filter} categoria={categoria}></GrillaProductos>
                 </Container>
             </Container>

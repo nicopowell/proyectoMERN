@@ -26,4 +26,5 @@ const GrillaProductos = ({ filter, categoria }) => {
         </Row>
     );
 };
+
 export default GrillaProductos;
