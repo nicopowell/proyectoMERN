@@ -19,7 +19,7 @@ const ItemProducto = ({producto, numeroDeProducto}) => {
             <Button variant="primary">
                     Suspender
                 </Button>
-                <Link className="btn btn-warning" to='/administrador/editarProducto'>Editar</Link>
+                <Link className="btn btn-warning" to={'/administrador/editarProducto/'+producto.id}>Editar</Link>
                 <Button variant="danger">Borrar</Button>
             </td>
         </tr>
