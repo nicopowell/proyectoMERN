@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Button, Dropdown, DropdownButton, Form, InputGroup } from "react-bootstrap";
 
 const InputProductos = ({ handleFilterChange, handleCategoria, categoriaSeleccionada }) => {
-    const [filter, setFilter] = useState(""); // Estado para el filtro de búsqueda
+    const [filter, setFilter] = useState(""); 
 
     const handleInputChange = (event) => {
-        setFilter(event.target.value); // Actualizar el estado del filtro de búsqueda
-        handleFilterChange(event.target.value, categoriaSeleccionada); // Llamar a la función del padre con el filtro y la categoría actual
+        setFilter(event.target.value);
+        handleFilterChange(event.target.value, categoriaSeleccionada);
     };
 
     const handleCategoriaClick = (categoria) => {
-        handleCategoria(categoria); // Llamar a la función del padre para cambiar la categoría
-        handleFilterChange(filter, categoria); // Llamar a la función del padre con el filtro actual y la nueva categoría
+        handleCategoria(categoria);
+        handleFilterChange(filter, categoria); 
     };
 
     return (
