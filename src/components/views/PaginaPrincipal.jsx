@@ -44,7 +44,7 @@ const PaginaPrincipal = () => {
                         handleCategoria={setCategoria}
                         categoriaSeleccionada={categoria}
                     />
-                    <GrillaProductos filter={filter} categoria={categoria}></GrillaProductos>
+                    <GrillaProductos filter={filter} categoriaSeleccionada={categoria}></GrillaProductos>
                 </Container>
             </Container>
         </div>
