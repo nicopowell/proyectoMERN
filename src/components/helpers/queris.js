@@ -41,16 +41,6 @@ export const consultaBorrarProducto = async (id) =>{
 }
 
 // USUARIOS
-
-export const consultaListaUsuarios = async () =>{
-    try{
-        const respuesta = await fetch(URLUsuario);
-        const listaUsuarios = await respuesta.json();
-        return listaUsuarios;
-    }catch(error){
-        console.log(error);
-    }
-}
 export const login = async(usuario)=>{
     try{
         const respuesta = await fetch(URLUsuario,{
@@ -70,6 +60,16 @@ export const login = async(usuario)=>{
         console.log(error)
     }
 }
+export const consultaListaUsuarios = async () =>{
+    try{
+        const respuesta = await fetch(URLUsuario);
+        const listaUsuarios = await respuesta.json();
+        return listaUsuarios;
+    }catch(error){
+        console.log(error);
+    }
+}
+
 
 // PEDIDOS
 
