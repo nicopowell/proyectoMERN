@@ -1,10 +1,12 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-import { consultaProductoParaEditar } from "../../helpers/queris";
-
+import {
+  consultaProductoParaEditar,
+  consultaEditarProducto,
+} from "../../helpers/queris";
 
 const EditarProducto = () => {
   const {
@@ -12,42 +14,51 @@ const EditarProducto = () => {
     handleSubmit,
     formState: { errors },
     setValue,
-    reset,
   } = useForm();
+  const navegacion = useNavigate();
 
-  const {id} = useParams();
-  useEffect(()=>{
-consultaProductoParaEditar(id).then((respuesta)=>{
-    if(respuesta){
-        console.log('cargar objeto en formulario');
+  const { id } = useParams();
+  useEffect(() => {
+    consultaProductoParaEditar(id).then((respuesta) => {
+      if (respuesta) {
+        console.log("cargar objeto en formulario");
         console.log(respuesta);
-        setValue('nombre', respuesta.nombre);
-        setValue('estado', respuesta.estado);
-        setValue('precio', respuesta.precio);
-        setValue('detalle', respuesta.detalle);
-        setValue('categoria', respuesta.categoria);
-        setValue('imagen', respuesta.imagen);
-    } else {
-        Swal.fire('Ocurrió un error', 'No se puede editar el producto, inténtelo mas tarde.', 'error');
-    }
-})
-  }, [])
-
-
-  const onSubmit = (productoNuevo) => {
-    productoNuevo.precio = parseFloat(productoNuevo.precio);
-    consultaAgregarProducto(productoNuevo).then((respuestaCreated)=>{
-      if(respuestaCreated && respuestaCreated.status === 201){
-        Swal.fire('Producto creado', `El producto ${productoNuevo.nombre} fue creado correctamente`, 'success');
-        reset();
-      }else{
-        Swal.fire('Ocurrio un error', `El producto ${productoNuevo.nombre} no fue creado, intentelo mas tarde`, 'error');
+        setValue("nombre", respuesta.nombre);
+        setValue("estado", respuesta.estado);
+        setValue("precio", respuesta.precio);
+        setValue("detalle", respuesta.detalle);
+        setValue("categoria", respuesta.categoria);
+        setValue("imagen", respuesta.imagen);
+      } else {
+        Swal.fire(
+          "Ocurrió un error",
+          "No se puede editar el producto, inténtelo mas tarde.",
+          "error"
+        );
       }
-    })
-   
+    });
+  }, []);
+
+  const onSubmit = (productoEditado) => {
+    console.log(productoEditado);
+    consultaEditarProducto(productoEditado, id).then((respuesta) => {
+      if (respuesta && respuesta.status === 200) {
+        Swal.fire(
+          "Producto editado",
+          `El producto ${productoEditado.nombre} fue editado correctamente`,
+          "success"
+        );
+        navegacion("/administrador");
+      } else {
+        Swal.fire(
+          "Ocurrió un error",
+          `El producto ${productoEditado.nombre} no se pudo editar. Intentelo mas tarde.`,
+          "error"
+        );
+      }
+    });
   };
 
-  
   return (
     <section className="container mainSection my-2">
       <h1 className="display-4 mt-5">Editar producto</h1>
@@ -76,10 +87,11 @@ consultaProductoParaEditar(id).then((respuesta)=>{
         </Form.Group>
         <Form.Group className="mb-3" controlId="formEstado">
           <Form.Label>Estado*</Form.Label>
-          <Form.Select {...register("estado", {
+          <Form.Select
+            {...register("estado", {
               required: "El estado es obligatorio",
             })}
-            >
+          >
             <option value="">Seleccione una opcion</option>
             <option value="Activo">Activo</option>
             <option value="De baja">De baja</option>
@@ -130,24 +142,23 @@ consultaProductoParaEditar(id).then((respuesta)=>{
             {errors.detalle?.message}
           </Form.Text>
         </Form.Group>
-            <Form.Group className="mb-3" controlId="formPrecio">
-              <Form.Label>Categoria*</Form.Label>
-              <Form.Select
-                {...register("categoria", {
-                  required: "La categoria es obligatoria",
-                })}
-                
-              >
-                <option value="">Seleccione una opcion</option>
-                <option value="Bebidas con alcohol">Bebidas con alcohol</option>
-                <option value="Bebidas sin alcohol">Bebidas sin alcohol</option>
-                <option value="Pastas">Pastas</option>
-                <option value="Pizzas">Pizzas</option>
-              </Form.Select>
-              <Form.Text className="text-danger">
-                {errors.categoria?.message}
-              </Form.Text>
-            </Form.Group>
+        <Form.Group className="mb-3" controlId="formPrecio">
+          <Form.Label>Categoria*</Form.Label>
+          <Form.Select
+            {...register("categoria", {
+              required: "La categoria es obligatoria",
+            })}
+          >
+            <option value="">Seleccione una opcion</option>
+            <option value="Bebidas con alcohol">Bebidas con alcohol</option>
+            <option value="Bebidas sin alcohol">Bebidas sin alcohol</option>
+            <option value="Pastas">Pastas</option>
+            <option value="Pizzas">Pizzas</option>
+          </Form.Select>
+          <Form.Text className="text-danger">
+            {errors.categoria?.message}
+          </Form.Text>
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
