@@ -41,21 +41,43 @@ export const consultaBorrarProducto = async (id) =>{
 }
 
 // USUARIOS
+// export const login = async(usuario)=>{
+//     try{
+//         const respuesta = await fetch(URLUsuario,{
+//             method: "POST",
+//             headers:{
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify(usuario)
+//         });
+//         const datos = await respuesta.json();
+//         return {
+//             status: respuesta.status,
+//             nombreUsuario: datos.nombreUsuario
+//         }
+       
+//     }catch(error){
+//         console.log(error)
+//     }
+// }
 export const login = async(usuario)=>{
     try{
-        const respuesta = await fetch(URLUsuario,{
-            method: "POST",
-            headers:{
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(usuario)
-        });
-        const datos = await respuesta.json();
-        return {
-            status: respuesta.status,
-            nombreUsuario: datos.nombreUsuario
-        }
-       
+        const respuesta = await fetch(URLUsuario);
+        const listaUsuarios = await respuesta.json();
+        //buscar cual usuario tiene el mail
+        const usuarioBuscado = listaUsuarios.find((itemUsuario)=> itemUsuario.email === usuario.email);
+        if(usuarioBuscado){
+            console.log('email encontrado');
+            if(usuarioBuscado.password === usuario.password){
+                return usuarioBuscado;
+            }else{
+                console.log('el password es incorrecto');
+                return null;
+            }
+        }else{
+            console.log('el email no existe');
+            return null
+        }       
     }catch(error){
         console.log(error)
     }

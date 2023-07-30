@@ -21,7 +21,7 @@ const Login = () => {
   const onSubmit = (usuario)=>{
     console.log(usuario)
     login(usuario).then((respuesta)=>{
-      if(respuesta && respuesta.status === 200){
+      if(respuesta){
         sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario));
         Swal.fire(
           'Bienvenido',
@@ -42,11 +42,23 @@ const Login = () => {
   }
   return (
     <>
-    <NavDropdown.Item >
-    <NavItem onClick={loginhandleShow}>
-    <Person></Person> Iniciar Sesión
-    </NavItem>
-    </NavDropdown.Item>
+            <NavDropdown title="Login" end className="dropMenu">
+            <NavDropdown.Item >
+              <NavItem onClick={loginhandleShow}>
+                <Person></Person> Iniciar Sesión
+              </NavItem>
+            </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <div className="dropdown-header">
+                ¿No tienes cuenta? Regístrate.
+              </div>
+              <NavDropdown.Item
+                className="text-center"
+                onClick={registerhandleShow}
+              >
+                <Button className="btnRegistro btn">Registro</Button>
+              </NavDropdown.Item>
+            </NavDropdown>
 
     <Modal show={loginshow} onHide={loginhandleClose}>
     <Modal.Header closeButton>

@@ -4,24 +4,26 @@ import {
   NavDropdown,
   Container,
   Button,
-  Modal,
-  Form,
 } from "react-bootstrap";
 import { Cart } from "react-bootstrap-icons";
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+// import { useState } from "react";
+import { Link, NavLink ,useNavigate} from "react-router-dom";
 import Login from "../views/Login";
 import "./menuNavegacion.css";
 
-const MenuNavegacion = () => {
-  const [loginshow, loginsetShow] = useState(false);
-  const [registershow, registersetShow] = useState(false);
+const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
+  
+  const navegacion = useNavigate();
 
+  const logout = ()=>{
+    setUsuarioLogueado({});
+    sessionStorage.removeItem('usuario');
+    navegacion('/');
+  }
+  // const [registershow, registersetShow] = useState(false);
 
-  const loginhandleClose = () => loginsetShow(false);
-  const loginhandleShow = () => loginsetShow(true);
-  const registerhandleClose = () => registersetShow(false);
-  const registerhandleShow = () => registersetShow(true);
+  // const registerhandleClose = () => registersetShow(false);
+  // const registerhandleShow = () => registersetShow(true);
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">
@@ -74,22 +76,16 @@ const MenuNavegacion = () => {
                 Bebidas con alcohol
               </NavDropdown.Item>
             </NavDropdown>
-            <NavLink end className={"nav-item nav-link"} to="/administrador">
-              Administrador
-            </NavLink>
-            <NavDropdown title="Login" className="dropMenu">
-              <Login></Login>
-              <NavDropdown.Divider />
-              <div className="dropdown-header">
-                ¿No tienes cuenta? Regístrate.
-              </div>
-              <NavDropdown.Item
-                className="text-center"
-                onClick={registerhandleShow}
-              >
-                <Button className="btnRegistro btn">Registro</Button>
-              </NavDropdown.Item>
-            </NavDropdown>
+            {
+              (usuarioLogueado.nombreUsuario)?(
+                <>
+                <NavLink end className={"nav-item nav-link"} to="/administrador">
+                  Administrador
+                </NavLink>
+                <Button variant="dark" onClick={logout}>Logout</Button>
+                </>
+                ):<Login></Login>
+            }
             <NavLink
               end
               className={"nav-item nav-link"}
@@ -103,7 +99,7 @@ const MenuNavegacion = () => {
       </Container>
 
 
-      <Modal show={registershow} onHide={registerhandleClose}>
+      {/* <Modal show={registershow} onHide={registerhandleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Regístrarse</Modal.Title>
         </Modal.Header>
@@ -167,7 +163,7 @@ const MenuNavegacion = () => {
             </Button>
           </Form>
         </Modal.Body>
-      </Modal>
+      </Modal> */}
     </Navbar>
   );
 };
