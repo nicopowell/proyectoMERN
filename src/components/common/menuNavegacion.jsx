@@ -9,18 +9,16 @@ import {
 } from "react-bootstrap";
 import { Cart } from "react-bootstrap-icons";
 import { useState } from "react";
-import { Link, NavLink ,useNavigate} from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 import Login from "../views/Login";
 import "./menuNavegacion.css";
 
 const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
   
-  const navegacion = useNavigate();
 
   const logout = ()=>{
     setUsuarioLogueado({});
     sessionStorage.removeItem('usuario');
-    navegacion('/');
   }
   const [registershow, registersetShow] = useState(false);
 
@@ -84,7 +82,7 @@ const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
                 <NavLink end className={"nav-item nav-link"} to="/administrador">
                   Administrador
                 </NavLink>
-                <NavLink end className={"nav-item nav-link"} onClick={logout}>Logout</NavLink>
+                <NavLink end className={"nav-item nav-link"} onClick={logout} to="/">Logout</NavLink>
                 </>
               ): <Login setUsuarioLogueado={setUsuarioLogueado}></Login>
             }
