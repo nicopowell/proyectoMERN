@@ -4,9 +4,11 @@ import {
   NavDropdown,
   Container,
   Button,
+  Modal,
+  Form,
 } from "react-bootstrap";
 import { Cart } from "react-bootstrap-icons";
-// import { useState } from "react";
+import { useState } from "react";
 import { Link, NavLink ,useNavigate} from "react-router-dom";
 import Login from "../views/Login";
 import "./menuNavegacion.css";
@@ -20,10 +22,10 @@ const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
     sessionStorage.removeItem('usuario');
     navegacion('/');
   }
-  // const [registershow, registersetShow] = useState(false);
+  const [registershow, registersetShow] = useState(false);
 
-  // const registerhandleClose = () => registersetShow(false);
-  // const registerhandleShow = () => registersetShow(true);
+  const registerhandleClose = () => registersetShow(false);
+  const registerhandleShow = () => registersetShow(true);
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">
@@ -82,10 +84,11 @@ const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
                 <NavLink end className={"nav-item nav-link"} to="/administrador">
                   Administrador
                 </NavLink>
-                <Button variant="dark" onClick={logout}>Logout</Button>
+                <NavLink end className={"nav-item nav-link"} onClick={logout}>Logout</NavLink>
                 </>
-                ):<Login></Login>
+              ): <Login setUsuarioLogueado={setUsuarioLogueado}></Login>
             }
+
             <NavLink
               end
               className={"nav-item nav-link"}
@@ -99,7 +102,7 @@ const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
       </Container>
 
 
-      {/* <Modal show={registershow} onHide={registerhandleClose}>
+      <Modal show={registershow} onHide={registerhandleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Regístrarse</Modal.Title>
         </Modal.Header>
@@ -163,7 +166,7 @@ const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
             </Button>
           </Form>
         </Modal.Body>
-      </Modal> */}
+      </Modal>
     </Navbar>
   );
 };

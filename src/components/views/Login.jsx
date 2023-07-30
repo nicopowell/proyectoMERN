@@ -6,7 +6,7 @@ import { useForm} from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({setUsuarioLogueado}) => {
   const [loginshow, loginsetShow] = useState(false);
   const [registershow, registersetShow] = useState(false);
 
@@ -42,23 +42,24 @@ const Login = () => {
   }
   return (
     <>
-            <NavDropdown title="Login" end className="dropMenu">
-            <NavDropdown.Item >
-              <NavItem onClick={loginhandleShow}>
-                <Person></Person> Iniciar Sesión
-              </NavItem>
-            </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <div className="dropdown-header">
-                ¿No tienes cuenta? Regístrate.
-              </div>
-              <NavDropdown.Item
-                className="text-center"
-                onClick={registerhandleShow}
-              >
-                <Button className="btnRegistro btn">Registro</Button>
-              </NavDropdown.Item>
-            </NavDropdown>
+    <NavDropdown title="Login" className="dropMenu">
+    <NavDropdown.Item >
+    <NavItem onClick={loginhandleShow}>
+    <Person></Person> Iniciar Sesión
+    </NavItem>
+    </NavDropdown.Item>
+      <NavDropdown.Divider />
+      <div className="dropdown-header">
+        ¿No tienes cuenta? Regístrate.
+        </div>
+        <NavDropdown.Item
+        className="text-center"
+        onClick={registerhandleShow}
+        >
+          <Button className="btnRegistro btn">Registro</Button>
+          </NavDropdown.Item>
+          </NavDropdown>
+
 
     <Modal show={loginshow} onHide={loginhandleClose}>
     <Modal.Header closeButton>
