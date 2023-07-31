@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./administrador.css";
 
-const ItemProducto = ({producto, numeroDeProducto}) => {
+const ItemProducto = ({ producto, numeroDeProducto }) => {
     return (
         <tr>
             <td>{numeroDeProducto}</td>
@@ -11,15 +11,17 @@ const ItemProducto = ({producto, numeroDeProducto}) => {
             <td>{producto.detalle}</td>
             <td>{producto.categoria}</td>
             <td>${producto.precio}</td>
-            <td className="columnaUrl">
-            {producto.imagen}
-            </td>
+            <td className="columnaUrl">{producto.imagen}</td>
             <td>{producto.estado}</td>
             <td className="text-center">
-            <Button variant="primary">
-                    Suspender
-                </Button>
-                <Link className="btn btn-warning" to={'/administrador/editarProducto/'+producto.id}>Editar</Link>
+                <Button variant="primary mx-1">Suspender</Button>
+                <br></br>
+                <Link
+                    className="btn btn-warning mx-1 my-1"
+                    to={"/administrador/editarProducto/" + producto.id}
+                >
+                    Editar
+                </Link>
                 <Button variant="danger">Borrar</Button>
             </td>
         </tr>
