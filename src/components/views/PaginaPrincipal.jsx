@@ -7,6 +7,11 @@ import { useState } from "react";
 const PaginaPrincipal = () => {
     const [filter, setFilter] = useState("");
     const [categoria, setCategoria] = useState("");
+    const [carrito, setCarrito] = useState([]);
+
+    const handleAgregarAlCarrito = (producto => {
+        setCarrito([...carrito, producto]);
+    });
 
     const handleFilterChange = (value, categoriaSeleccionada) => {
         setFilter(value);
@@ -44,7 +49,7 @@ const PaginaPrincipal = () => {
                         handleCategoria={setCategoria}
                         categoriaSeleccionada={categoria}
                     />
-                    <GrillaProductos filter={filter} categoriaSeleccionada={categoria}></GrillaProductos>
+                    <GrillaProductos filter={filter} categoriaSeleccionada={categoria} onAgregarAlCarrito={handleAgregarAlCarrito}></GrillaProductos>
                 </Container>
             </Container>
         </div>
