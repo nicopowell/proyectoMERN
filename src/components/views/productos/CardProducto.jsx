@@ -5,12 +5,15 @@ import ModalDetalleProducto from "../ModalDetalleProducto";
 import { useState } from "react";
 import './cardProducto.css'
 
-const CardProducto = ({producto}) => {
+const CardProducto = ({producto, onAgregarAlCarrito}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   if (!producto) {
     return null;
+  }
+  const agregarAlCarrito = ()=> {
+    onAgregarAlCarrito(producto);
   }
   return (
     <>
@@ -23,7 +26,7 @@ const CardProducto = ({producto}) => {
                         alt={producto.nombre}
                         className="position-relative imagenProductoCard"
                     />
-                    <Button className="btnCard btnAgregarAlPedido">
+                    <Button className="btnCard btnAgregarAlPedido" onClick={agregarAlCarrito}>
                         <CartFill size={23}></CartFill>
                     </Button>
                 </div>
