@@ -52,9 +52,8 @@ const Login = ({setUsuarioLogueado}) => {
         </div>
         <NavDropdown.Item
         className="text-center"
-        onClick={registerhandleShow}
         >
-          <Button className="btnRegistro btn">Registro</Button>
+          <Register></Register>
           </NavDropdown.Item>
           </NavDropdown>
 
