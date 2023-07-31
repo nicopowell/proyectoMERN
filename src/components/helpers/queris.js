@@ -115,7 +115,20 @@ export const consultaListaUsuarios = async () =>{
         console.log(error);
     }
 }
-
+export const register = async (usuario) => {
+    try{
+        const respuesta = await fetch(URLUsuario, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario)
+            });
+        return respuesta;
+    }catch(error){
+        console.log(error);
+    }
+}
 
 // PEDIDOS
 
