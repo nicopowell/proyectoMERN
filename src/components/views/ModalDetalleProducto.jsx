@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Image from 'react-bootstrap/Image';
+import Image from "react-bootstrap/Image";
 
 function ModalDetalleProducto({ producto, show, handleClose }) {
   return (
@@ -9,19 +9,15 @@ function ModalDetalleProducto({ producto, show, handleClose }) {
         <Modal.Header closeButton>
           <Modal.Title>{producto.nombre}</Modal.Title>
         </Modal.Header>
-        <Modal.Body >
-              <Image
-               src={producto.imagen}
-              className="position-flex"  fluid
-            />
-         <br /> Que Contiene:
-         <br />
-         {producto.detalle}
+        <Modal.Body>
+          <Image src={producto.imagen} className="position-flex" fluid />
+          <br /> <b>Que Contiene:</b>
           <br />
-           <br />
-           Precio:$ {producto.precio} -
-           <br />
-           Categoria: {producto.categoria}
+          {producto.detalle}
+          <br />
+          <b>Precio:$</b> {producto.precio} <b>-</b>
+          <br />
+          <b>Categoria:</b> {producto.categoria}
         </Modal.Body>
         <Modal.Footer>
           <Button

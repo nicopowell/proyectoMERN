@@ -36,7 +36,7 @@ const SobreNosotros = () => {
           </Card.Body>
           <ListGroup className="list-group-flush">
             <ListGroup.Item>Repositor </ListGroup.Item>
-           <a href={'https://github.com/nicopowell'} className='bs-light mx-2' target='_blank'><Github></Github></a>
+        <a  href={'https://github.com/nicopowell'} className='bs-light mx-2' target='_blank'><Github>Git</Github></a>
           </ListGroup>
         </Card>
 
