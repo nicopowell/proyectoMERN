@@ -115,7 +115,7 @@ export const consultaListaUsuarios = async () =>{
         console.log(error);
     }
 }
-export const register = async (usuario) => {
+export const registrar = async (usuario) => {
     try{
         const respuesta = await fetch(URLUsuario, {
             method: "POST",

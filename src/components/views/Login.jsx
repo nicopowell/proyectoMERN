@@ -95,7 +95,7 @@ const Login = ({setUsuarioLogueado}) => {
              })}
           />
              <Form.Text className="text-danger">
-               {errors.password?.message}
+               {errors.contraseña?.message}
              </Form.Text>
         </Form.Group>
         <Button
