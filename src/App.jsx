@@ -1,17 +1,22 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import PaginaPrincipal from "./components/views/PaginaPrincipal";
 import "./App.css";
 import "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import MenuNavegacion from "./components/common/menuNavegacion";
 import Footer from "./components/common/footer";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
+import PaginaPrincipal from "./components/views/PaginaPrincipal";
 import SobreNosotros from "./components/views/SobreNosotros";
 import Error404 from "./components/views/Error404";
 import CarritoPedidos from "./components/views/CarritoPedidos";
 
 function App() {
+    const [carrito, setCarrito] = useState([]);
+    const agregarAlCarrito = (producto) => {
+        setCarrito([...carrito,producto]);
+    }
   return (
     <>
       <BrowserRouter>
@@ -20,13 +25,13 @@ function App() {
           <Route
             exact
             path="/"
-            element={<PaginaPrincipal></PaginaPrincipal>}
+            element={<PaginaPrincipal carrito={carrito} agregarAlCarrito={agregarAlCarrito}></PaginaPrincipal>}
           ></Route>
           <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
           <Route
             exact
             path="/pedidos"
-            element={<CarritoPedidos></CarritoPedidos>}
+            element={<CarritoPedidos carrito={carrito}></CarritoPedidos>}
           ></Route>
           <Route
             exact

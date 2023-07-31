@@ -4,13 +4,12 @@ import GrillaProductos from "./productos/GrillaProductos";
 import InputProductos from "./productos/InputProductos";
 import { useState } from "react";
 
-const PaginaPrincipal = () => {
+const PaginaPrincipal = ({carrito, agregarAlCarrito}) => {
     const [filter, setFilter] = useState("");
     const [categoria, setCategoria] = useState("");
-    const [carrito, setCarrito] = useState([]);
-
+    
     const handleAgregarAlCarrito = (producto => {
-        setCarrito([...carrito, producto]);
+        agregarAlCarrito(producto);
     });
 
     const handleFilterChange = (value, categoriaSeleccionada) => {
