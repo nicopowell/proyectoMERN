@@ -247,6 +247,42 @@
       "estado": "Pendiente",
       "total": 1200,
       "id": 9
+    },
+    {
+      "usuario": "Usuario Logueado",
+      "productos": [
+        {
+          "producto": "Gaseosa 500cc.",
+          "cantidad": 1
+        }
+      ],
+      "estado": "Pendiente",
+      "total": 450,
+      "id": 10
+    },
+    {
+      "usuario": "Usuario Logueado",
+      "productos": [
+        {
+          "producto": "Gaseosa 500cc.",
+          "cantidad": 1
+        }
+      ],
+      "estado": "Pendiente",
+      "total": 450,
+      "id": 11
+    },
+    {
+      "usuario": "Usuario Logueado",
+      "productos": [
+        {
+          "producto": "Cerveza Artesanal",
+          "cantidad": 1
+        }
+      ],
+      "estado": "Pendiente",
+      "total": 750,
+      "id": 12
     }
   ]
 }
