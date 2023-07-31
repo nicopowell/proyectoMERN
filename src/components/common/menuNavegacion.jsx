@@ -73,7 +73,7 @@ const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
                 <NavLink end className={"nav-item nav-link"} to="/administrador">
                   Administrador
                 </NavLink>
-                <NavLink end className={"nav-item nav-link"} onClick={logout} to="/">Logout</NavLink>
+                <NavLink end className={"nav-item nav-link"} onClick={logout} to="/">Cerrar Sesion</NavLink>
                 </>
               ): <Login setUsuarioLogueado={setUsuarioLogueado}></Login>
             }

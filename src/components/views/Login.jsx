@@ -16,6 +16,8 @@ const Login = ({setUsuarioLogueado}) => {
   const { register, handleSubmit, formState: { errors}, reset } = useForm();
   const navegacion = useNavigate();
 
+  
+
   const onSubmit = (usuario)=>{
     console.log(usuario)
     login(usuario).then((respuesta)=>{
@@ -40,7 +42,7 @@ const Login = ({setUsuarioLogueado}) => {
   }
   return (
     <>
-    <NavDropdown title="Login" className="dropMenu">
+    <NavDropdown title="Iniciar Sesion" className="dropMenu">
     <NavDropdown.Item >
     <NavItem onClick={loginhandleShow}>
     <Person></Person> Iniciar Sesión
