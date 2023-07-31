@@ -3,7 +3,7 @@ import ItemCarrito from "./carrito/ItemCarrito";
 import { Container, Col, Row, Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const CarritoPedidos = () => {
+const CarritoPedidos = ({carrito}) => {
   return (
     <>
       <section className="my-4">
@@ -22,9 +22,9 @@ const CarritoPedidos = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <ItemCarrito></ItemCarrito>
-                    <ItemCarrito></ItemCarrito>
-                    <ItemCarrito></ItemCarrito>
+                    <ItemCarrito key={producto.id} nombre={producto.nombre}
+              precio={producto.precio}></ItemCarrito>
+                    
                   </tbody>
                 </Table>
               </div>
