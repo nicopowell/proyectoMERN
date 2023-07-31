@@ -1,13 +1,13 @@
 {
   "productos": [
     {
-      "id": 1,
       "nombre": "Gaseosa 500cc.",
       "estado": "Activo",
       "precio": 450,
       "detalle": "Bebida gasificada sabor Pomelo.",
       "categoria": "Bebidas sin alcohol",
-      "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg"
+      "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg",
+      "id": 1
     },
     {
       "nombre": "Cerveza Artesanal",

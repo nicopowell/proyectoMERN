@@ -20,7 +20,7 @@ const SobreNosotros = () => {
         <p>Nadie llega a la cima sin la ayuda de otros.</p>
         <p>Se agradeze a RollingCode por la gran opportunidad junto a la Municipalidad de San Miguel de Tucumnan</p>
       </section>
-      <Container>
+      {/* <Container>
         <Row md={4} ld={3} className="mb-3" >
         <Card border="primary"  style={{ width: "18rem" }}>
             <Card.Img variant="top" src="./src/assets/hack.png"/>
@@ -87,7 +87,7 @@ const SobreNosotros = () => {
 
 
         </Row>
-      </Container>
+      </Container> */}
     </>
   );
 };
