@@ -2,13 +2,20 @@ import "./carrito/estilosCarrito.css";
 import ItemCarrito from "./carrito/ItemCarrito";
 import { Container, Col, Row, Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const CarritoPedidos = ({ carrito }) => {
+const CarritoPedidos = ({ carrito, setCarrito }) => {
   const calcularTotal = () => {
     const total = carrito.reduce((accumulator, item) => {
       return accumulator + item.producto.precio * item.cantidad;
     }, 0);
     return total;
+  };
+  const eliminarProducto = (productoId) => {
+    const carritoActualizado = carrito.filter(
+      (item) => item.producto.id !== productoId
+    );
+    setCarrito(carritoActualizado);
   };
   return (
     <>
@@ -29,7 +36,7 @@ const CarritoPedidos = ({ carrito }) => {
                   </thead>
                   <tbody>
                     {carrito.map((producto) => (
-                      <ItemCarrito key={producto.producto.id} item={producto} />
+                      <ItemCarrito key={producto.producto.id} item={producto} eliminarProducto={eliminarProducto}/>
                     ))}
                   </tbody>
                 </Table>

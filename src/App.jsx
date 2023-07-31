@@ -14,7 +14,7 @@ import CarritoPedidos from "./components/views/CarritoPedidos";
 
 function App() {
   const [carrito, setCarrito] = useState([]);
-  
+
   const agregarAlCarrito = (producto) => {
     const carritoActualizado = [...carrito];
     const itemEnCarrito = carritoActualizado.find(
@@ -49,7 +49,7 @@ function App() {
           <Route
             exact
             path="/pedidos"
-            element={<CarritoPedidos carrito={carrito}></CarritoPedidos>}
+            element={<CarritoPedidos carrito={carrito} setCarrito={setCarrito}></CarritoPedidos>}
           ></Route>
           <Route
             exact
