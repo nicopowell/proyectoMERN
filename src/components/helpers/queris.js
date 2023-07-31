@@ -91,8 +91,8 @@ export const consultaListaPedidos = async () => {
 
 export const agregarPedido = async (carrito, total) => {
   let pedido = {};
-  const fecha = new Date();
-  pedido.id = uuidv4;
+  const fechaPedido = new Date();
+  pedido.id = uuidv4();
   pedido.usuario = "Usuario Logueado"; //falta agregar logica para que registre el nombre del usuario logueado
   pedido.productos = carrito.map((producto) => ({
     id: producto.producto.id,
@@ -101,6 +101,7 @@ export const agregarPedido = async (carrito, total) => {
   }));
   pedido.estado = "Pendiente";
   pedido.total = total;
+  pedido.fecha = fechaPedido;
   try {
     const pedidoNuevo = await fetch(URLPedidos, {
         method: 'POST',

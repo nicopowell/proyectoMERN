@@ -69,30 +69,13 @@
   ],
   "pedidos": [
     {
-      "usuario": "Usuario Logueado",
-      "productos": [
-        {
-          "id": 3,
-          "producto": "Pizza Calabresa",
-          "cantidad": 2
-        },
-        {
-          "id": 4,
-          "producto": "Lasagna de carne",
-          "cantidad": 1
-        }
-      ],
-      "estado": "Pendiente",
-      "total": 5850,
-      "id": 1
-    },
-    {
+      "id": "faef00b6-5536-4530-927a-ed8103c566ca",
       "usuario": "Usuario Logueado",
       "productos": [
         {
           "id": 1,
           "producto": "Gaseosa 500cc.",
-          "cantidad": 2
+          "cantidad": 1
         },
         {
           "id": 2,
@@ -101,8 +84,8 @@
         }
       ],
       "estado": "Pendiente",
-      "total": 1650,
-      "id": 2
+      "total": 1200,
+      "fecha": "2023-07-31T23:05:47.355Z"
     }
   ]
 }
