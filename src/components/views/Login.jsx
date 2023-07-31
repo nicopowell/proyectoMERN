@@ -2,18 +2,16 @@ import { Form, Button,Modal,NavItem,NavDropdown} from "react-bootstrap";
 import { useState } from "react";
 import { Person } from "react-bootstrap-icons";
 import { login } from "../helpers/queris";
+import Register from "./Register";
 import { useForm} from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
 const Login = ({setUsuarioLogueado}) => {
   const [loginshow, loginsetShow] = useState(false);
-  const [registershow, registersetShow] = useState(false);
 
   const loginhandleClose = () => loginsetShow(false);
-  const registerhandleClose = () => registersetShow(false);
   const loginhandleShow = () => loginsetShow(true);
-  const registerhandleShow = () => registersetShow(true);
 
   const { register, handleSubmit, formState: { errors}, reset } = useForm();
   const navegacion = useNavigate();
@@ -112,9 +110,7 @@ const Login = ({setUsuarioLogueado}) => {
     </Modal.Body>
     <Modal.Footer className="justify-content-center mt-4">
       <p>¿Aún no tienes cuenta?</p>
-      <Button variant="primary" onClick={registerhandleShow}>
-        Regístrarse
-      </Button>
+      <Register></Register>
     </Modal.Footer>
   </Modal>
   </>
