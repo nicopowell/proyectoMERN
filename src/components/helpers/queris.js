@@ -79,6 +79,13 @@ export const consultaListaUsuarios = async () => {
 
 // PEDIDOS
 
+const mostrarFecha = (fecha) => {
+    const dia = fecha.getDate();
+    const mes = fecha.getMonth() + 1;
+    const anio = fecha.getFullYear();
+    return `${dia}/${mes}/${anio}`;
+  };
+
 export const consultaListaPedidos = async () => {
   try {
     const respuesta = await fetch(URLPedidos);
@@ -101,7 +108,7 @@ export const agregarPedido = async (carrito, total) => {
   }));
   pedido.estado = "Pendiente";
   pedido.total = total;
-  pedido.fecha = fechaPedido;
+  pedido.fecha = mostrarFecha(fechaPedido);
   try {
     const pedidoNuevo = await fetch(URLPedidos, {
         method: 'POST',

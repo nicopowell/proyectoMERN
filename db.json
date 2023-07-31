@@ -86,6 +86,30 @@
       "estado": "Pendiente",
       "total": 1200,
       "fecha": "2023-07-31T23:05:47.355Z"
+    },
+    {
+      "id": "aa8e6b73-6397-425c-8085-0092a6271577",
+      "usuario": "Usuario Logueado",
+      "productos": [
+        {
+          "id": 2,
+          "producto": "Cerveza Artesanal",
+          "cantidad": 1
+        },
+        {
+          "id": 1,
+          "producto": "Gaseosa 500cc.",
+          "cantidad": 2
+        },
+        {
+          "id": 3,
+          "producto": "Pizza Calabresa",
+          "cantidad": 1
+        }
+      ],
+      "estado": "Pendiente",
+      "total": 3500,
+      "fecha": "31/7/2023"
     }
   ]
 }
