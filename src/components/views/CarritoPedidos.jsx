@@ -3,20 +3,42 @@ import ItemCarrito from "./carrito/ItemCarrito";
 import { Container, Col, Row, Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
+
 
 const CarritoPedidos = ({ carrito, setCarrito }) => {
+  const navegacion = useNavigate;
+
   const calcularTotal = () => {
     const total = carrito.reduce((accumulator, item) => {
       return accumulator + item.producto.precio * item.cantidad;
     }, 0);
     return total;
   };
+
   const eliminarProducto = (productoId) => {
-    const carritoActualizado = carrito.filter(
+    Swal.fire({
+      title: "Eliminar producto",
+      text: "¿Deseas eliminar este producto de tu carrito?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Eliminar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+      const carritoActualizado = carrito.filter(
       (item) => item.producto.id !== productoId
     );
-    setCarrito(carritoActualizado);
-  };
+    setCarrito(carritoActualizado);  
+      }
+    }
+    
+  )};
+
+  const confirmarPedido = (carrito, total) => {
+
+  }
   return (
     <>
       <section className="my-4">

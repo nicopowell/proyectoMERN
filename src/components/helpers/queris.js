@@ -1,6 +1,10 @@
 const URLProducto = import.meta.env.VITE_API_PRODUCTO;
 const URLUsuario = import.meta.env.VITE_API_USUARIO;
 const URLPedidos = import.meta.env.VITE_API_PEDIDOS;
+const fecha = new Date();
+const dia = fecha.getDate()
+const mes = fecha.getMonth()
+const anio = fecha.getFullYear()
 
 // PRODUCTO
 
@@ -87,4 +91,5 @@ export const consultaListaPedidos = async () =>{
         console.log(error);
     }
 }
+
 
