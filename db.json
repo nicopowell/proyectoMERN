@@ -42,6 +42,7 @@
       "id": 1,
       "nombreUsuario": "Nico",
       "email": "nico@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     },
@@ -49,6 +50,7 @@
       "id": 2,
       "nombreUsuario": "Marisa",
       "email": "marisa@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     },
@@ -64,6 +66,7 @@
       "id": 4,
       "nombreUsuario": "Juan",
       "email": "juan@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     }
