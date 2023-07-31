@@ -3,7 +3,13 @@ import ItemCarrito from "./carrito/ItemCarrito";
 import { Container, Col, Row, Button, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const CarritoPedidos = ({carrito}) => {
+const CarritoPedidos = ({ carrito }) => {
+  const calcularTotal = () => {
+    const total = carrito.reduce((accumulator, product) => {
+      return accumulator + product.precio;
+    }, 0);
+    return total;
+  };
   return (
     <>
       <section className="my-4">
@@ -22,9 +28,9 @@ const CarritoPedidos = ({carrito}) => {
                     </tr>
                   </thead>
                   <tbody>
-                    <ItemCarrito key={producto.id} nombre={producto.nombre}
-              precio={producto.precio}></ItemCarrito>
-                    
+                    {carrito.map((producto) => (
+                      <ItemCarrito key={producto.id} producto={producto} />
+                    ))}
                   </tbody>
                 </Table>
               </div>
@@ -37,9 +43,7 @@ const CarritoPedidos = ({carrito}) => {
                     alt="logoRB"
                     className="logoConSombra"
                   />
-                  <h5>Total a pagar: ${3000}</h5>
-                  {/*agregar luego funcion para sumar productos (state)*/}
-
+                  <h5>Total a pagar: ${calcularTotal()}</h5>
                   <Button id="btnConfirmarPedido" className="mt-2">
                     Confirmar pedido
                   </Button>
