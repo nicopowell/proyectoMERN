@@ -28,13 +28,13 @@
       "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
     },
     {
-      "id": 4,
       "nombre": "Lasagna de carne",
       "estado": "Activo",
       "precio": 2150,
       "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
       "categoria": "Pastas",
-      "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg"
+      "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
+      "id": 4
     }
   ],
   "usuarios": [

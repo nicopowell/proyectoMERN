@@ -7,7 +7,7 @@ function ModalDetalleProducto({ producto, show, handleClose }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Detalle: {producto.nombre}</Modal.Title>
+          <Modal.Title>{producto.nombre}</Modal.Title>
         </Modal.Header>
         <Modal.Body >
               <Image
@@ -18,9 +18,8 @@ function ModalDetalleProducto({ producto, show, handleClose }) {
          <br />
          {producto.detalle}
           <br />
-          Presentacion: 8 porciones 
            <br />
-           Precio: {producto.precio}
+           Precio:$ {producto.precio} -
            <br />
            Categoria: {producto.categoria}
         </Modal.Body>
