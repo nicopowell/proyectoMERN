@@ -13,10 +13,23 @@ import Error404 from "./components/views/Error404";
 import CarritoPedidos from "./components/views/CarritoPedidos";
 
 function App() {
-    const [carrito, setCarrito] = useState([]);
-    const agregarAlCarrito = (producto) => {
-        setCarrito([...carrito,producto]);
+  const [carrito, setCarrito] = useState([]);
+  
+  const agregarAlCarrito = (producto) => {
+    const carritoActualizado = [...carrito];
+    const itemEnCarrito = carritoActualizado.find(
+      (item) => item.producto.id === producto.id
+    );
+
+    if (itemEnCarrito) {
+      itemEnCarrito.cantidad += 1;
+    } else {
+      carritoActualizado.push({ producto, cantidad: 1 });
     }
+
+    setCarrito(carritoActualizado);
+  };
+
   return (
     <>
       <BrowserRouter>
@@ -25,7 +38,12 @@ function App() {
           <Route
             exact
             path="/"
-            element={<PaginaPrincipal carrito={carrito} agregarAlCarrito={agregarAlCarrito}></PaginaPrincipal>}
+            element={
+              <PaginaPrincipal
+                carrito={carrito}
+                agregarAlCarrito={agregarAlCarrito}
+              ></PaginaPrincipal>
+            }
           ></Route>
           <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
           <Route

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const CarritoPedidos = ({ carrito }) => {
   const calcularTotal = () => {
-    const total = carrito.reduce((accumulator, product) => {
-      return accumulator + product.precio;
+    const total = carrito.reduce((accumulator, item) => {
+      return accumulator + item.producto.precio * item.cantidad;
     }, 0);
     return total;
   };
@@ -29,7 +29,7 @@ const CarritoPedidos = ({ carrito }) => {
                   </thead>
                   <tbody>
                     {carrito.map((producto) => (
-                      <ItemCarrito key={producto.id} producto={producto} />
+                      <ItemCarrito key={producto.producto.id} item={producto} />
                     ))}
                   </tbody>
                 </Table>

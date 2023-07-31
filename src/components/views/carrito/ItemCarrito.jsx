@@ -2,11 +2,12 @@ import React from "react";
 import { Trash3 } from "react-bootstrap-icons";
 import { Button } from "react-bootstrap";
 
-const ItemCarrito = ({producto}) => {
+const ItemCarrito = ({item}) => {
+  const {producto, cantidad} = item;
   return (
     <>
       <tr>
-        <td>1</td>
+        <td>{cantidad}</td>
         <td>{producto.nombre}</td>
         <td>${producto.precio}</td>
         <td>
