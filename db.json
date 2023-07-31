@@ -73,20 +73,73 @@
       "usuario": "Nico",
       "fecha": "28/7/2023",
       "productos": [
-        "Gaseosa 500cc.",
-        "Pizza Calabresa"
+        {
+          "producto": "Gaseosa 500cc.",
+          "cantidad": "2"
+        },
+        {
+          "producto": "Pizza Calabresa",
+          "cantidad": "1"
+        }
       ],
-      "estado": "Entregado"
+      "estado": "Entregado",
+      "total": 4566
     },
     {
       "id": 2,
       "usuario": "Marisa",
       "fecha": "28/7/2023",
       "productos": [
-        "Gaseosa 500cc.",
-        "Pizza Calabresa"
+        {
+          "producto": "Gaseosa 500cc.",
+          "cantidad": "2"
+        },
+        {
+          "producto": "Pizza Calabresa",
+          "cantidad": "1"
+        }
       ],
-      "estado": "Pendiente"
+      "estado": "Pendiente",
+      "total": 4566
+    },
+    {
+      "usuario": "Usuario Logueado",
+      "productos": [
+        {
+          "producto": {
+            "id": 1,
+            "nombre": "Gaseosa 500cc.",
+            "estado": "Activo",
+            "precio": 450,
+            "detalle": "Bebida gasificada sabor Pomelo.",
+            "categoria": "Bebidas sin alcohol",
+            "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg"
+          },
+          "cantidad": 2
+        },
+        {
+          "producto": {
+            "nombre": "Cerveza Artesanal",
+            "estado": "Activo",
+            "precio": 750,
+            "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
+            "categoria": "Bebidas con alcohol",
+            "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg",
+            "id": 2
+          },
+          "cantidad": 1
+        }
+      ],
+      "estado": "Pendiente",
+      "total": 1650,
+      "id": 3
+    },
+    {
+      "usuario": "Usuario Logueado",
+      "productos": [],
+      "estado": "Pendiente",
+      "total": 0,
+      "id": 4
     }
   ]
 }

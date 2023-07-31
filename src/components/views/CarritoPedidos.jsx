@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { agregarPedido } from "../helpers/queris";
 
 
 
 const CarritoPedidos = ({ carrito, setCarrito }) => {
-  const navegacion = useNavigate;
+  const navegacion = useNavigate();
 
   const calcularTotal = () => {
     const total = carrito.reduce((accumulator, item) => {
@@ -37,7 +38,17 @@ const CarritoPedidos = ({ carrito, setCarrito }) => {
   )};
 
   const confirmarPedido = (carrito, total) => {
-
+agregarPedido(carrito, total).then((respuestaCreated=> {
+  if (respuestaCreated && respuestaCreated.status === 201){
+    Swal.fire(
+      "Pedido exitoso", "¡Tu pedido fue realizado y pronto llegará a tu mesa!", "success"
+    );
+    setCarrito([]);
+    navegacion("/");
+  } else {
+    Swal.fire("Tuvimos un problema", "No pudimos concretar tu pedido. Intentá de nuevo mas tarde", "error");
+  }
+}))
   }
   return (
     <>
@@ -73,7 +84,7 @@ const CarritoPedidos = ({ carrito, setCarrito }) => {
                     className="logoConSombra"
                   />
                   <h5>Total a pagar: ${calcularTotal()}</h5>
-                  <Button id="btnConfirmarPedido" className="mt-2">
+                  <Button id="btnConfirmarPedido" className="mt-2" onClick={()=> confirmarPedido(carrito,calcularTotal())}>
                     Confirmar pedido
                   </Button>
                   <Link to="/" className="mb-3" id="linkSeguirComprando">
