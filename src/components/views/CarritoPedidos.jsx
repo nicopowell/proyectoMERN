@@ -52,9 +52,17 @@ agregarPedido(carrito, total).then((respuestaCreated=> {
   }
   return (
     <>
-      <section className="my-4">
+      <section className="my-4 mainSection">
         <Container className=" align-items-center ">
           <h1 className="mt-5 p-2 titulo">Tu pedido</h1>
+          {carrito.length === 0 ? ( 
+            <article className="text-center">
+            <h2>Tu carrito está vacío</h2>
+            <Link to="/" className="mb-3 btn btn-light" id="linkAgregarProductos">
+                Agregar productos
+              </Link>
+              </article>
+          ) : (
           <Row>
             <Col lg={8}>
               <div className="table-responsive">
@@ -84,7 +92,7 @@ agregarPedido(carrito, total).then((respuestaCreated=> {
                     className="logoConSombra"
                   />
                   <h5>Total a pagar: ${calcularTotal()}</h5>
-                  <Button id="btnConfirmarPedido" className="mt-2" onClick={()=> confirmarPedido(carrito,calcularTotal())}>
+                  <Button id="btnConfirmarPedido" className="mt-2" onClick={()=> confirmarPedido(carrito,calcularTotal())} disabled={carrito.length === 0}>
                     Confirmar pedido
                   </Button>
                   <Link to="/" className="mb-3" id="linkSeguirComprando">
@@ -94,6 +102,7 @@ agregarPedido(carrito, total).then((respuestaCreated=> {
               </aside>
             </Col>
           </Row>
+          )}
         </Container>
       </section>
     </>

@@ -172,6 +172,13 @@
       "estado": "Pendiente",
       "total": 1950,
       "id": 5
+    },
+    {
+      "usuario": "Usuario Logueado",
+      "productos": [],
+      "estado": "Pendiente",
+      "total": 0,
+      "id": 6
     }
   ]
 }
