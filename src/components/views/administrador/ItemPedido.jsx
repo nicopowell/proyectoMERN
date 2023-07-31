@@ -11,8 +11,8 @@ const ItemPedido = ({ pedido, numeroDePedido }) => {
             <td>
                 <ul>
                     {pedido.productos.map((producto) => (
-                         <li key={producto.producto.id}>
-                         {producto.producto.nombre} x {producto.cantidad}
+                         <li key={producto.id}>
+                         {producto.producto} x {producto.cantidad}
                        </li>
                     ))}
                 </ul>
