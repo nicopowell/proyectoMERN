@@ -95,6 +95,7 @@ export const agregarPedido = async (carrito, total) => {
   pedido.id = uuidv4;
   pedido.usuario = "Usuario Logueado"; //falta agregar logica para que registre el nombre del usuario logueado
   pedido.productos = carrito.map((producto) => ({
+    id: producto.producto.id,
     producto: producto.producto.nombre, 
     cantidad: producto.cantidad, 
   }));
