@@ -179,6 +179,74 @@
       "estado": "Pendiente",
       "total": 0,
       "id": 6
+    },
+    {
+      "usuario": "Usuario Logueado",
+      "productos": [
+        {
+          "producto": {
+            "id": 1,
+            "nombre": "Gaseosa 500cc.",
+            "estado": "Activo",
+            "precio": 450,
+            "detalle": "Bebida gasificada sabor Pomelo.",
+            "categoria": "Bebidas sin alcohol",
+            "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg"
+          },
+          "cantidad": 1
+        },
+        {
+          "producto": {
+            "nombre": "Cerveza Artesanal",
+            "estado": "Activo",
+            "precio": 750,
+            "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
+            "categoria": "Bebidas con alcohol",
+            "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg",
+            "id": 2
+          },
+          "cantidad": 2
+        }
+      ],
+      "estado": "Pendiente",
+      "total": 1950,
+      "id": 7
+    },
+    {
+      "usuario": "Usuario Logueado",
+      "productos": [
+        {
+          "producto": {
+            "nombre": "Cerveza Artesanal",
+            "estado": "Activo",
+            "precio": 750,
+            "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
+            "categoria": "Bebidas con alcohol",
+            "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg",
+            "id": 2
+          },
+          "cantidad": 1
+        }
+      ],
+      "estado": "Pendiente",
+      "total": 750,
+      "id": 8
+    },
+    {
+      "usuario": "Usuario Logueado",
+      "productos": [
+        {
+          "producto": "Gaseosa 500cc.",
+          "cantidad": 1
+        },
+        {
+          "producto": "Cerveza Artesanal",
+          "cantidad": 1
+        }
+      ],
+      "estado": "Pendiente",
+      "total": 1200,
+      "id": 9
     }
   ]
 }

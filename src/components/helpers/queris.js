@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from 'uuid';
 const URLProducto = import.meta.env.VITE_API_PRODUCTO;
 const URLUsuario = import.meta.env.VITE_API_USUARIO;
 const URLPedidos = import.meta.env.VITE_API_PEDIDOS;
@@ -91,8 +92,12 @@ export const consultaListaPedidos = async () => {
 export const agregarPedido = async (carrito, total) => {
   let pedido = {};
   const fecha = new Date();
+  pedido.id = uuidv4;
   pedido.usuario = "Usuario Logueado"; //falta agregar logica para que registre el nombre del usuario logueado
-  pedido.productos = carrito;
+  pedido.productos = carrito.map((producto) => ({
+    producto: producto.producto.nombre, 
+    cantidad: producto.cantidad, 
+  }));
   pedido.estado = "Pendiente";
   pedido.total = total;
   try {
