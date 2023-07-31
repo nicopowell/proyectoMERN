@@ -69,25 +69,6 @@
   ],
   "pedidos": [
     {
-      "id": "faef00b6-5536-4530-927a-ed8103c566ca",
-      "usuario": "Usuario Logueado",
-      "productos": [
-        {
-          "id": 1,
-          "producto": "Gaseosa 500cc.",
-          "cantidad": 1
-        },
-        {
-          "id": 2,
-          "producto": "Cerveza Artesanal",
-          "cantidad": 1
-        }
-      ],
-      "estado": "Pendiente",
-      "total": 1200,
-      "fecha": "2023-07-31T23:05:47.355Z"
-    },
-    {
       "id": "aa8e6b73-6397-425c-8085-0092a6271577",
       "usuario": "Usuario Logueado",
       "productos": [
