@@ -2,7 +2,7 @@ import React from "react";
 import { Table } from "react-bootstrap";
 import ItemProducto from "./ItemProducto";
 
-const TablaProductos = ({ productos, cambiarEstado }) => {
+const TablaProductos = ({ productos }) => {
     let contador = 0;
     return (
         <Table responsive striped bordered hover>
