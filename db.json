@@ -94,6 +94,20 @@
       "estado": "Pendiente",
       "total": 3500,
       "fecha": "31/7/2023"
+    },
+    {
+      "id": "dc7aebe4-91ad-4326-a78d-f785f8fe7ece",
+      "usuario": "Usuario Logueado",
+      "productos": [
+        {
+          "id": 2,
+          "producto": "Cerveza artesanal",
+          "cantidad": 1
+        }
+      ],
+      "estado": "Pendiente",
+      "total": 750,
+      "fecha": "1/8/2023"
     }
   ]
 }
