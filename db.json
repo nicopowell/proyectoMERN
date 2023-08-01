@@ -41,9 +41,36 @@
       "estado": "Activo",
       "precio": 1850,
       "detalle": "papas rusticas con queso gratinado",
-      "categoria": "Pizzas",
+      "categoria": "Otros",
       "imagen": "https://cdn.doers.video/embed/4d4ab84e712462c163a143882640fb1d496601526425813/5983b2248ba4d.jpg",
       "id": 5
+    },
+    {
+      "nombre": "Pizza Rellena Formaggi",
+      "estado": "Activo",
+      "precio": 2800,
+      "detalle": "Salsa de tomate, quesos mozzarella, fontina, azul, cheddar y provolone.",
+      "categoria": "Pizzas",
+      "imagen": "https://pizzerialamina.es/218-large_default/pizza-formaggio.jpg",
+      "id": 6
+    },
+    {
+      "nombre": "Papas con chedar",
+      "estado": "Activo",
+      "precio": 1500,
+      "detalle": "papas rusticas con chedar gratinado",
+      "categoria": "Otros",
+      "imagen": "https://www.lanacion.com.ar/resizer/pVUlQKNmWZw3owV26z3NK2N-2ag=/880x586/filters:format(webp):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/7CZZUB7WOJEGXMQCTXOL6ETACE.jpg",
+      "id": 7
+    },
+    {
+      "nombre": "Pizza Putanesca",
+      "estado": "Activo",
+      "precio": 2500,
+      "detalle": "Rodajas de tomate, mozzarella,  anchoas y oregano.",
+      "categoria": "Pizzas",
+      "imagen": "https://www.grazia.fr/wp-content/uploads/grazia/2013/02/Pizza-a-la-puttanesca-poivrons-capres-olives-et-anchois.jpg",
+      "id": 8
     }
   ],
   "usuarios": [
