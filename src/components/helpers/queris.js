@@ -64,6 +64,20 @@ export const consultaBorrarProducto = async (id) => {
     }
 };
 
+export const consultaCambiarEstadoProducto = async (estado ,id) => {
+    try{
+        const respuesta = await fetch(`${URLProducto}/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(estado)
+        });
+    }catch(error){
+        console.log(error);
+    }
+}
+
 // USUARIOS
 // export const login = async(usuario)=>{
 //     try{
@@ -116,7 +130,21 @@ export const consultaListaUsuarios = async () => {
     } catch (error) {
         console.log(error);
     }
-};
+}
+
+export const consultaCambiarEstadoUsuarios = async (estado ,id) => {
+    try{
+        const respuesta = await fetch(`${URLUsuario}/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(estado)
+        });
+    }catch(error){
+        console.log(error);
+    }
+}
 
 // PEDIDOS
 
