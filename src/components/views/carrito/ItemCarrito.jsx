@@ -2,19 +2,15 @@ import React from "react";
 import { Trash3 } from "react-bootstrap-icons";
 import { Button } from "react-bootstrap";
 
-const ItemCarrito = ({item, eliminarProducto}) => {
-  const {producto, cantidad} = item;
-  const handleEliminarProducto = () => {
-    eliminarProducto(producto.id);
-  };
+const ItemCarrito = () => {
   return (
     <>
       <tr>
-        <td>{cantidad}</td>
-        <td>{producto.nombre}</td>
-        <td>${producto.precio}</td>
+        <td>1</td>
+        <td>Pizza</td>
+        <td>2500</td>
         <td>
-          <Button variant="danger btn-sm" id="btnEliminarProducto"  onClick={handleEliminarProducto}>
+          <Button variant="danger btn-sm" id="btnEliminarProducto">
             <Trash3 />
           </Button>
         </td>
