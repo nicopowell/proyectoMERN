@@ -42,7 +42,7 @@ const Login = ({setUsuarioLogueado}) => {
   }
   return (
     <>
-    <NavDropdown title="Iniciar Sesion" className="dropMenu">
+    <NavDropdown title="Ingresar" className="dropMenu">
     <NavDropdown.Item >
     <NavItem onClick={loginhandleShow}>
     <Person></Person> Iniciar Sesión

@@ -115,6 +115,18 @@ export const consultaListaUsuarios = async () =>{
         console.log(error);
     }
 }
+export const ConsultarUsuarioExistente = async () => {
+    try {
+        const existe = await fetch(URLUsuario, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }});
+            return existe;
+    } catch (error) {
+        console.log(error);
+    }
+}
 export const registrar = async (usuario) => {
     try{
         const respuesta = await fetch(URLUsuario, {

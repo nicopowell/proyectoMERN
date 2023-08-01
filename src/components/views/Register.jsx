@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form, Button,Modal} from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { registrar } from "../helpers/queris";
+import { registrar,ConsultarUsuarioExistente } from "../helpers/queris";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -17,23 +17,33 @@ const Register = ({setUsuarioRegistrado}) => {
     const onSubmit = (usuario)=>{
         console.log(usuario)
           usuario.estado = "Activo";
-          usuario.perfil = "Admin";
-         registrar(usuario).then((respuesta)=>{
-          if(respuesta && respuesta.status === 201){
-            Swal.fire(
-              `su usuario quedo registrado exitosamente`,
-              'success'
-            );
-            reset();
-            navegacion('/');
-          }else{
-            Swal.fire(
-              'Error',
-              'No se pudo registrar su usuario exitosamente ',
-              'error'
-            )
-          }
-        })
+          usuario.perfil = "Usuario-Comun";
+          ConsultarUsuarioExistente(usuario).then((existe)=> {
+            if(existe && existe.status != 200){
+              registrar(usuario).then((respuesta)=>{
+               if(respuesta && respuesta.status === 201){
+                 Swal.fire(
+                   `su usuario quedo registrado exitosamente`,
+                   'success'
+                 );
+                 reset();
+                 navegacion('/');
+               }else{
+                 Swal.fire(
+                   'Error',
+                   'No se pudo registrar su usuario exitosamente ',
+                   'error'
+                 )
+               }
+             })
+            }else {
+              Swal.fire(
+                'Error',
+                'Su usuario ya existe ',
+                'error'
+              )
+            }
+          })
       }
 
     return (
