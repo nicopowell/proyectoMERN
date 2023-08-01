@@ -51,7 +51,7 @@ const [carrito, setCarrito] = useState([]);
           <Route
             exact
             path="/pedidos"
-            element={<CarritoPedidos carrito={carrito} setCarrito={setCarrito}></CarritoPedidos>}
+            element={<CarritoPedidos carrito={carrito} setCarrito={setCarrito} usuarioLogueado={usuarioLogueado}></CarritoPedidos>}
           ></Route>
           <Route
             exact
