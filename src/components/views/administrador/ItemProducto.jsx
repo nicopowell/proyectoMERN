@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./administrador.css";
-import { consultaCambiarEstado } from "../../helpers/queris";
+import { consultaCambiarEstadoProducto } from "../../helpers/queris";
 
 const ItemProducto = ({ producto, numeroDeProducto }) => {
     const [estado, setEstado] = useState(producto.estado);
     const cambiarEstado = () => {
         const nuevoEstado = estado === "Activo" ? "De baja" : "Activo";
 
-        consultaCambiarEstado({ estado: nuevoEstado }, producto.id)
+        consultaCambiarEstadoProducto({ estado: nuevoEstado }, producto.id)
             .then(() => {
                 setEstado(nuevoEstado);
             })
@@ -29,7 +29,7 @@ const ItemProducto = ({ producto, numeroDeProducto }) => {
             <td>{estado}</td>
             <td className="text-center">
                 <Button variant="primary mx-1" onClick={cambiarEstado}>
-                    {estado === "Activo" ? "Suspender" : "Activar"}
+                    {estado === "Activo" ? "Dar de baja" : "Activar"}
                 </Button>
                 <br></br>
                 <Link
