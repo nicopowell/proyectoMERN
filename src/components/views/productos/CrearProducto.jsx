@@ -2,23 +2,23 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { consultaAgregarProducto } from "../../helpers/queris";
 import Swal from "sweetalert2";
-
+import { useNavigate } from "react-router-dom";
 
 const CrearProducto = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    // reset,
   } = useForm();
-
+  const navegacion = useNavigate();
   const onSubmit = (productoNuevo) => {
     productoNuevo.precio = parseFloat(productoNuevo.precio);
     consultaAgregarProducto(productoNuevo).then((respuestaCreated)=>{
       if(respuestaCreated && respuestaCreated.status === 201){
         Swal.fire('Producto creado', `El producto ${productoNuevo.nombre} fue creado correctamente`, 'success');
-        reset();
-      }else{
+        navegacion("/administrador");
+        }else{
         Swal.fire('Ocurrio un error', `El producto ${productoNuevo.nombre} no fue creado, intentelo mas tarde`, 'error');
       }
     })
@@ -100,7 +100,7 @@ const CrearProducto = () => {
               },
               maxLength: {
                 value: 300,
-                message: "La cantidad maxima de caracteres es de 2 digitos",
+                message: "La cantidad maxima de caracteres es de 3 digitos",
               },
             })}
           />
@@ -120,6 +120,7 @@ const CrearProducto = () => {
                 <option value="Bebidas sin alcohol">Bebidas sin alcohol</option>
                 <option value="Pastas">Pastas</option>
                 <option value="Pizzas">Pizzas</option>
+                <option value="Otros">Otros</option>
               </Form.Select>
               <Form.Text className="text-danger">
                 {errors.categoria?.message}
@@ -141,6 +142,7 @@ const CrearProducto = () => {
         <Button variant="primary" type="submit">
           Guardar
         </Button>
+
       </Form>
     </section>
   );

@@ -15,9 +15,11 @@ function ModalDetalleProducto({ producto, show, handleClose }) {
           <br />
           {producto.detalle}
           <br />
-          <b>Precio:$</b> {producto.precio} <b>-</b>
-          <br />
-          <b>Categoria:</b> {producto.categoria}
+          Presentacion: 8 porciones 
+           <br />
+           Precio: {producto.precio}
+           <br />
+           Categoria: {producto.categoria}
         </Modal.Body>
         <Modal.Footer>
           <Button

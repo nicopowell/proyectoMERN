@@ -19,13 +19,13 @@
       "id": 2
     },
     {
-      "id": 3,
       "nombre": "Pizza Calabresa",
       "estado": "Activo",
       "precio": 1850,
       "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
       "categoria": "Pizzas",
-      "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
+      "imagen": "https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg",
+      "id": 3
     },
     {
       "nombre": "Lasagna de carne",
@@ -33,8 +33,7 @@
       "precio": 2150,
       "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
       "categoria": "Pastas",
-      "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
-      "id": 4
+      "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg"
     }
   ],
   "usuarios": [
