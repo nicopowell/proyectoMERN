@@ -19,22 +19,31 @@
       "id": 2
     },
     {
-      "id": 3,
       "nombre": "Pizza Calabresa",
       "estado": "Activo",
       "precio": 1850,
       "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
       "categoria": "Pizzas",
-      "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
+      "imagen": "https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg",
+      "id": 3
     },
     {
-      "id": 4,
       "nombre": "Lasagna de carne",
       "estado": "Activo",
       "precio": 2150,
       "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
       "categoria": "Pastas",
-      "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg"
+      "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
+      "id": 4
+    },
+    {
+      "nombre": "Papas Gratinadas",
+      "estado": "Activo",
+      "precio": 1850,
+      "detalle": "papas rusticas con queso gratinado",
+      "categoria": "Pizzas",
+      "imagen": "https://cdn.doers.video/embed/4d4ab84e712462c163a143882640fb1d496601526425813/5983b2248ba4d.jpg",
+      "id": 5
     }
   ],
   "usuarios": [
