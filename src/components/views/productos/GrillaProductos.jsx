@@ -3,7 +3,7 @@ import { Row } from "react-bootstrap";
 import CardProducto from "./CardProducto";
 import { consultaListaProductos } from "../../helpers/queris";
 
-const GrillaProductos = ({ filter, categoriaSeleccionada }) => {
+const GrillaProductos = ({ filter, categoriaSeleccionada, onAgregarAlCarrito }) => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const GrillaProductos = ({ filter, categoriaSeleccionada }) => {
     return (
         <Row>
             {productosFiltrados.map((producto) =>
-                producto.estado ===  "Activo" ? <CardProducto key={producto.id} producto={producto} /> : null
+                producto.estado ===  "Activo" ? <CardProducto key={producto.id} producto={producto} onAgregarAlCarrito={onAgregarAlCarrito}/> : null
             )}
         </Row>
     );
