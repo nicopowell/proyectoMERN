@@ -3,7 +3,7 @@ import { Row } from "react-bootstrap";
 import CardProducto from "./CardProducto";
 import { consultaListaProductos } from "../../helpers/queris";
 
-const GrillaProductos = ({ filter, categoriaSeleccionada }) => {
+const GrillaProductos = ({ filter, categoriaSeleccionada, onAgregarAlCarrito }) => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {

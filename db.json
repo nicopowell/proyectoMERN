@@ -33,7 +33,8 @@
       "precio": 2150,
       "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
       "categoria": "Pastas",
-      "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg"
+      "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
+      "id": 4
     }
   ],
   "usuarios": [
@@ -72,40 +73,18 @@
   ],
   "pedidos": [
     {
-      "id": 1,
-      "usuario": "Nico",
-      "fecha": "28/7/2023",
-      "productos": [
-        "Gaseosa 500cc.",
-        "Pizza Calabresa"
-      ],
-      "estado": "Entregado"
-    },
-    {
-      "id": 2,
-      "usuario": "Marisa",
-      "fecha": "28/7/2023",
-      "productos": [
-        "Gaseosa 500cc.",
-        "Pizza Calabresa"
-      ],
-      "estado": "Pendiente",
-      "total": 3500,
-      "fecha": "31/7/2023"
-    },
-    {
-      "id": "dc7aebe4-91ad-4326-a78d-f785f8fe7ece",
       "usuario": "Usuario Logueado",
       "productos": [
         {
-          "id": 2,
-          "producto": "Cerveza artesanal",
+          "id": 3,
+          "producto": "Pizza Calabresa",
           "cantidad": 1
         }
       ],
       "estado": "Pendiente",
-      "total": 750,
-      "fecha": "1/8/2023"
+      "total": 1850,
+      "fecha": "1/8/2023",
+      "id": 1
     }
   ]
 }
