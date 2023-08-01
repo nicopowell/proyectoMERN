@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "react-bootstrap";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import MenuNavegacion from "./components/common/menuNavegacion";
@@ -13,13 +14,13 @@ import Error404 from "./components/views/Error404";
 import CarritoPedidos from "./components/views/CarritoPedidos";
 
 function App() {
-  const [carrito, setCarrito] = useState([]);
+const [carrito, setCarrito] = useState([]);
 
   const agregarAlCarrito = (producto) => {
     const carritoActualizado = [...carrito];
     const itemEnCarrito = carritoActualizado.find(
       (item) => item.producto.id === producto.id
-    );
+     );
 
     if (itemEnCarrito) {
       itemEnCarrito.cantidad += 1;
@@ -29,11 +30,13 @@ function App() {
 
     setCarrito(carritoActualizado);
   };
+    const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
+    const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
   return (
     <>
       <BrowserRouter>
-        <MenuNavegacion></MenuNavegacion>
+        <MenuNavegacion usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></MenuNavegacion>
         <Routes>
           <Route
             exact

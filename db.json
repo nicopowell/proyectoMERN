@@ -1,34 +1,33 @@
 {
   "productos": [
     {
-      "id": 1,
       "nombre": "Gaseosa 500cc.",
       "estado": "Activo",
       "precio": 450,
       "detalle": "Bebida gasificada sabor Pomelo.",
       "categoria": "Bebidas sin alcohol",
-      "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg"
+      "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg",
+      "id": 1
     },
     {
-      "nombre": "Cerveza Artesanal",
+      "id": 2,
+      "nombre": "Cerveza artesanal",
       "estado": "Activo",
       "precio": 750,
       "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
       "categoria": "Bebidas con alcohol",
-      "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg",
-      "id": 2
+      "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg"
     },
     {
-      "id": 3,
       "nombre": "Pizza Calabresa",
       "estado": "Activo",
       "precio": 1850,
       "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
       "categoria": "Pizzas",
-      "imagen": "https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
+      "imagen": "https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg",
+      "id": 3
     },
     {
-      "id": 4,
       "nombre": "Lasagna de carne",
       "estado": "Activo",
       "precio": 2150,
@@ -42,6 +41,7 @@
       "id": 1,
       "nombreUsuario": "Nico",
       "email": "nico@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     },
@@ -49,6 +49,7 @@
       "id": 2,
       "nombreUsuario": "Marisa",
       "email": "marisa@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     },
@@ -56,6 +57,7 @@
       "id": 3,
       "nombreUsuario": "Julian",
       "email": "julian@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     },
@@ -63,6 +65,7 @@
       "id": 4,
       "nombreUsuario": "Juan",
       "email": "juan@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     }

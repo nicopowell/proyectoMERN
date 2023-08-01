@@ -13,16 +13,18 @@ const GrillaProductos = ({ filter, categoriaSeleccionada, onAgregarAlCarrito }) 
     }, []);
 
     const productosFiltrados = productos.filter((producto) => {
-        const nombreIncluido = producto.nombre.toLowerCase().includes(filter.toLowerCase()) || filter === "";
-        const categoriaCoincide = !categoriaSeleccionada || producto.categoria === categoriaSeleccionada;
+        const nombreIncluido =
+            producto.nombre.toLowerCase().includes(filter.toLowerCase()) || filter === "";
+        const categoriaCoincide =
+            !categoriaSeleccionada || producto.categoria === categoriaSeleccionada;
         return nombreIncluido && categoriaCoincide;
     });
 
     return (
         <Row>
-            {productosFiltrados.map((producto) => (
-                <CardProducto key={producto.id} producto={producto} onAgregarAlCarrito={onAgregarAlCarrito} />
-            ))}
+            {productosFiltrados.map((producto) =>
+                producto.estado ===  "Activo" ? <CardProducto key={producto.id} producto={producto} /> : null
+            )}
         </Row>
     );
 };
