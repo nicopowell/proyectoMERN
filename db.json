@@ -72,24 +72,22 @@
   ],
   "pedidos": [
     {
-      "id": "aa8e6b73-6397-425c-8085-0092a6271577",
-      "usuario": "Usuario Logueado",
+      "id": 1,
+      "usuario": "Nico",
+      "fecha": "28/7/2023",
       "productos": [
-        {
-          "id": 2,
-          "producto": "Cerveza Artesanal",
-          "cantidad": 1
-        },
-        {
-          "id": 1,
-          "producto": "Gaseosa 500cc.",
-          "cantidad": 2
-        },
-        {
-          "id": 3,
-          "producto": "Pizza Calabresa",
-          "cantidad": 1
-        }
+        "Gaseosa 500cc.",
+        "Pizza Calabresa"
+      ],
+      "estado": "Entregado"
+    },
+    {
+      "id": 2,
+      "usuario": "Marisa",
+      "fecha": "28/7/2023",
+      "productos": [
+        "Gaseosa 500cc.",
+        "Pizza Calabresa"
       ],
       "estado": "Pendiente",
       "total": 3500,
