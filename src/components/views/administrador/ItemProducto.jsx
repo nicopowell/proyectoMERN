@@ -29,7 +29,7 @@ const ItemProducto = ({ producto, numeroDeProducto }) => {
             <td>{estado}</td>
             <td className="text-center">
                 <Button variant="primary mx-1" onClick={cambiarEstado}>
-                    Suspender
+                    {estado === "Activo" ? "Suspender" : "Activar"}
                 </Button>
                 <br></br>
                 <Link
