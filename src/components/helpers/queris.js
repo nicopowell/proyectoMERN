@@ -73,6 +73,7 @@ export const consultaCambiarEstadoProducto = async (estado ,id) => {
             },
             body: JSON.stringify(estado)
         });
+        return respuesta;
     }catch(error){
         console.log(error);
     }
@@ -141,6 +142,7 @@ export const consultaCambiarEstadoUsuarios = async (estado ,id) => {
             },
             body: JSON.stringify(estado)
         });
+    return respuesta;
     }catch(error){
         console.log(error);
     }
@@ -191,3 +193,18 @@ export const agregarPedido = async (carrito, total) => {
         return false;
     }
 };
+
+export const consultaCambiarEstadoPedido = async (estado ,id) => {
+    try{
+        const respuesta = await fetch(`${URLPedidos}/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(estado)
+        });
+    return respuesta;
+    }catch(error){
+        console.log(error);
+    }
+}
