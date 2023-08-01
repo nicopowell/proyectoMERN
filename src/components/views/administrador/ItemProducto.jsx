@@ -3,9 +3,10 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./administrador.css";
 import { consultaBorrarProducto, consultaListaProductos } from "../../helpers/queris";
+import Swal from "sweetalert2";
 
-
-const ItemProducto = ({producto, numeroDeProducto}) => {
+const ItemProducto = ({producto, numeroDeProducto, setProductos}) => {
+    
     const borrarProducto = () => {
         Swal.fire({
           title: `¿Esta seguro de borrar el producto ${producto.nombre}?`,
@@ -26,8 +27,7 @@ const ItemProducto = ({producto, numeroDeProducto}) => {
                   `El ${producto.nombre} fue borrado correctamente`,
                   "success"
                 );
-                  consultaListaProductos().then((respuesta) =>
-                  setProductos(respuesta)
+                  consultaListaProductos().then((respuesta) =>  setProductos(respuesta)
                 );
               } else {
                 Swal.fire(
