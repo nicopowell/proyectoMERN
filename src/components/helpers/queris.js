@@ -64,6 +64,20 @@ export const consultaBorrarProducto = async (id) =>{
     }
 }
 
+export const consultaCambiarEstado = async (estado ,id) => {
+    try{
+        const respuesta = await fetch(`${URLProducto}/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(estado)
+        });
+    }catch(error){
+        console.log(error);
+    }
+}
+
 // USUARIOS
 // export const login = async(usuario)=>{
 //     try{
