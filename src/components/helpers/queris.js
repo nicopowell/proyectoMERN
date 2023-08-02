@@ -88,14 +88,12 @@ export const login = async (usuario) => {
             (itemUsuario) => itemUsuario.email === usuario.email
         );
         if (usuarioBuscado) {
-            if (usuarioBuscado.password === usuario.password) {
+            if (usuarioBuscado.contraseña === usuario.contraseña) {
                 return usuarioBuscado;
             } else {
-                console.log("el password es incorrecto");
                 return null;
             }
         } else {
-            console.log("el email no existe");
             return null;
         }
     } catch (error) {

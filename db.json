@@ -78,6 +78,14 @@
       "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
+    },
+    {
+      "nombreUsuario": "Nicolas",
+      "email": "nicopowell30@gmail.com",
+      "contraseña": "123456aA",
+      "estado": "Suspendido",
+      "perfil": "Usuario",
+      "id": 5
     }
   ],
   "pedidos": []
