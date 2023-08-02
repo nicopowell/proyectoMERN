@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import Login from "../views/Login";
 import "./menuNavegacion.css";
 import { useState } from "react";
+import logo from "../../assets/16.png"
 
 const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
     const [estaLogueado, setEstaLogueado] = useState(!!usuarioLogueado);
@@ -17,7 +18,7 @@ const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
         <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">
             <Container className="d-flex justify-content-between">
                 <Navbar.Brand as={Link} to="/">
-                    <img src="../../src/assets/16.png" className="logoNavbar"></img>
+                    <img src={logo} className="logoNavbar"></img>
                 </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
