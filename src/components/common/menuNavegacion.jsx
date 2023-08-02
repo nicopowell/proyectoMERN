@@ -13,7 +13,6 @@ const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
         sessionStorage.removeItem("usuario");
         setEstaLogueado(false);
     };
-    console.log(usuarioLogueado)
     return (
         <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">
             <Container className="d-flex justify-content-between">

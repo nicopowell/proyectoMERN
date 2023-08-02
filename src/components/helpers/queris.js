@@ -185,18 +185,18 @@ const mostrarFecha = (fecha) => {
 };
 
 export const agregarPedido = async (carrito, total, usuarioLogueado) => {
-    console.log(usuarioLogueado)
-    let pedido = {};
     const fechaPedido = new Date();
-    pedido.usuario = usuarioLogueado.nombreUsuario;
-    pedido.productos = carrito.map((producto) => ({
-        id: producto.producto._id,
-        producto: producto.producto.nombre,
-        cantidad: producto.cantidad,
-    }));
-    pedido.estado = "Pendiente";
-    pedido.total = total;
-    pedido.fecha = mostrarFecha(fechaPedido);
+    let pedido = {
+        productos : carrito.map((producto) => ({
+            id: producto.producto._id,
+            producto: producto.producto.nombre,
+            cantidad: producto.cantidad,
+        })),
+        usuario : usuarioLogueado.nombreUsuario,
+        estado : "Pendiente",
+        total : total,
+        fecha : mostrarFecha(fechaPedido)
+    };
     console.log(pedido)
     try {
         const pedidoNuevo = await fetch(URLPedidos, {
@@ -206,6 +206,7 @@ export const agregarPedido = async (carrito, total, usuarioLogueado) => {
             },
             body: JSON.stringify(pedido),
         });
+        console.log(URLPedidos);
         return pedidoNuevo;
     } catch (error) {
         console.log(error);
