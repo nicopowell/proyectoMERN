@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Button,Modal} from "react-bootstrap";
+import { Form, Button,Modal,NavItem,NavDropdown} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { registrar} from "../helpers/queris";
 import { useNavigate } from "react-router-dom";
@@ -44,9 +44,11 @@ const Register = ({setUsuarioRegistrado}) => {
 
     return (
         <>
-        <Button variant="primary" onClick={registerhandleShow}>
-            Regístrarse
-        </Button>
+        <NavDropdown.Item className="text-center">
+          <NavItem onClick={registerhandleShow}>
+          Regístrarse
+          </NavItem>
+          </NavDropdown.Item>
         
         <Modal show={registershow} onHide={registerhandleClose}>
             <Modal.Header closeButton>

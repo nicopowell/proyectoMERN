@@ -14,7 +14,7 @@ const Login = ({setUsuarioLogueado}) => {
   const loginhandleShow = () => loginsetShow(true);
 
 
-  const { register, handleSubmit, formState: { errors}, reset } = useForm();
+  const { register, handleSubmit, formState: { errors}} = useForm();
   const navegacion = useNavigate();
 
   
@@ -52,11 +52,8 @@ const Login = ({setUsuarioLogueado}) => {
       <div className="dropdown-header">
         ¿No tienes cuenta? Regístrate.
         </div>
-        <NavDropdown.Item
-        className="text-center"
-        >
-          <Register></Register>
-          </NavDropdown.Item>
+        <NavDropdown.Divider />
+        <Register></Register>
           </NavDropdown>
 
 
@@ -109,10 +106,6 @@ const Login = ({setUsuarioLogueado}) => {
         </Button>
       </Form>
     </Modal.Body>
-    <Modal.Footer className="justify-content-center mt-4">
-      <p>¿Aún no tienes cuenta?</p>
-      <Register ></Register>
-    </Modal.Footer>
   </Modal>
   </>
   );
