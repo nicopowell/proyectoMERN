@@ -141,7 +141,13 @@ const CrearProducto = () => {
         <Button variant="primary" type="submit">
           Guardar
         </Button>
-      </Form>
+         
+        {'      '}
+        <Button variant="primary" type="submit" href={'/administrador'} >
+          Cancelar
+        </Button>
+        
+       </Form>
     </section>
   );
 };
