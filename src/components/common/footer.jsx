@@ -17,11 +17,8 @@ const Footer = () => {
                     <h6>Paginas que puede visitar</h6>
                         <ul>
                             <li>
-                            <a href="./pages/error404.html" className=" fs-6">
-                                    Sobre Nosotros                                
-                                    </a>
-                                <a href={'/SobreNosotros'} className="fs-6">
-                                    ¿Quienes Somos?
+                             <a href={'/SobreNosotros'} className="fs-6">
+                                    Sobre Nosotros
                                 </a>
                             </li>
                             <li>

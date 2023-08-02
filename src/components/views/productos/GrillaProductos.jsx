@@ -3,7 +3,7 @@ import { Row } from "react-bootstrap";
 import CardProducto from "./CardProducto";
 import { consultaListaProductos } from "../../helpers/queris";
 
-const GrillaProductos = ({ filter, categoriaSeleccionada }) => {
+const GrillaProductos = ({ filter, categoriaSeleccionada, onAgregarAlCarrito }) => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
@@ -13,16 +13,18 @@ const GrillaProductos = ({ filter, categoriaSeleccionada }) => {
     }, []);
 
     const productosFiltrados = productos.filter((producto) => {
-        const nombreIncluido = producto.nombre.toLowerCase().includes(filter.toLowerCase()) || filter === "";
-        const categoriaCoincide = !categoriaSeleccionada || producto.categoria === categoriaSeleccionada;
+        const nombreIncluido =
+            producto.nombre.toLowerCase().includes(filter.toLowerCase()) || filter === "";
+        const categoriaCoincide =
+            !categoriaSeleccionada || producto.categoria === categoriaSeleccionada;
         return nombreIncluido && categoriaCoincide;
     });
 
     return (
         <Row>
-            {productosFiltrados.map((producto) => (
-                <CardProducto key={producto.id} producto={producto} />
-            ))}
+            {productosFiltrados.map((producto) =>
+                producto.estado ===  "Activo" ? <CardProducto key={producto.id} producto={producto} onAgregarAlCarrito={onAgregarAlCarrito}/> : null
+            )}
         </Row>
     );
 };
