@@ -1,6 +1,5 @@
-import React from "react";
-import { useEffect } from "react";
-import { ButtonGroup, Container, Table, ToggleButton} from "react-bootstrap";
+import React, { useEffect } from "react";
+import { ButtonGroup, Container, Table, ToggleButton } from "react-bootstrap";
 import { useState } from "react";
 import {Link} from "react-router-dom";
 import TablaProductos from "./administrador/TablaProductos";
@@ -44,7 +43,7 @@ const Administrador = () => {
             case "Productos":
                 return <TablaProductos productos={productos}  setProductos={setProductos} />;
             case "Pedidos":
-                return <TablaPedidos pedidos={pedidos} />;
+                return <TablaPedidos pedidos={pedidos} setPedidos={setPedidos} />;
             default:
                 return null;
         }

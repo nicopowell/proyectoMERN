@@ -1,27 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import {
+  consultaCambiarEstadoPedido,
+  consultaBorrarPedido,
+  consultaListaPedidos
+} from "../../helpers/queris";
+import Swal from 'sweetalert2';
 
-const ItemPedido = ({ pedido, numeroDePedido }) => {
-    let contador = 0
-    return (
-        <tr>
-            <td>{numeroDePedido}</td>
-            <td>{pedido.usuario}</td>
-            <td>{pedido.fecha}</td>
-            <td>
-                <ul>
-                    {pedido.productos.map((producto) => (
-                        <li key={contador++}>{producto}</li>
-                    ))}
-                </ul>
-            </td>
-            <td>{pedido.estado}</td>
-            <td className="text-center">
-                <Button variant="primary my-1 mx-1">Suspender</Button>
-                <Button variant="danger">Borrar</Button>
-            </td>
-        </tr>
-    );
+const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
+  const [estado, setEstado] = useState(pedido.estado);
+  const cambiarEstado = () => {
+    const nuevoEstado = estado === "Pendiente" ? "Entregado" : "Pendiente";
+
+    consultaCambiarEstadoPedido({ estado: nuevoEstado }, pedido.id)
+      .then(() => {
+        setEstado(nuevoEstado);
+      })
+      .catch((error) => {
+        console.error("Error al cambiar el estado del pedido:", error);
+      });
+  };
+  const borrarPedido = () => {
+    consultaBorrarPedido(pedido.id)
+      .then(() => {
+        Swal.fire(
+          "Pedido Eliminado.",
+          "Eliminaste el pedido correctamente.",
+          "success"
+        );
+        consultaListaPedidos().then((respuesta) => setPedidos(respuesta));
+      })
+      .catch((error) => {
+        Swal.fire(
+          "Algo falló",
+          "No se pudo eliminar el pedido. Inténtalo mas tarde. ",
+          "error"
+        );
+        console.log(error);
+      });
+  };
+
+  return (
+    <tr>
+      <td>{numeroDePedido}</td>
+      <td>{pedido.usuario}</td>
+      <td>{pedido.fecha}</td>
+      <td>
+        <ul>
+          {pedido.productos.map((producto) => (
+            <li key={producto.id}>
+              {producto.producto} x {producto.cantidad}
+            </li>
+          ))}
+        </ul>
+      </td>
+      <td>{estado}</td>
+      <td className="text-center">
+        <Button variant="primary my-1 mx-1" onClick={cambiarEstado}>
+          {estado === "Pendiente" ? "Confirmar" : "Cancelar"}
+        </Button>
+        <Button variant="danger" onClick={borrarPedido}>Borrar</Button>
+      </td>
+    </tr>
+  );
 };
 
 export default ItemPedido;

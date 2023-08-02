@@ -10,7 +10,7 @@ const cardsSobreNos = [
   {
     id: 1,
     title: "Nicolas Powell",
-    text: " SCRUM,Estudiante de RollingCode School",
+    text: " SCRUM, Estudiante de RollingCode School",
     image: image1,
     url: "https://github.com/nicopowell",
   },
