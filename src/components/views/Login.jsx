@@ -111,6 +111,7 @@ const Login = ({setUsuarioLogueado}) => {
     </Modal.Body>
     <Modal.Footer className="justify-content-center mt-4">
       <p>¿Aún no tienes cuenta?</p>
+      <Register ></Register>
     </Modal.Footer>
   </Modal>
   </>
