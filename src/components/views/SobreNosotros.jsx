@@ -1,5 +1,5 @@
 import "react-bootstrap";
-import Cards from "../cards";
+import CardsSobreNos from "../cardsSobreNos";
 const SobreNosotros = () => {
   return (
     <>
@@ -14,15 +14,17 @@ const SobreNosotros = () => {
         <p>TRABAJO GRUPAL - PROYECTO FINAL</p>
         <p>Nadie llega a la cima sin la ayuda de otros.</p>
         <p>
-          Se agradeze a RollingCode por la gran oportunidad junto a la
-          Municipalidad de San Miguel de Tucuman
+          Se agradece a RollingCode por la gran oportunidad junto a la
+          Municipalidad de San Miguel de Tucumán
         </p>
       </section>
       <h1 className="display-4 text-center"> Integrantes</h1>
       <hr />
 
-      <Cards />
-         </>
+      <CardsSobreNos />
+
+      <hr />
+    </>
   );
 };
 

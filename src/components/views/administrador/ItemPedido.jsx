@@ -3,9 +3,9 @@ import { Button } from "react-bootstrap";
 import {
   consultaCambiarEstadoPedido,
   consultaBorrarPedido,
-  consultaListaPedidos
+  consultaListaPedidos,
 } from "../../helpers/queris";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
   const [estado, setEstado] = useState(pedido.estado);
@@ -20,24 +20,38 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
         console.error("Error al cambiar el estado del pedido:", error);
       });
   };
+
   const borrarPedido = () => {
-    consultaBorrarPedido(pedido.id)
-      .then(() => {
-        Swal.fire(
-          "Pedido Eliminado.",
-          "Eliminaste el pedido correctamente.",
-          "success"
-        );
-        consultaListaPedidos().then((respuesta) => setPedidos(respuesta));
-      })
-      .catch((error) => {
-        Swal.fire(
-          "Algo falló",
-          "No se pudo eliminar el pedido. Inténtalo mas tarde. ",
-          "error"
-        );
-        console.log(error);
-      });
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Una vez eliminado, no podrás recuperar este pedido.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d96c06",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Sí, eliminarlo",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        consultaBorrarPedido(pedido.id)
+          .then(() => {
+            Swal.fire(
+              "Pedido Eliminado.",
+              "Eliminaste el pedido correctamente.",
+              "success"
+            );
+            consultaListaPedidos().then((respuesta) => setPedidos(respuesta));
+          })
+          .catch((error) => {
+            Swal.fire(
+              "Algo falló",
+              "No se pudo eliminar el pedido. Inténtalo mas tarde.",
+              "error"
+            );
+            console.log(error);
+          });
+      }
+    });
   };
 
   return (
@@ -59,7 +73,9 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
         <Button variant="primary my-1 mx-1" onClick={cambiarEstado}>
           {estado === "Pendiente" ? "Confirmar" : "Cancelar"}
         </Button>
-        <Button variant="danger" onClick={borrarPedido}>Borrar</Button>
+        <Button variant="danger" onClick={borrarPedido}>
+          Borrar
+        </Button>
       </td>
     </tr>
   );

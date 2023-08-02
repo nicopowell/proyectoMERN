@@ -175,6 +175,9 @@ const EditarProducto = () => {
         </Form.Group>
         <Button variant="primary" type="submit">
           Guardar
+        </Button>{'      '}
+        <Button variant="primary" type="submit" href={'/administrador'} >
+          Cancelar
         </Button>
       </Form>
     </section>
