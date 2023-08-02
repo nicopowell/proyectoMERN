@@ -11,7 +11,7 @@ const ItemProducto = ({producto, numeroDeProducto, setProductos}) => {
   const cambiarEstado = () => {
         const nuevoEstado = estado === "Activo" ? "De baja" : "Activo";
 
-        consultaCambiarEstadoProducto({ estado: nuevoEstado }, producto.id)
+        consultaCambiarEstadoProducto({ estado: nuevoEstado }, producto._id)
             .then(() => {
                 setEstado(nuevoEstado);
             })
@@ -32,7 +32,7 @@ const ItemProducto = ({producto, numeroDeProducto, setProductos}) => {
           cancelButtonText: "Cancelar",
         }).then((result) => {
           if (result.isConfirmed) {
-              consultaBorrarProducto(producto.id).then((respuesta) => {
+              consultaBorrarProducto(producto._id).then((respuesta) => {
               if (respuesta.status === 200) {
                 Swal.fire(
                   "Producto borrado",
@@ -68,7 +68,7 @@ const ItemProducto = ({producto, numeroDeProducto, setProductos}) => {
                     {estado === "Activo" ? "Dar de baja" : "Activar"}
                 </Button>
                 <br></br>
-                <Link className="btn btn-warning mx-1 my-1" to={"/administrador/editarProducto/" + producto.id}>
+                <Link className="btn btn-warning mx-1 my-1" to={"/administrador/editarProducto/" + producto._id}>
                     Editar
                 </Link>
                 <Button variant="danger" onClick={borrarProducto}>Borrar</Button>

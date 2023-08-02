@@ -19,7 +19,7 @@ const TablaPedidos = ({ pedidos, setPedidos }) => {
             <tbody>
                 {pedidos.map((pedido) => (
                     <ItemPedido
-                        key={pedido.id}
+                        key={pedido._id}
                         pedido={pedido}
                         numeroDePedido={++contador} setPedidos={setPedidos}
                     ></ItemPedido>

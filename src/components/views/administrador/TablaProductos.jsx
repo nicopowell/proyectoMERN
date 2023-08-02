@@ -21,7 +21,7 @@ const TablaProductos = ({ productos, setProductos }) => {
             <tbody>
                 {productos.map((producto) => (
                     <ItemProducto
-                        key={producto.id}
+                        key={producto._id}
                         producto={producto}
                         numeroDeProducto={++contador}
                         setProductos={setProductos}

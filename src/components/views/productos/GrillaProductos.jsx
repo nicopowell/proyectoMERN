@@ -23,7 +23,7 @@ const GrillaProductos = ({ filter, categoriaSeleccionada, onAgregarAlCarrito }) 
     return (
         <Row>
             {productosFiltrados.map((producto) =>
-                producto.estado ===  "Activo" ? <CardProducto key={producto.id} producto={producto} onAgregarAlCarrito={onAgregarAlCarrito}/> : null
+                producto.estado ===  "Activo" ? <CardProducto key={producto._id} producto={producto} onAgregarAlCarrito={onAgregarAlCarrito}/> : null
             )}
         </Row>
     );

@@ -19,7 +19,7 @@ function App() {
 
     const agregarAlCarrito = (producto) => {
         const carritoActualizado = [...carrito];
-        const itemEnCarrito = carritoActualizado.find((item) => item.producto.id === producto.id);
+        const itemEnCarrito = carritoActualizado.find((item) => item.producto._id === producto._id);
 
         if (itemEnCarrito) {
             itemEnCarrito.cantidad += 1;

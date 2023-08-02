@@ -12,7 +12,7 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
   const cambiarEstado = () => {
     const nuevoEstado = estado === "Pendiente" ? "Entregado" : "Pendiente";
 
-    consultaCambiarEstadoPedido({ estado: nuevoEstado }, pedido.id)
+    consultaCambiarEstadoPedido({ estado: nuevoEstado }, pedido._id)
       .then(() => {
         setEstado(nuevoEstado);
       })
@@ -33,7 +33,7 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        consultaBorrarPedido(pedido.id)
+        consultaBorrarPedido(pedido._id)
           .then(() => {
             Swal.fire(
               "Pedido Eliminado.",
@@ -62,7 +62,7 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
       <td>
         <ul>
           {pedido.productos.map((producto) => (
-            <li key={producto.id}>
+            <li key={producto._id}>
               {producto.producto} x {producto.cantidad}
             </li>
           ))}
