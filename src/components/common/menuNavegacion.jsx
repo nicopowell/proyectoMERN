@@ -1,59 +1,55 @@
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Container
-} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import { Cart } from "react-bootstrap-icons";
-import { Link, NavLink} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Login from "../views/Login";
 import "./menuNavegacion.css";
+import { useState } from "react";
 
-const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
-  
+const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
+  const [estaLogueado, setEstaLogueado] = useState(!!usuarioLogueado);
 
-  const logout = ()=>{
-    setUsuarioLogueado({});
-    sessionStorage.removeItem('usuario');
-  }
-  return (
-    <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">
-      <Container className="d-flex justify-content-between">
-        <Navbar.Brand as={Link} to="/">
-          <img src="../../src/assets/16.png" className="logoNavbar"></img>
-        </Navbar.Brand>
+    const logout = () => {
+        setUsuarioLogueado({});
+        sessionStorage.removeItem("usuario");
+        setEstaLogueado(false)
+    };
+    return (
+        <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">
+            <Container className="d-flex justify-content-between">
+                <Navbar.Brand as={Link} to="/">
+                    <img src="../../src/assets/16.png" className="logoNavbar"></img>
+                </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto align-items-center">
-            <NavLink end className={"nav-item nav-link"} to="/">
-              Pagina Principal
-            </NavLink>
-            
-            {
-              (usuarioLogueado.nombreUsuario)?(
-                <>
-                <NavLink end className={"nav-item nav-link"} to="/administrador">
-                  Administrador
-                </NavLink>
-                <NavLink end className={"nav-item nav-link"} onClick={logout} to="/">Cerrar Sesion</NavLink>
-                </>
-              ): <Login setUsuarioLogueado={setUsuarioLogueado}></Login>
-            }
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ms-auto align-items-center">
+                        <NavLink end className={"nav-item nav-link"} to="/">
+                            Pagina Principal
+                        </NavLink>
+                        {estaLogueado ? (
+                            <>
+                                <NavLink end className={"nav-item nav-link"} to="/administrador">
+                                    Administrador
+                                </NavLink>
+                                <Button
+                                    className={"nav-item nav-link btnLogout"}
+                                    onClick={logout}
+                                >
+                                    Cerrar Sesion
+                                </Button>
+                            </>
+                        ) : (
+                            <Login setUsuarioLogueado={setUsuarioLogueado} setEstaLogueado={setEstaLogueado}></Login>
+                        )}
 
-            <NavLink
-              end
-              className={"nav-item nav-link"}
-              to="/pedidos"
-              id="carrito"
-            >
-              <Cart size={35}></Cart>
-            </NavLink>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
+                        <NavLink end className={"nav-item nav-link"} to="/pedidos" id="carrito">
+                            <Cart size={35}></Cart>
+                        </NavLink>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 };
 
 export default MenuNavegacion;

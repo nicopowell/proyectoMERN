@@ -84,3 +84,10 @@
     max-width: 500px;
     filter: drop-shadow(0 0 10px black);
 }
+
+.btnLogout:hover{
+    background: none;
+}
+.btnLogout:active{
+    background: none !important;
+}

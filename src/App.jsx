@@ -13,65 +13,72 @@ import Error404 from "./components/views/Error404";
 import CarritoPedidos from "./components/views/CarritoPedidos";
 
 function App() {
-const [carrito, setCarrito] = useState([]);
-
-  const agregarAlCarrito = (producto) => {
-    const carritoActualizado = [...carrito];
-    const itemEnCarrito = carritoActualizado.find(
-      (item) => item.producto.id === producto.id
-     );
-
-    if (itemEnCarrito) {
-      itemEnCarrito.cantidad += 1;
-    } else {
-      carritoActualizado.push({ producto, cantidad: 1 });
-    }
-
-    setCarrito(carritoActualizado);
-    };
-    const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
+    const [carrito, setCarrito] = useState([]);
+    const usuario = JSON.parse(sessionStorage.getItem("usuario"));
     const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
-  return (
-    <>
-      <BrowserRouter>
-        <MenuNavegacion usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></MenuNavegacion>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <PaginaPrincipal
-                carrito={carrito}
-                agregarAlCarrito={agregarAlCarrito}
-              ></PaginaPrincipal>
-            }
-          ></Route>
-          <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
-          <Route
-            exact
-            path="/pedidos"
-            element={<CarritoPedidos carrito={carrito} setCarrito={setCarrito} usuarioLogueado={usuarioLogueado}></CarritoPedidos>}
-          ></Route>
-          <Route
-            exact
-            path="/SobreNosotros"
-            element={<SobreNosotros></SobreNosotros>}
-          ></Route>
-          <Route
-            path="/administrador/*"
-            element={
-              <RutasProtegidas>
-                <RutasAdministrador></RutasAdministrador>
-              </RutasProtegidas>
-            }
-          ></Route>
-          <Route path="*" element={<Error404></Error404>}></Route>
-        </Routes>
-        <Footer></Footer>
-      </BrowserRouter>
-    </>
-  );
+    const agregarAlCarrito = (producto) => {
+        const carritoActualizado = [...carrito];
+        const itemEnCarrito = carritoActualizado.find((item) => item.producto.id === producto.id);
+
+        if (itemEnCarrito) {
+            itemEnCarrito.cantidad += 1;
+        } else {
+            carritoActualizado.push({ producto, cantidad: 1 });
+        }
+
+        setCarrito(carritoActualizado);
+    };
+
+    return (
+        <>
+            <BrowserRouter>
+                <MenuNavegacion
+                    usuarioLogueado={usuarioLogueado}
+                    setUsuarioLogueado={setUsuarioLogueado}
+                ></MenuNavegacion>
+                <Routes>
+                    <Route
+                        exact
+                        path="/"
+                        element={
+                            <PaginaPrincipal
+                                carrito={carrito}
+                                agregarAlCarrito={agregarAlCarrito}
+                            ></PaginaPrincipal>
+                        }
+                    ></Route>
+                    <Route exact path="/detalle" element={<h1>Detalle</h1>}></Route>
+                    <Route
+                        exact
+                        path="/pedidos"
+                        element={
+                            <CarritoPedidos
+                                carrito={carrito}
+                                setCarrito={setCarrito}
+                                usuarioLogueado={usuarioLogueado}
+                            ></CarritoPedidos>
+                        }
+                    ></Route>
+                    <Route
+                        exact
+                        path="/SobreNosotros"
+                        element={<SobreNosotros></SobreNosotros>}
+                    ></Route>
+                    <Route
+                        path="/administrador/*"
+                        element={
+                            <RutasProtegidas>
+                                <RutasAdministrador></RutasAdministrador>
+                            </RutasProtegidas>
+                        }
+                    ></Route>
+                    <Route path="*" element={<Error404></Error404>}></Route>
+                </Routes>
+                <Footer></Footer>
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;

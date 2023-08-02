@@ -78,6 +78,14 @@
       "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
+    },
+    {
+      "nombreUsuario": "awdawa",
+      "email": "awdaw@aw.caw",
+      "contraseña": "123456aA",
+      "estado": "Activo",
+      "perfil": "Usuario",
+      "id": 5
     }
   ],
   "pedidos": []
