@@ -43,7 +43,7 @@ const Administrador = () => {
             case "Productos":
                 return <TablaProductos productos={productos} />;
             case "Pedidos":
-                return <TablaPedidos pedidos={pedidos} />;
+                return <TablaPedidos pedidos={pedidos} setPedidos={setPedidos} />;
             default:
                 return null;
         }

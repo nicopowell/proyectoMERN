@@ -3,10 +3,11 @@ import { Button } from "react-bootstrap";
 import {
   consultaCambiarEstadoPedido,
   consultaBorrarPedido,
+  consultaListaPedidos
 } from "../../helpers/queris";
 import Swal from 'sweetalert2';
 
-const ItemPedido = ({ pedido, numeroDePedido }) => {
+const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
   const [estado, setEstado] = useState(pedido.estado);
   const cambiarEstado = () => {
     const nuevoEstado = estado === "Pendiente" ? "Entregado" : "Pendiente";
@@ -23,17 +24,18 @@ const ItemPedido = ({ pedido, numeroDePedido }) => {
     consultaBorrarPedido(pedido.id)
       .then(() => {
         Swal.fire(
-            "Pedido Eliminado.",
-            "Eliminaste el pedido correctamente.",
-            "success"
-          );
+          "Pedido Eliminado.",
+          "Eliminaste el pedido correctamente.",
+          "success"
+        );
+        consultaListaPedidos().then((respuesta) => setPedidos(respuesta));
       })
       .catch((error) => {
         Swal.fire(
-            "Algo falló",
-            "No se pudo eliminar el pedido. Inténtalo mas tarde. ",
-            "error"
-          );
+          "Algo falló",
+          "No se pudo eliminar el pedido. Inténtalo mas tarde. ",
+          "error"
+        );
         console.log(error);
       });
   };

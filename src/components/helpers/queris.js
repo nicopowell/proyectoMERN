@@ -214,11 +214,9 @@ export const consultaBorrarPedido = async (id) => {
       const respuesta = await fetch(`${URLPedidos}/${id}`, {
         method: "DELETE",
       });
-        if (respuesta.status === 200) {
-         return true;
-      } 
+        return respuesta;
     } catch (error) {
         console.log(error)
-        return false;
+        return null;
     }
   };
