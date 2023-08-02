@@ -11,7 +11,7 @@ const TablaProductos = ({ productos, setProductos }) => {
                     <th>ID</th>
                     <th>Producto</th>
                     <th>Detalle</th>
-                    <th>Categoria</th>
+                    <th>Categoría</th>
                     <th>Precio</th>
                     <th>URL Imagen</th>
                     <th>Estado</th>

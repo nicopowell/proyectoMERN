@@ -15,7 +15,7 @@ const SobreNosotros = () => {
         <p>Nadie llega a la cima sin la ayuda de otros.</p>
         <p>
           Se agradece a RollingCode por la gran oportunidad junto a la
-          Municipalidad de San Miguel de Tucumán
+          Municipalidad de San Miguel de Tucumán.
         </p>
       </section>
       <h1 className="display-4 text-center"> Integrantes</h1>
