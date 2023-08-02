@@ -2,7 +2,7 @@ import "react-bootstrap";
 import CardsSobreNos from "../cardsSobreNos";
 const SobreNosotros = () => {
   return (
-    <>
+    <div className="mainSection">
       <img
         src="https://images.pexels.com/photos/8753672/pexels-photo-8753672.jpeg"
         alt="Banner con platos de comida"
@@ -24,7 +24,7 @@ const SobreNosotros = () => {
       <CardsSobreNos />
 
       <hr />
-    </>
+    </div>
   );
 };
 

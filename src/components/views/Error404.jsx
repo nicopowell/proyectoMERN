@@ -4,7 +4,7 @@ import './estilosError.css'
 
 const Error404 = () => {
   return (
-    <>
+    <div className="mainSection">
       <Container className="d-flex flex-column align-items-center justify-content-center">
         <h1 className="my-5 titulo404">¡Eso aún se está cocinando!</h1>
         
@@ -14,7 +14,7 @@ const Error404 = () => {
         </Link>
         
       </Container>
-    </>
+    </div>
   );
 };
 
