@@ -72,7 +72,7 @@ const ItemProducto = ({producto, numeroDeProducto, setProductos}) => {
                 <Link className="btn btn-warning mx-1 my-1" to={"/administrador/editarProducto/" + producto.id}>
                     Editar
                 </Link>
-                <Button variant="danger" onClick={borrarProducto}>
+                <Button variant="danger" onClick={borrarProducto}>Borrar</Button>
             </td>
         </tr>
     );
