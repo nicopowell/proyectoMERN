@@ -16,7 +16,7 @@ const Register = ({setUsuarioRegistrado}) => {
 
     const onSubmit = (usuario)=>{
           usuario.estado = "Activo";
-          usuario.perfil = "Usuario-Comun";
+          usuario.perfil = "Usuario";
               registrar(usuario).then((respuesta)=>{
                if(respuesta && respuesta.status === 201){
                  Swal.fire(
@@ -29,7 +29,7 @@ const Register = ({setUsuarioRegistrado}) => {
                }else if(respuesta === null){
                 Swal.fire(
                   'Error',
-                  'Este usuario ya existe',
+                  'Este usuario o correo ya existe',
                   'error'
                 )
                }else{

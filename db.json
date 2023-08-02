@@ -89,11 +89,11 @@
       "estado": "Activo"
     },
     {
-      "nombreUsuario": "Nico",
+      "nombreUsuario": "Nicoa",
       "email": "nicoa@rollingcode.com",
       "contraseña": "123456aA",
       "estado": "Activo",
-      "perfil": "Usuario-Comun",
+      "perfil": "Usuario",
       "id": 5
     }
   ],
