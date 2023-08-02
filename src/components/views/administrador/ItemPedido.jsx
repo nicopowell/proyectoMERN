@@ -3,9 +3,9 @@ import { Button } from "react-bootstrap";
 import {
   consultaCambiarEstadoPedido,
   consultaBorrarPedido,
-  consultaListaPedidos
+  consultaListaPedidos,
 } from "../../helpers/queris";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
   const [estado, setEstado] = useState(pedido.estado);
@@ -59,7 +59,9 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
         <Button variant="primary my-1 mx-1" onClick={cambiarEstado}>
           {estado === "Pendiente" ? "Confirmar" : "Cancelar"}
         </Button>
-        <Button variant="danger" onClick={borrarPedido}>Borrar</Button>
+        <Button variant="danger" onClick={borrarPedido}>
+          Borrar
+        </Button>
       </td>
     </tr>
   );
