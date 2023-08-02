@@ -2,27 +2,27 @@ import { Form, Button,Modal,NavItem,NavDropdown} from "react-bootstrap";
 import { useState } from "react";
 import { Person } from "react-bootstrap-icons";
 import { login } from "../helpers/queris";
+import Register from "./Register";
 import { useForm} from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
 const Login = ({setUsuarioLogueado}) => {
   const [loginshow, loginsetShow] = useState(false);
-  const [registershow, registersetShow] = useState(false);
 
   const loginhandleClose = () => loginsetShow(false);
-  const registerhandleClose = () => registersetShow(false);
   const loginhandleShow = () => loginsetShow(true);
-  const registerhandleShow = () => registersetShow(true);
 
-  const { register, handleSubmit, formState: { errors}, reset } = useForm();
+
+  const { register, handleSubmit, formState: { errors}} = useForm();
   const navegacion = useNavigate();
 
+  
+
   const onSubmit = (usuario)=>{
-    console.log(usuario)
     login(usuario).then((respuesta)=>{
       if(respuesta){
-        sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario));
+        sessionStorage.setItem('usuario', JSON.stringify(respuesta.perfil));
         Swal.fire(
           'Bienvenido',
           `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
@@ -42,7 +42,7 @@ const Login = ({setUsuarioLogueado}) => {
   }
   return (
     <>
-    <NavDropdown title="Login" className="dropMenu">
+    <NavDropdown title="Ingresar" className="dropMenu">
     <NavDropdown.Item >
     <NavItem onClick={loginhandleShow}>
     <Person></Person> Iniciar Sesión
@@ -52,12 +52,8 @@ const Login = ({setUsuarioLogueado}) => {
       <div className="dropdown-header">
         ¿No tienes cuenta? Regístrate.
         </div>
-        <NavDropdown.Item
-        className="text-center"
-        onClick={registerhandleShow}
-        >
-          <Button className="btnRegistro btn">Registro</Button>
-          </NavDropdown.Item>
+        <NavDropdown.Divider />
+        <Register></Register>
           </NavDropdown>
 
 
@@ -98,7 +94,7 @@ const Login = ({setUsuarioLogueado}) => {
              })}
           />
              <Form.Text className="text-danger">
-               {errors.password?.message}
+               {errors.contraseña?.message}
              </Form.Text>
         </Form.Group>
         <Button
@@ -110,12 +106,6 @@ const Login = ({setUsuarioLogueado}) => {
         </Button>
       </Form>
     </Modal.Body>
-    <Modal.Footer className="justify-content-center mt-4">
-      <p>¿Aún no tienes cuenta?</p>
-      <Button variant="primary" onClick={registerhandleShow}>
-        Regístrarse
-      </Button>
-    </Modal.Footer>
   </Modal>
   </>
   );
