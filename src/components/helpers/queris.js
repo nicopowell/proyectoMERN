@@ -197,7 +197,6 @@ export const agregarPedido = async (carrito, total, usuarioLogueado) => {
         total : total,
         fecha : mostrarFecha(fechaPedido)
     };
-    console.log(pedido.fecha)
     try {
         const respuesta = await fetch(URLPedidos, {
             method: "POST",

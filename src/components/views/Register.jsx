@@ -27,7 +27,6 @@ const Register = ({ setEstaLogueado }) => {
                 perfil: "Usuario",
                 nombreUsuario: usuario.nombreUsuario,
             };
-            console.log(respuesta.nombre);
             if (respuesta && respuesta.mensaje === "usuario creado") {
                 sessionStorage.setItem("usuario", JSON.stringify(usuarioObj));
                 Swal.fire("Fantastico", `su usuario quedo registrado exitosamente`, "success");
