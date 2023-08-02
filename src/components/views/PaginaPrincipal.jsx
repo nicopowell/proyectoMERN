@@ -1,5 +1,4 @@
 import { Container } from "react-bootstrap";
-import ProductosPopulares from "./productos/ProductosPopulares";
 import GrillaProductos from "./productos/GrillaProductos";
 import InputProductos from "./productos/InputProductos";
 import { useState } from "react";
@@ -37,10 +36,6 @@ const PaginaPrincipal = ({carrito, agregarAlCarrito}) => {
                 </p>
             </section>
             <Container className="mb-5">
-                <h3>Productos populares</h3>
-                <Container>
-                    <ProductosPopulares></ProductosPopulares>
-                </Container>
                 <h3 className="mt-5">Todos nuestros productos</h3>
                 <Container>
                     <InputProductos
