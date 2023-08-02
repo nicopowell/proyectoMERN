@@ -128,7 +128,6 @@ export const registrar = async (usuario) => {
                 body: JSON.stringify(usuario),
             });
             const data = await respuestaRegistro.json();
-            console.log(data);
             return data; // Devuelve la respuesta de registro, no la respuesta original
         } else {
             return null;
