@@ -16,7 +16,7 @@ const GrillaProductos = ({ filter, categoriaSeleccionada, onAgregarAlCarrito }) 
         const nombreIncluido =
             producto.nombre.toLowerCase().includes(filter.toLowerCase()) || filter === "";
         const categoriaCoincide =
-            !categoriaSeleccionada || producto.categoria === categoriaSeleccionada;
+            !categoriaSeleccionada || categoriaSeleccionada === "Categorias" || producto.categoria === categoriaSeleccionada;
         return nombreIncluido && categoriaCoincide;
     });
 
