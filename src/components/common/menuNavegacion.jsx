@@ -6,13 +6,15 @@ import "./menuNavegacion.css";
 import { useState } from "react";
 
 const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
-  const [estaLogueado, setEstaLogueado] = useState(!!usuarioLogueado);
+    const [estaLogueado, setEstaLogueado] = useState(!!usuarioLogueado);
 
     const logout = () => {
         setUsuarioLogueado({});
         sessionStorage.removeItem("usuario");
-        setEstaLogueado(false)
+        setEstaLogueado(false);
     };
+    
+    console.log(usuarioLogueado)
     return (
         <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">
             <Container className="d-flex justify-content-between">
@@ -28,18 +30,24 @@ const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
                         </NavLink>
                         {estaLogueado ? (
                             <>
-                                <NavLink end className={"nav-item nav-link"} to="/administrador">
-                                    Administrador
-                                </NavLink>
-                                <Button
-                                    className={"nav-item nav-link btnLogout"}
-                                    onClick={logout}
-                                >
+                                {usuarioLogueado === "Admin" || usuarioLogueado.perfil === "Admin" ? (
+                                    <NavLink
+                                        end
+                                        className={"nav-item nav-link"}
+                                        to="/administrador"
+                                    >
+                                        Administrador
+                                    </NavLink>
+                                ) : null}
+                                <Button className={"nav-item nav-link btnLogout"} onClick={logout}>
                                     Cerrar Sesion
                                 </Button>
                             </>
                         ) : (
-                            <Login setUsuarioLogueado={setUsuarioLogueado} setEstaLogueado={setEstaLogueado}></Login>
+                            <Login
+                                setUsuarioLogueado={setUsuarioLogueado}
+                                setEstaLogueado={setEstaLogueado}
+                            ></Login>
                         )}
 
                         <NavLink end className={"nav-item nav-link"} to="/pedidos" id="carrito">
