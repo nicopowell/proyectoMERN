@@ -197,17 +197,16 @@ export const agregarPedido = async (carrito, total, usuarioLogueado) => {
         total : total,
         fecha : mostrarFecha(fechaPedido)
     };
-    console.log(pedido)
+    console.log(pedido.fecha)
     try {
-        const pedidoNuevo = await fetch(URLPedidos, {
+        const respuesta = await fetch(URLPedidos, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(pedido),
         });
-        console.log(URLPedidos);
-        return pedidoNuevo;
+        return respuesta;
     } catch (error) {
         console.log(error);
         return false;
