@@ -78,6 +78,30 @@
       "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
+    },
+    {
+      "nombreUsuario": "awdawa",
+      "email": "awdaw@aw.caw",
+      "contraseña": "123456aA",
+      "estado": "Activo",
+      "perfil": "Usuario",
+      "id": 5
+    },
+    {
+      "nombreUsuario": "awd",
+      "email": "nicoa@rollingcode.com",
+      "contraseña": "123456aA",
+      "estado": "Activo",
+      "perfil": "Usuario",
+      "id": 6
+    },
+    {
+      "nombreUsuario": "awds",
+      "email": "nicopowell30@gmail.com",
+      "contraseña": "123456aA",
+      "estado": "Activo",
+      "perfil": "Usuario",
+      "id": 7
     }
   ],
   "pedidos": []

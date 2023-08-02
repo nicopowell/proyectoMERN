@@ -5,7 +5,7 @@ import { registrar} from "../helpers/queris";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Register = ({setUsuarioRegistrado}) => {
+const Register = ({setEstaLogueado}) => {
     const [registershow, registersetShow] = useState(false);
 
     const registerhandleClose = () => registersetShow(false);
@@ -25,6 +25,7 @@ const Register = ({setUsuarioRegistrado}) => {
                    `su usuario quedo registrado exitosamente`,
                    'success'
                  );
+                 setEstaLogueado(true)
                  reset();
                  navegacion('/');
                  registerhandleClose()

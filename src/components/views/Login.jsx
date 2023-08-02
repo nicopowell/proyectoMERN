@@ -7,7 +7,7 @@ import { useForm} from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
-const Login = ({setUsuarioLogueado}) => {
+const Login = ({setUsuarioLogueado, setEstaLogueado}) => {
   const [loginshow, loginsetShow] = useState(false);
 
   const loginhandleClose = () => loginsetShow(false);
@@ -28,9 +28,15 @@ const Login = ({setUsuarioLogueado}) => {
           `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
           'success'
         );
+        setEstaLogueado(true)
         setUsuarioLogueado(respuesta);
         //redireccionar
-        navegacion('/administrador');
+        if(respuesta.perfil === "Admin"){
+          navegacion('/administrador');
+        } else {
+          navegacion('/');
+        }
+        
       }else{
         Swal.fire(
           'Error',
@@ -53,7 +59,7 @@ const Login = ({setUsuarioLogueado}) => {
         ¿No tienes cuenta? Regístrate.
         </div>
         <NavDropdown.Divider />
-        <Register></Register>
+        <Register setEstaLogueado={setEstaLogueado}></Register>
           </NavDropdown>
 
 
