@@ -24,7 +24,7 @@ const Register = ({ setEstaLogueado }) => {
         usuario.estado = "Activo";
         registrar(usuario).then((respuesta) => {
             const usuarioObj = {
-                perfil: usuario.perfil,
+                perfil: "Usuario",
                 nombreUsuario: usuario.nombreUsuario,
             };
             console.log(respuesta.nombre);
