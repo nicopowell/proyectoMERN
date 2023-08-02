@@ -69,6 +69,14 @@
       "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
+    },
+    {
+      "nombreUsuario": "Nico",
+      "email": "nicoa@rollingcode.com",
+      "contraseña": "123456aA",
+      "estado": "Activo",
+      "perfil": "Usuario-Comun",
+      "id": 5
     }
   ],
   "pedidos": []

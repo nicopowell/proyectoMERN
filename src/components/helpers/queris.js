@@ -64,20 +64,20 @@ export const consultaBorrarProducto = async (id) => {
     }
 };
 
-export const consultaCambiarEstadoProducto = async (estado ,id) => {
-    try{
+export const consultaCambiarEstadoProducto = async (estado, id) => {
+    try {
         const respuesta = await fetch(`${URLProducto}/${id}`, {
             method: "PATCH",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(estado)
+            body: JSON.stringify(estado),
         });
         return respuesta;
-    }catch(error){
+    } catch (error) {
         console.log(error);
     }
-}
+};
 
 // USUARIOS
 // export const login = async(usuario)=>{
@@ -113,10 +113,10 @@ export const login = async (usuario) => {
                 console.log("el password es incorrecto");
                 return null;
             }
-        }else{
-            console.log('el email no existe');
+        } else {
+            console.log("el email no existe");
             return null;
-        }       
+        }
     } catch (error) {
         console.log(error);
     }
@@ -129,42 +129,46 @@ export const consultaListaUsuarios = async () => {
     } catch (error) {
         console.log(error);
     }
-}
+};
 
 export const registrar = async (usuario) => {
-    try{
+    try {
         const respuesta = await fetch(URLUsuario);
         const listaUsuarios = await respuesta.json();
-        const usuarioExistente = listaUsuarios.find((itemUsuario)=> itemUsuario.email === usuario.email);
-        if(!usuarioExistente){
-        const respuesta = await fetch(URLUsuario, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(usuario)
+        const usuarioExistente = listaUsuarios.find(
+            (itemUsuario) => itemUsuario.email === usuario.email
+        );
+        if (!usuarioExistente) {
+            const respuesta = await fetch(URLUsuario, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(usuario),
             });
             return respuesta;
-        }else {
+        } else {
             return null;
         }
+    } catch (error) {
+        console.log(error);
+    }
+};
 
-
-export const consultaCambiarEstadoUsuarios = async (estado ,id) => {
-    try{
+export const consultaCambiarEstadoUsuarios = async (estado, id) => {
+    try {
         const respuesta = await fetch(`${URLUsuario}/${id}`, {
             method: "PATCH",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(estado)
+            body: JSON.stringify(estado),
         });
-    return respuesta;
-
-    }catch(error){
+        return respuesta;
+    } catch (error) {
         console.log(error);
     }
-}
+};
 
 // PEDIDOS
 
@@ -212,29 +216,29 @@ export const agregarPedido = async (carrito, total, usuarioLogueado) => {
     }
 };
 
-export const consultaCambiarEstadoPedido = async (estado ,id) => {
-    try{
+export const consultaCambiarEstadoPedido = async (estado, id) => {
+    try {
         const respuesta = await fetch(`${URLPedidos}/${id}`, {
             method: "PATCH",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(estado)
+            body: JSON.stringify(estado),
         });
-    return respuesta;
-    }catch(error){
+        return respuesta;
+    } catch (error) {
         console.log(error);
     }
-}
+};
 
 export const consultaBorrarPedido = async (id) => {
     try {
-      const respuesta = await fetch(`${URLPedidos}/${id}`, {
-        method: "DELETE",
-      });
+        const respuesta = await fetch(`${URLPedidos}/${id}`, {
+            method: "DELETE",
+        });
         return respuesta;
     } catch (error) {
-        console.log(error)
+        console.log(error);
         return null;
     }
-  };
+};

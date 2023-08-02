@@ -29,44 +29,7 @@ const MenuNavegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
             <NavLink end className={"nav-item nav-link"} to="/">
               Pagina Principal
             </NavLink>
-            <NavDropdown title="Nuestros Productos" className="dropMenu">
-              <NavDropdown.Item
-                end
-                className={"nav-item nav-link"}
-                as={NavLink}
-                to="/*"
-                id="linkPizzas"
-              >
-                Pizzas
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                end
-                className={"nav-item nav-link"}
-                as={NavLink}
-                to="/*"
-                id="linkPastas"
-              >
-                Pastas
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                end
-                className={"nav-item nav-link"}
-                as={NavLink}
-                to="/*"
-                id="linkBebidasSinAlcohol"
-              >
-                Bebidas sin alcohol
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                end
-                className={"nav-item nav-link"}
-                as={NavLink}
-                to="/*"
-                id="linkBebidasConAlcohol"
-              >
-                Bebidas con alcohol
-              </NavDropdown.Item>
-            </NavDropdown>
+            
             {
               (usuarioLogueado.nombreUsuario)?(
                 <>
