@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import GrillaProductos from "./productos/GrillaProductos";
 import InputProductos from "./productos/InputProductos";
 import { useState } from "react";
+import logoConLema from "../../assets/LogoConLemaNaranja.png"
 
 const PaginaPrincipal = ({carrito, agregarAlCarrito}) => {
     const [filter, setFilter] = useState("");
@@ -25,7 +26,7 @@ const PaginaPrincipal = ({carrito, agregarAlCarrito}) => {
             />
             <section className="seccionInfoRestaurante text-light py-3 text-center mb-5">
                 <img
-                    src="../../src/assets/LogoConLemaNaranja.png"
+                    src={logoConLema}
                     alt="Logo del restaurante Rolling Bites"
                     id="logoIndex"
                 />
