@@ -14,7 +14,7 @@ const Footer = () => {
                     </a>
                 </aside>
                 <aside className="col-md-4 text-md-center col-xs-12">
-                    <h6>Paginas que puede visitar</h6>
+                    <h6>Páginas que puede visitar</h6>
                         <ul>
                             <li>
                              <a href={'/SobreNosotros'} className="fs-6">
@@ -34,7 +34,7 @@ const Footer = () => {
                         </ul>
                 </aside>
                 <aside className="col-md-4 text-md-start col-xs-12">
-                    <h6>Siguenos en nuestras redes sociales</h6>
+                    <h6>Síguenos en nuestras redes sociales</h6>
                     <a href={'*'} className='bs-light mx-2' target='_blank'><Facebook></Facebook></a>
                     <a href={'*'} className='bs-light mx-2' target='_blank'><Twitter></Twitter></a>
                     <a href={'*'} className='bs-light mx-2' target='_blank'><Instagram></Instagram></a>

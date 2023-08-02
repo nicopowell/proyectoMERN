@@ -31,7 +31,7 @@ const Login = ({ setUsuarioLogueado, setEstaLogueado }) => {
                     sessionStorage.setItem("usuario", JSON.stringify(usuario));
                     Swal.fire(
                         "Bienvenido",
-                        `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
+                        `${respuesta.nombreUsuario} iniciaste sesión correctamente.`,
                         "success"
                     );
                     setEstaLogueado(true);
@@ -45,7 +45,7 @@ const Login = ({ setUsuarioLogueado, setEstaLogueado }) => {
                 } else {
                     Swal.fire(
                         "Error",
-                        "Su cuenta se encuentra suspendida, por favor contacte con el soporte",
+                        "Su cuenta se encuentra suspendida, por favor contacte con el soporte.",
                         "error"
                     );
                 }

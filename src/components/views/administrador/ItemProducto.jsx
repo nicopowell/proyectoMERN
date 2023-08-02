@@ -22,7 +22,7 @@ const ItemProducto = ({producto, numeroDeProducto, setProductos}) => {
   
   const borrarProducto = () => {
         Swal.fire({
-          title: `¿Esta seguro de borrar el producto ${producto.nombre}?`,
+          title: `¿Está seguro de borrar el producto ${producto.nombre}?`,
           text: "No se puede revertir este paso",
           icon: "warning",
           showCancelButton: true,

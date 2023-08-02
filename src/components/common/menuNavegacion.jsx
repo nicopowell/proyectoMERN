@@ -24,7 +24,7 @@ const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto align-items-center">
                         <NavLink end className={"nav-item nav-link"} to="/">
-                            Pagina Principal
+                            Página Principal
                         </NavLink>
                         {estaLogueado ? (
                             <>
@@ -38,7 +38,7 @@ const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
                                     </NavLink>
                                 ) : null}
                                 <Button className={"nav-item nav-link btnLogout"} onClick={logout}>
-                                    Cerrar Sesion
+                                    Cerrar Sesión
                                 </Button>
                             </>
                         ) : (
