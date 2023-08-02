@@ -1,42 +1,93 @@
+:root {
+    --color1: #272838;
+    --color2: #0081a7;
+    --color3: #00afb9;
+    --color4: #d5c9df;
+    --color5: #eeb902;
+    --color6: #d96c06;
+  }
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #D5C9DF;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.mainSection {
+    flex-grow: 1;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#bannerIndex {
+    height: 250px;
+    object-fit: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.seccionInfoRestaurante {
+    background: #272838e0;
 }
 
-.card {
-  padding: 2em;
+.cardProducto {
+    transition: ease 0.2s;
 }
 
-.read-the-docs {
-  color: #888;
+.cardProducto:hover {
+    scale: 1.05;
+    transition: ease 0.2s;
+}
+
+.btnCard {
+    background-color: #EEB902;
+    border: none;
+}
+
+.btnCard:hover {
+    background-color: #c59a00;
+}
+
+.btnCard:active {
+    background-color: #D96C06 !important;
+}
+
+.btnAgregarAlPedido {
+    position: absolute;
+    border-radius: 50%;
+    height: 3.3rem;
+    width: 3.3rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    box-shadow: 0px 0px 10px black;
+}
+
+.btnTablas {
+    background-color: var(--color6);
+    border: none;
+}
+
+.btnTablas:hover {
+    background-color: #d3ab1c !important;
+
+}
+
+.btnTablasSelected {
+    background-color: var(--color5) !important
+}
+
+#input-categorias{
+    background: #fff !important;
+    color: #333;
+    border: 1px solid #aaa
+}
+
+#logoIndex{
+    width: 100%;
+    max-width: 500px;
+    filter: drop-shadow(0 0 10px black);
+}
+
+.btnLogout:hover{
+    background: none;
+}
+.btnLogout:active{
+    background: none !important;
 }

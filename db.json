@@ -1,0 +1,92 @@
+{
+  "productos": [
+    {
+      "nombre": "Gaseosa 500cc.",
+      "estado": "Activo",
+      "precio": 450,
+      "detalle": "Bebida gasificada sabor Pomelo.",
+      "categoria": "Bebidas sin alcohol",
+      "imagen": "https://images.pexels.com/photos/11832019/pexels-photo-11832019.jpeg",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Cerveza artesanal",
+      "estado": "Activo",
+      "precio": 750,
+      "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
+      "categoria": "Bebidas con alcohol",
+      "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg"
+    },
+    {
+      "nombre": "Pizza Calabresa",
+      "estado": "Activo",
+      "precio": 1850,
+      "detalle": "Deliciosa pizza con calabresa, queso mozzarella y salsa de tomate.",
+      "categoria": "Pizzas",
+      "imagen": "https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg",
+      "id": 3
+    },
+    {
+      "nombre": "Lasagna de carne",
+      "estado": "Activo",
+      "precio": 2150,
+      "detalle": "Lasagna de carne con salsa boloñesa, queso y gratinada al horno.",
+      "categoria": "Pastas",
+      "imagen": "https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg",
+      "id": 4
+    },
+    {
+      "nombre": "Papas Gratinadas",
+      "estado": "Activo",
+      "precio": 1850,
+      "detalle": "papas rusticas con queso gratinado",
+      "categoria": "Otros",
+      "imagen": "https://cdn.doers.video/embed/4d4ab84e712462c163a143882640fb1d496601526425813/5983b2248ba4d.jpg",
+      "id": 5
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombreUsuario": "Nico",
+      "email": "nico@rollingcode.com",
+      "contraseña": "123456aA",
+      "perfil": "Admin",
+      "estado": "Activo"
+    },
+    {
+      "id": 2,
+      "nombreUsuario": "Marisa",
+      "email": "marisa@rollingcode.com",
+      "contraseña": "123456aA",
+      "perfil": "Admin",
+      "estado": "Activo"
+    },
+    {
+      "id": 3,
+      "nombreUsuario": "Julian",
+      "email": "julian@rollingcode.com",
+      "contraseña": "123456aA",
+      "perfil": "Admin",
+      "estado": "Activo"
+    },
+    {
+      "id": 4,
+      "nombreUsuario": "Juan",
+      "email": "juan@rollingcode.com",
+      "contraseña": "123456aA",
+      "perfil": "Admin",
+      "estado": "Activo"
+    },
+    {
+      "nombreUsuario": "Nicolas",
+      "email": "nicopowell30@gmail.com",
+      "contraseña": "123456aA",
+      "estado": "Suspendido",
+      "perfil": "Usuario",
+      "id": 5
+    }
+  ],
+  "pedidos": []
+}
