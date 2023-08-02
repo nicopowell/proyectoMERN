@@ -19,6 +19,7 @@ const Register = ({setUsuarioRegistrado}) => {
           usuario.perfil = "Usuario";
               registrar(usuario).then((respuesta)=>{
                if(respuesta && respuesta.status === 201){
+                sessionStorage.setItem('usuario', JSON.stringify(usuario.nombreUsuario));
                  Swal.fire(
                   'Fantastico',
                    `su usuario quedo registrado exitosamente`,
@@ -26,6 +27,7 @@ const Register = ({setUsuarioRegistrado}) => {
                  );
                  reset();
                  navegacion('/');
+                 registerhandleClose()
                }else if(respuesta === null){
                 Swal.fire(
                   'Error',

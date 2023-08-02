@@ -44,15 +44,6 @@
       "categoria": "Otros",
       "imagen": "https://cdn.doers.video/embed/4d4ab84e712462c163a143882640fb1d496601526425813/5983b2248ba4d.jpg",
       "id": 5
-    },
-    {
-      "nombre": "Pizza Rellena Formaggi",
-      "estado": "Activo",
-      "precio": 2800,
-      "detalle": "Salsa de tomate, quesos mozzarella, fontina, azul, cheddar y provolone.",
-      "categoria": "Pizzas",
-      "imagen": "https://pizzerialamina.es/218-large_default/pizza-formaggio.jpg",
-      "id": 6
     }
   ],
   "usuarios": [
@@ -87,14 +78,6 @@
       "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
-    },
-    {
-      "nombreUsuario": "Nicoa",
-      "email": "nicoa@rollingcode.com",
-      "contraseña": "123456aA",
-      "estado": "Activo",
-      "perfil": "Usuario",
-      "id": 5
     }
   ],
   "pedidos": []
