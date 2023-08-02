@@ -31,7 +31,12 @@ const Login = ({setUsuarioLogueado, setEstaLogueado}) => {
         setEstaLogueado(true)
         setUsuarioLogueado(respuesta);
         //redireccionar
-        navegacion('/administrador');
+        if(respuesta.perfil === "Admin"){
+          navegacion('/administrador');
+        } else {
+          navegacion('/');
+        }
+        
       }else{
         Swal.fire(
           'Error',

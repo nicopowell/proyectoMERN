@@ -79,26 +79,6 @@ export const consultaCambiarEstadoProducto = async (estado, id) => {
     }
 };
 
-// USUARIOS
-// export const login = async(usuario)=>{
-//     try{
-//         const respuesta = await fetch(URLUsuario,{
-//             method: "POST",
-//             headers:{
-//                 "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify(usuario)
-//         });
-//         const datos = await respuesta.json();
-//         return {
-//             status: respuesta.status,
-//             nombreUsuario: datos.nombreUsuario
-//         }
-
-//     }catch(error){
-//         console.log(error)
-//     }
-// }
 export const login = async (usuario) => {
     try {
         const respuesta = await fetch(URLUsuario);

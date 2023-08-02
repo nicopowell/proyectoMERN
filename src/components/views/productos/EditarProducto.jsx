@@ -21,8 +21,6 @@ const EditarProducto = () => {
   useEffect(() => {
     consultaProductoParaEditar(id).then((respuesta) => {
       if (respuesta) {
-        console.log("cargar objeto en formulario");
-        console.log(respuesta);
         setValue("nombre", respuesta.nombre);
         setValue("estado", respuesta.estado);
         setValue("precio", respuesta.precio);
@@ -40,7 +38,6 @@ const EditarProducto = () => {
   }, []);
 
   const onSubmit = (productoEditado) => {
-    console.log(productoEditado);
     consultaEditarProducto(productoEditado, id).then((respuesta) => {
       if (respuesta && respuesta.status === 200) {
         Swal.fire(
