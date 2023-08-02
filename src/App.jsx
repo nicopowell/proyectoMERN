@@ -62,7 +62,7 @@ function App() {
                     ></Route>
                     <Route
                         exact
-                        path="/SobreNosotros"
+                        path="/sobre-nosotros"
                         element={<SobreNosotros></SobreNosotros>}
                     ></Route>
                     <Route

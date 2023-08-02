@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import './footer.css'
 import { Facebook,Twitter,Instagram,Whatsapp } from 'react-bootstrap-icons';
+import logoFooter from "../../assets/8.png"
 
 const Footer = () => {
 
@@ -10,14 +11,14 @@ const Footer = () => {
             <section className='row'>
                 <aside className='col-md-4 ps-lg-5 col-xs-12'>
                     <a href={'/'}>
-                    <img src="../../src/assets/8.png" id="logoFooter" alt='logoFooter'></img>
+                    <img src={logoFooter} id="logoFooter" alt='logoFooter'></img>
                     </a>
                 </aside>
                 <aside className="col-md-4 text-md-center col-xs-12">
                     <h6>Páginas que puede visitar</h6>
                         <ul>
                             <li>
-                             <a href={'/SobreNosotros'} className="fs-6">
+                             <a href={'/sobre-nosotros'} className="fs-6">
                                     Sobre Nosotros
                                 </a>
                             </li>
