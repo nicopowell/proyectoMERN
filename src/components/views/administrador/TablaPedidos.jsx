@@ -2,7 +2,7 @@ import React from "react";
 import { Table } from "react-bootstrap";
 import ItemPedido from "./ItemPedido";
 
-const TablaPedidos = ({ pedidos }) => {
+const TablaPedidos = ({ pedidos, setPedidos }) => {
     let contador = 0;
     return (
         <Table responsive striped bordered hover>
@@ -21,7 +21,7 @@ const TablaPedidos = ({ pedidos }) => {
                     <ItemPedido
                         key={pedido.id}
                         pedido={pedido}
-                        numeroDePedido={++contador}
+                        numeroDePedido={++contador} setPedidos={setPedidos}
                     ></ItemPedido>
                 ))}
             </tbody>

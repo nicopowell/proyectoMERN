@@ -10,13 +10,13 @@
       "id": 1
     },
     {
-      "nombre": "Cerveza Artesanal",
+      "id": 2,
+      "nombre": "Cerveza artesanal",
       "estado": "Activo",
       "precio": 750,
       "detalle": "Cerveza artesanal de la casa, perfecta para los amantes de la cerveza.",
       "categoria": "Bebidas con alcohol",
-      "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg",
-      "id": 2
+      "imagen": "https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg"
     },
     {
       "nombre": "Pizza Calabresa",
@@ -60,6 +60,7 @@
       "id": 1,
       "nombreUsuario": "Nico",
       "email": "nico@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     },
@@ -67,6 +68,7 @@
       "id": 2,
       "nombreUsuario": "Marisa",
       "email": "marisa@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     },
@@ -74,6 +76,7 @@
       "id": 3,
       "nombreUsuario": "Julian",
       "email": "julian@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     },
@@ -81,30 +84,10 @@
       "id": 4,
       "nombreUsuario": "Juan",
       "email": "juan@rollingcode.com",
+      "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
     }
   ],
-  "pedidos": [
-    {
-      "id": 1,
-      "usuario": "Nico",
-      "fecha": "28/7/2023",
-      "productos": [
-        "Gaseosa 500cc.",
-        "Pizza Calabresa"
-      ],
-      "estado": "Entregado"
-    },
-    {
-      "id": 2,
-      "usuario": "Marisa",
-      "fecha": "28/7/2023",
-      "productos": [
-        "Gaseosa 500cc.",
-        "Pizza Calabresa"
-      ],
-      "estado": "Pendiente"
-    }
-  ]
+  "pedidos": []
 }
