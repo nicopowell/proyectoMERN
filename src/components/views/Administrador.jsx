@@ -39,7 +39,7 @@ const Administrador = () => {
     const renderizarTablaSeleccionada = () => {
         switch (tablaSeleccionada) {
             case "Usuarios":
-                return <TablaUsuarios usuarios={usuarios} />;
+                return <TablaUsuarios usuarios={usuarios} setUsuarios={setUsuarios} />;
             case "Productos":
                 return <TablaProductos productos={productos}  setProductos={setProductos} />;
             case "Pedidos":
