@@ -91,7 +91,7 @@ export const login = async(usuario)=>{
         //buscar cual usuario tiene el mail
         const usuarioBuscado = listaUsuarios.find((itemUsuario)=> itemUsuario.email === usuario.email);
         if(usuarioBuscado){
-            if(usuarioBuscado.password === usuario.password){
+            if(usuarioBuscado.contraseña === usuario.contraseña){
                 return usuarioBuscado;
             }else{
                 console.log('el password es incorrecto');
@@ -118,19 +118,19 @@ export const registrar = async (usuario) => {
     try{
         const respuesta = await fetch(URLUsuario);
         const listaUsuarios = await respuesta.json();
-        const usuarioExistente = listaUsuarios.find((itemUsuario)=> itemUsuario.email === usuario.email);
+        const usuarioExistente = listaUsuarios.find((itemUsuario)=> itemUsuario.nombreUsuario === usuario.nombreUsuario);
         if(!usuarioExistente){
-        const respuesta = await fetch(URLUsuario, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(usuario)
-            });
-            return respuesta;
-        }else {
-            return null;
-        }
+                const respuesta = await fetch(URLUsuario, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(usuario)
+                    });
+                    return respuesta;
+                }else {
+                    return null;
+                }
     }catch(error){
         console.log(error);
     }
