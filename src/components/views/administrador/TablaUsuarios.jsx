@@ -19,7 +19,7 @@ const TablaUsuarios = ({ usuarios, setUsuarios }) => {
             <tbody>
                 {usuarios.map((usuario) => (
                     <ItemUsuario
-                        key={usuario.id}
+                        key={usuario._id}
                         usuario={usuario}
                         numeroDeUsuario={++contador}
                         setUsuarios={setUsuarios}

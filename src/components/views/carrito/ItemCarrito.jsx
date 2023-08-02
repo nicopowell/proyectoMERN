@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 const ItemCarrito = ({item, eliminarProducto}) => {
   const {producto, cantidad} = item;
   const handleEliminarProducto = () => {
-    eliminarProducto(producto.id);
+    eliminarProducto(producto._id);
   };
   return (
     <>

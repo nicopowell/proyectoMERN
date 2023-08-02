@@ -187,7 +187,7 @@ export const agregarPedido = async (carrito, total, usuarioLogueado) => {
     const fechaPedido = new Date();
     pedido.usuario = usuarioLogueado.nombreUsuario;
     pedido.productos = carrito.map((producto) => ({
-        id: producto.producto.id,
+        id: producto.producto._id,
         producto: producto.producto.nombre,
         cantidad: producto.cantidad,
     }));

@@ -27,7 +27,7 @@ const CarritoPedidos = ({ carrito, setCarrito, usuarioLogueado }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         const carritoActualizado = carrito.filter(
-          (item) => item.producto.id !== productoId
+          (item) => item.producto._id !== productoId
         );
         setCarrito(carritoActualizado);
       }
@@ -93,7 +93,7 @@ const CarritoPedidos = ({ carrito, setCarrito, usuarioLogueado }) => {
                     <tbody>
                       {carrito.map((producto) => (
                         <ItemCarrito
-                          key={producto.producto.id}
+                          key={producto.producto._id}
                           item={producto}
                           eliminarProducto={eliminarProducto}
                         />

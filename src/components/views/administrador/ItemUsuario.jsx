@@ -8,7 +8,7 @@ const ItemUsuario = ({ usuario, numeroDeUsuario, setUsuarios }) => {
     const cambiarEstado = () => {
         const nuevoEstado = estado === "Activo" ? "Suspendido" : "Activo";
 
-        consultaCambiarEstadoUsuarios({ estado: nuevoEstado }, usuario.id)
+        consultaCambiarEstadoUsuarios({ estado: nuevoEstado }, usuario._id)
             .then(() => {
                 setEstado(nuevoEstado);
             })
@@ -29,7 +29,7 @@ const ItemUsuario = ({ usuario, numeroDeUsuario, setUsuarios }) => {
           cancelButtonText: "Cancelar",
         }).then((result) => {
           if (result.isConfirmed) {
-            consultaBorrarUsuario(usuario.id)
+            consultaBorrarUsuario(usuario._id)
               .then(() => {
                 Swal.fire(
                   "Usuario Eliminado.",
