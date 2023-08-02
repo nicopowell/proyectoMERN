@@ -1,22 +1,19 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Image from 'react-bootstrap/Image';
+import Image from "react-bootstrap/Image";
 
 function ModalDetalleProducto({ producto, show, handleClose }) {
   return (
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Detalle: {producto.nombre}</Modal.Title>
+          <Modal.Title>{producto.nombre}</Modal.Title>
         </Modal.Header>
-        <Modal.Body >
-              <Image
-               src={producto.imagen}
-              className="position-flex"  fluid
-            />
-         <br /> Que Contiene:
-         <br />
-         {producto.detalle}
+        <Modal.Body>
+          <Image src={producto.imagen} className="position-flex" fluid />
+          <br /> <b>Que Contiene:</b>
+          <br />
+          {producto.detalle}
           <br />
           Presentacion: 8 porciones 
            <br />
