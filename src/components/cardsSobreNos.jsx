@@ -1,16 +1,16 @@
 import React from "react";
-import Card from "../components/card";
-
+import CardSobreNos from "./cardSobreNos";
 import image1 from "../assets/powell.jpeg";
-import image2 from '../assets/hack.png';
-import image3 from '../assets/julianmontenegro.jpeg';
-import image4 from '../assets/jmg.jpeg';
+import image2 from "../assets/marisa.jpeg";
+import image3 from "../assets/julianmontenegro.jpeg";
+import image4 from "../assets/jmg.jpeg";
+import { Col, Row } from "react-bootstrap";
 
-const cards = [
+const cardsSobreNos = [
   {
     id: 1,
     title: "Nicolas Powell",
-    text: " SCRUM del trabajo grupal ,Estudiante de RollingCode School",
+    text: " SCRUM,Estudiante de RollingCode School",
     image: image1,
     url: "https://github.com/nicopowell",
   },
@@ -29,26 +29,31 @@ const cards = [
     url: "https://github.com/JulianIgnacio",
   },
   {
-    id: 3,
-    title: "Gimenez Juan Manuel",
+    id: 4,
+    title: "Juan Manuel Gimenez",
     text: "Estudiante de RollingCode School",
     image: image4,
     url: "https://github.com/juanmakorn",
   },
 ];
 
-function Cards() {
+function CardsSobreNos() {
   return (
     <div className="container d-flex justify-content-center align-items-center h-100">
-      <div className="row">
-        {cards.map(({ title, image, url, id, text}) => (
-          <div className="col-md-4" key={id}>
-            <Card imageSource={image} title={title} url={url}  text={text}/>
-          </div>
+      <Row>
+        {cardsSobreNos.map(({ title, image, url, id, text }) => (
+          <Col sm={12} md={6} className="col-md-4 max-width: auto p-2" key={id}>
+            <CardSobreNos
+              imageSource={image}
+              title={title}
+              url={url}
+              text={text}
+            />
+          </Col>
         ))}
-      </div>
+      </Row>
     </div>
   );
 }
 
-export default Cards;
+export default CardsSobreNos;

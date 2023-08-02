@@ -1,0 +1,13 @@
+.imgNos{
+  height: 480px;
+  object-fit: cover;
+  display: Auto;
+}
+
+@media screen and (max-width:767px){
+  .imgNos{
+      height: 480px;
+      object-fit: cover;
+      display: Auto;
+  }
+}

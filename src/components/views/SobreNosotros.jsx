@@ -1,5 +1,5 @@
 import "react-bootstrap";
-import Cards from "../cards";
+import CardsSobreNos from "../cardsSobreNos";
 const SobreNosotros = () => {
   return (
     <>
@@ -21,8 +21,10 @@ const SobreNosotros = () => {
       <h1 className="display-4 text-center"> Integrantes</h1>
       <hr />
 
-      <Cards />
-         </>
+      <CardsSobreNos />
+
+      <hr />
+    </>
   );
 };
 
