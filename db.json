@@ -69,14 +69,6 @@
       "contraseña": "123456aA",
       "perfil": "Admin",
       "estado": "Activo"
-    },
-    {
-      "nombreUsuario": "pruebaUsuario",
-      "email": "admin@rollingcode.com",
-      "contraseña": "123456aA",
-      "estado": "Activo",
-      "perfil": "Usuario-Comun",
-      "id": 5
     }
   ],
   "pedidos": [

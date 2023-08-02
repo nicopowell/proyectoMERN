@@ -91,7 +91,6 @@ export const login = async(usuario)=>{
         //buscar cual usuario tiene el mail
         const usuarioBuscado = listaUsuarios.find((itemUsuario)=> itemUsuario.email === usuario.email);
         if(usuarioBuscado){
-            console.log('email encontrado');
             if(usuarioBuscado.password === usuario.password){
                 return usuarioBuscado;
             }else{
@@ -100,7 +99,7 @@ export const login = async(usuario)=>{
             }
         }else{
             console.log('el email no existe');
-            return null
+            return null;
         }       
     }catch(error){
         console.log(error)
@@ -115,20 +114,12 @@ export const consultaListaUsuarios = async () =>{
         console.log(error);
     }
 }
-export const ConsultarUsuarioExistente = async () => {
-    try {
-        const existe = await fetch(URLUsuario, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json"
-            }});
-            return existe;
-    } catch (error) {
-        console.log(error);
-    }
-}
 export const registrar = async (usuario) => {
     try{
+        const respuesta = await fetch(URLUsuario);
+        const listaUsuarios = await respuesta.json();
+        const usuarioExistente = listaUsuarios.find((itemUsuario)=> itemUsuario.email === usuario.email);
+        if(!usuarioExistente){
         const respuesta = await fetch(URLUsuario, {
             method: "POST",
             headers: {
@@ -136,7 +127,10 @@ export const registrar = async (usuario) => {
             },
             body: JSON.stringify(usuario)
             });
-        return respuesta;
+            return respuesta;
+        }else {
+            return null;
+        }
     }catch(error){
         console.log(error);
     }

@@ -13,13 +13,13 @@ const Login = ({setUsuarioLogueado}) => {
   const loginhandleClose = () => loginsetShow(false);
   const loginhandleShow = () => loginsetShow(true);
 
+
   const { register, handleSubmit, formState: { errors}, reset } = useForm();
   const navegacion = useNavigate();
 
   
 
   const onSubmit = (usuario)=>{
-    console.log(usuario)
     login(usuario).then((respuesta)=>{
       if(respuesta){
         sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario));
@@ -111,7 +111,6 @@ const Login = ({setUsuarioLogueado}) => {
     </Modal.Body>
     <Modal.Footer className="justify-content-center mt-4">
       <p>¿Aún no tienes cuenta?</p>
-      <Register></Register>
     </Modal.Footer>
   </Modal>
   </>
