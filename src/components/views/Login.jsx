@@ -22,7 +22,7 @@ const Login = ({setUsuarioLogueado}) => {
   const onSubmit = (usuario)=>{
     login(usuario).then((respuesta)=>{
       if(respuesta){
-        sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario));
+        sessionStorage.setItem('usuario', JSON.stringify(respuesta.perfil));
         Swal.fire(
           'Bienvenido',
           `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
