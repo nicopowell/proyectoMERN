@@ -22,37 +22,37 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
   };
 
   const borrarPedido = () => {
-  Swal.fire({
-    title: "¿Estás seguro?",
-    text: "Una vez eliminado, no podrás recuperar este pedido.",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#d96c06",
-    cancelButtonColor: "#3085d6",
-    confirmButtonText: "Sí, eliminarlo",
-    cancelButtonText: "Cancelar",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      consultaBorrarPedido(pedido.id)
-        .then(() => {
-          Swal.fire(
-            "Pedido Eliminado.",
-            "Eliminaste el pedido correctamente.",
-            "success"
-          );
-          consultaListaPedidos().then((respuesta) => setPedidos(respuesta));
-        })
-        .catch((error) => {
-          Swal.fire(
-            "Algo falló",
-            "No se pudo eliminar el pedido. Inténtalo mas tarde.",
-            "error"
-          );
-          console.log(error);
-        });
-    }
-  });
-};
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Una vez eliminado, no podrás recuperar este pedido.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d96c06",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Sí, eliminarlo",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        consultaBorrarPedido(pedido.id)
+          .then(() => {
+            Swal.fire(
+              "Pedido Eliminado.",
+              "Eliminaste el pedido correctamente.",
+              "success"
+            );
+            consultaListaPedidos().then((respuesta) => setPedidos(respuesta));
+          })
+          .catch((error) => {
+            Swal.fire(
+              "Algo falló",
+              "No se pudo eliminar el pedido. Inténtalo mas tarde.",
+              "error"
+            );
+            console.log(error);
+          });
+      }
+    });
+  };
 
   return (
     <tr>
