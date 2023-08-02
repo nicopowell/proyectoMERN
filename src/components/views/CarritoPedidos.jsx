@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { agregarPedido } from "../helpers/queris";
 
-const CarritoPedidos = ({ carrito, setCarrito }) => {
+const CarritoPedidos = ({ carrito, setCarrito, usuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const calcularTotal = () => {
@@ -34,8 +34,16 @@ const CarritoPedidos = ({ carrito, setCarrito }) => {
     });
   };
 
-  const confirmarPedido = (carrito, total) => {
-    agregarPedido(carrito, total).then((respuestaCreated) => {
+  const confirmarPedido = (carrito, total, usuarioLogueado) => {
+    if (Object.keys(usuarioLogueado).length === 0) {
+      Swal.fire(
+        "No iniciaste sesión",
+        "Debes iniciar sesión para confirmar el pedido.",
+        "info"
+      );
+      return;
+    }
+    agregarPedido(carrito, total, usuarioLogueado).then((respuestaCreated) => {
       if (respuestaCreated && respuestaCreated.status === 201) {
         Swal.fire(
           "Pedido exitoso",
@@ -106,7 +114,7 @@ const CarritoPedidos = ({ carrito, setCarrito }) => {
                     <Button
                       id="btnConfirmarPedido"
                       className="mt-2"
-                      onClick={() => confirmarPedido(carrito, calcularTotal())}
+                      onClick={() => confirmarPedido(carrito, calcularTotal(), usuarioLogueado)}
                       disabled={carrito.length === 0}
                     >
                       Confirmar pedido

@@ -28,7 +28,7 @@ const [carrito, setCarrito] = useState([]);
     }
 
     setCarrito(carritoActualizado);
-  };
+    };
     const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
     const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
@@ -51,7 +51,7 @@ const [carrito, setCarrito] = useState([]);
           <Route
             exact
             path="/pedidos"
-            element={<CarritoPedidos carrito={carrito} setCarrito={setCarrito}></CarritoPedidos>}
+            element={<CarritoPedidos carrito={carrito} setCarrito={setCarrito} usuarioLogueado={usuarioLogueado}></CarritoPedidos>}
           ></Route>
           <Route
             exact

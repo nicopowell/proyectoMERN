@@ -167,10 +167,10 @@ const mostrarFecha = (fecha) => {
     return `${dia}/${mes}/${anio}`;
 };
 
-export const agregarPedido = async (carrito, total) => {
+export const agregarPedido = async (carrito, total, usuarioLogueado) => {
     let pedido = {};
     const fechaPedido = new Date();
-    pedido.usuario = "Usuario Logueado";
+    pedido.usuario = usuarioLogueado.nombreUsuario;
     pedido.productos = carrito.map((producto) => ({
         id: producto.producto.id,
         producto: producto.producto.nombre,
