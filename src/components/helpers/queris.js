@@ -81,18 +81,17 @@ export const consultaCambiarEstadoProducto = async (estado, id) => {
 
 export const login = async (usuario) => {
     try {
-        const respuesta = await fetch(URLUsuario);
-        const listaUsuarios = await respuesta.json();
+        const respuesta = await fetch(URLUsuario + "/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(usuario),
+        });
 
-        const usuarioBuscado = listaUsuarios.find(
-            (itemUsuario) => itemUsuario.email === usuario.email
-        );
-        if (usuarioBuscado) {
-            if (usuarioBuscado.contraseña === usuario.contraseña) {
-                return usuarioBuscado;
-            } else {
-                return null;
-            }
+        const data = await respuesta.json();
+        if (respuesta.ok) {
+            return data;
         } else {
             return null;
         }
@@ -100,6 +99,7 @@ export const login = async (usuario) => {
         console.log(error);
     }
 };
+
 export const consultaListaUsuarios = async () => {
     try {
         const respuesta = await fetch(URLUsuario);
@@ -112,22 +112,24 @@ export const consultaListaUsuarios = async () => {
 
 export const registrar = async (usuario) => {
     try {
-        const respuesta = await fetch(URLUsuario);
-        const listaUsuarios = await respuesta.json();
+        const respuestaListaUsuarios = await fetch(URLUsuario);
+        const listaUsuarios = await respuestaListaUsuarios.json();
         const usuarioExistente = listaUsuarios.find(
             (itemUsuario) =>
                 itemUsuario.nombreUsuario === usuario.nombreUsuario ||
                 itemUsuario.email === usuario.email
         );
         if (!usuarioExistente) {
-            const respuesta = await fetch(URLUsuario, {
+            const respuestaRegistro = await fetch(URLUsuario + "/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(usuario),
             });
-            return respuesta;
+            const data = await respuestaRegistro.json();
+            console.log(data);
+            return data; // Devuelve la respuesta de registro, no la respuesta original
         } else {
             return null;
         }
@@ -183,6 +185,7 @@ const mostrarFecha = (fecha) => {
 };
 
 export const agregarPedido = async (carrito, total, usuarioLogueado) => {
+    console.log(usuarioLogueado)
     let pedido = {};
     const fechaPedido = new Date();
     pedido.usuario = usuarioLogueado.nombreUsuario;
@@ -194,6 +197,7 @@ export const agregarPedido = async (carrito, total, usuarioLogueado) => {
     pedido.estado = "Pendiente";
     pedido.total = total;
     pedido.fecha = mostrarFecha(fechaPedido);
+    console.log(pedido)
     try {
         const pedidoNuevo = await fetch(URLPedidos, {
             method: "POST",
