@@ -35,7 +35,7 @@ const CarritoPedidos = ({ carrito, setCarrito, usuarioLogueado }) => {
   };
 
   const confirmarPedido = (carrito, total, usuarioLogueado) => {
-    if (!usuarioLogueado) {
+    if (Object.keys(usuarioLogueado).length === 0) {
       Swal.fire(
         "No iniciaste sesión",
         "Debes iniciar sesión para confirmar el pedido.",

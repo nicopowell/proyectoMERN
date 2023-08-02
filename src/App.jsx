@@ -28,7 +28,7 @@ const [carrito, setCarrito] = useState([]);
     }
 
     setCarrito(carritoActualizado);
-  };
+    };
     const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
     const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
