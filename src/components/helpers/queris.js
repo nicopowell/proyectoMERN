@@ -153,6 +153,18 @@ export const consultaCambiarEstadoUsuarios = async (estado, id) => {
     }
 };
 
+export const consultaBorrarUsuario = async (id) => {
+    try {
+        const respuesta = await fetch(`${URLUsuario}/${id}`, {
+            method: "DELETE",
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
 // PEDIDOS
 
 export const consultaListaPedidos = async () => {

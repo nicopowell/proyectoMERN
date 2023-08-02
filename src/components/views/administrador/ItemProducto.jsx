@@ -33,7 +33,6 @@ const ItemProducto = ({producto, numeroDeProducto, setProductos}) => {
         }).then((result) => {
           if (result.isConfirmed) {
               consultaBorrarProducto(producto.id).then((respuesta) => {
-              console.log(respuesta);
               if (respuesta.status === 200) {
                 Swal.fire(
                   "Producto borrado",
