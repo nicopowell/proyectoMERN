@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "animate.css";
 import "./cardsSobreNos.css";
-//position-relative card text-center bg-dark
+
 function CardSobreNos({ imageSource, title, text, url }) {
   return (
     <div className="card position-relative text-center bg-dark">
