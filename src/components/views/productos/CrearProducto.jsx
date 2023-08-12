@@ -44,7 +44,7 @@ const CrearProducto = () => {
               },
               maxLength: {
                 value: 100,
-                message: "La cantidad maxima de caracteres es de 2 digitos",
+                message: "La cantidad maxima de caracteres es de 100 digitos",
               },
             })}
           />
@@ -74,8 +74,8 @@ const CrearProducto = () => {
             {...register("precio", {
               required: "El precio del producto es obligatorio",
               min: {
-                value: 1,
-                message: "El precio minimo es de $1",
+                value: 500,
+                message: "El precio minimo es de $500",
               },
               max: {
                 value: 10000,
@@ -100,7 +100,7 @@ const CrearProducto = () => {
               },
               maxLength: {
                 value: 300,
-                message: "La cantidad maxima de caracteres es de 3 digitos",
+                message: "La cantidad maxima de caracteres es de 300 digitos",
               },
             })}
           />
