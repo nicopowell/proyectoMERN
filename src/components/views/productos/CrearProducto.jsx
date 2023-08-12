@@ -74,8 +74,8 @@ const CrearProducto = () => {
             {...register("precio", {
               required: "El precio del producto es obligatorio",
               min: {
-                value: 500,
-                message: "El precio minimo es de $500",
+                value: 100,
+                message: "El precio minimo es de $100",
               },
               max: {
                 value: 10000,
