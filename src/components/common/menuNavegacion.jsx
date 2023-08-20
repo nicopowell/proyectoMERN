@@ -23,8 +23,6 @@ const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
               setUsuarioLogueado({});
               sessionStorage.removeItem("usuario");
               setEstaLogueado(false);
-            } else if (result.isDenied) {
-              Swal.fire('Continue tranquilamente', '', 'info')
             }
           })
     };
