@@ -10,6 +10,7 @@ export const consultaAgregarProducto = async (producto) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "x-token":JSON.parse(sessionStorage.getItem('usuario')).token
             },
             body: JSON.stringify(producto),
         });
@@ -85,7 +86,6 @@ export const login = async (usuario) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "x-token":JSON.parse(sessionStorage.getItem('usuario')).token
             },
             body: JSON.stringify(usuario),
         });
