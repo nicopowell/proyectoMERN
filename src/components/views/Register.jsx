@@ -59,6 +59,7 @@ const Register = ({ setEstaLogueado }) => {
                             <Form.Control
                                 type="text"
                                 placeholder="nombreusuario"
+                                maxLength={100}
                                 {...register("nombreUsuario", {
                                     required: "El nombre de usuario es obligatorio",
                                     minLength: {
