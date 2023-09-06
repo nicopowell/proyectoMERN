@@ -24,7 +24,8 @@ const Login = ({ setUsuarioLogueado, setEstaLogueado }) => {
         login(usuario).then((respuesta) => {
             const usuario = {
                 perfil: respuesta.perfil,
-                nombreUsuario: respuesta.nombreUsuario
+                nombreUsuario: respuesta.nombreUsuario,
+                token: respuesta.token
             }
             if (respuesta) {
                 if (respuesta.estado === "Activo") {
