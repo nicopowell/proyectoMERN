@@ -80,6 +80,7 @@ const Login = ({ setUsuarioLogueado, setEstaLogueado }) => {
                             <Form.Control
                                 type="email"
                                 placeholder="Ingrese un email"
+                                maxLength={200}
                                 {...register("email", {
                                     required: "El email es un dato obligatorio",
                                     pattern: {
@@ -96,6 +97,7 @@ const Login = ({ setUsuarioLogueado, setEstaLogueado }) => {
                             <Form.Control
                                 type="password"
                                 placeholder="Contraseña"
+                                maxLength={75}
                                 {...register("contraseña", {
                                     required: "La contraseña es un dato obligatorio",
                                     pattern: {
