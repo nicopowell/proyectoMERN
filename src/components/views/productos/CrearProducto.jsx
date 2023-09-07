@@ -32,6 +32,7 @@ const CrearProducto = () => {
         });
     };
 
+
     return (
         <section className="container mainSection my-2">
             <h1 className="display-4 mt-5">Nuevo producto</h1>
@@ -51,7 +52,7 @@ const CrearProducto = () => {
                             },
                             maxLength: {
                                 value: 100,
-                                message: "La cantidad maxima de caracteres es de 2 digitos",
+                                message: "La cantidad maxima de caracteres es de 100 digitos",
                             },
                         })}
                     />
@@ -105,7 +106,7 @@ const CrearProducto = () => {
                             },
                             maxLength: {
                                 value: 300,
-                                message: "La cantidad maxima de caracteres es de 3 digitos",
+                                message: "La cantidad maxima de caracteres es de 300 digitos",
                             },
                         })}
                     />
