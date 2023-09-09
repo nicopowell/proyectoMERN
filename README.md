@@ -31,6 +31,17 @@ npm i
 
 npm run dev
 ```
+## Para entorno local
+Creamos el archivo .env y agregamos las siguientes variables de entorno:
+
+VITE_API_PRODUCTO=http://localhost:4000/rolling-bites/productos 
+VITE_API_USUARIO=http://localhost:4000/rolling-bites/auth/usuarios 
+VITE_API_PEDIDOS=http://localhost:4000/rolling-bites/pedidos
+## Para vercel
+Creamos el archivo .env y agregamos las siguientes variables de entorno:
+VITE_API_PRODUCTO=https://backend-proyecto-mern.vercel.app/rolling-bites/productos 
+VITE_API_USUARIO=https://backend-proyecto-mern.vercel.app/auth/usuarios 
+VITE_API_PEDIDOS=https://backend-proyecto-mern.vercel.app/pedidos
 
 ## Autores
 
