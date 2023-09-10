@@ -1,6 +1,7 @@
 import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import { Cart } from "react-bootstrap-icons";
 import { Link, NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
 import Login from "../views/Login";
 import "./menuNavegacion.css";
 import { useState } from "react";
@@ -10,9 +11,20 @@ const MenuNavegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
     const [estaLogueado, setEstaLogueado] = useState(!!usuarioLogueado);
 
     const logout = () => {
-        setUsuarioLogueado({});
-        sessionStorage.removeItem("usuario");
-        setEstaLogueado(false);
+        Swal.fire({
+            icon:'warning',
+            title: 'Esta seguro que desea cerrar sesion?',
+            showDenyButton: true,
+            confirmButtonText: 'Si',
+            denyButtonText: `No`,
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire('Se cerro sesion de manera exitosa', '', 'success')
+              setUsuarioLogueado({});
+              sessionStorage.removeItem("usuario");
+              setEstaLogueado(false);
+            }
+          })
     };
     return (
         <Navbar bg="dark" variant="dark" expand="lg" id="menuNavbar">

@@ -66,6 +66,7 @@ const EditarProducto = () => {
           <Form.Control
             type="text"
             placeholder="Ej: Pizza"
+            maxLength={100}
             {...register("nombre", {
               required: "El nombre del producto es obligatorio",
               minLength: {
@@ -74,7 +75,7 @@ const EditarProducto = () => {
               },
               maxLength: {
                 value: 100,
-                message: "La cantidad maxima de caracteres es de 2 digitos",
+                message: "La cantidad maxima de caracteres es de 100 digitos",
               },
             })}
           />
@@ -102,11 +103,13 @@ const EditarProducto = () => {
           <Form.Control
             type="number"
             placeholder="Ej: 50"
+            min={1}
+            max={10000}
             {...register("precio", {
               required: "El precio del producto es obligatorio",
               min: {
-                value: 1,
-                message: "El precio minimo es de $1",
+                value: 100,
+                message: "El precio minimo es de $100",
               },
               max: {
                 value: 10000,
@@ -121,6 +124,7 @@ const EditarProducto = () => {
         <Form.Group className="mb-3" controlId="formDescripcion">
           <Form.Label>Detalle*</Form.Label>
           <Form.Control
+            maxLength={300}
             type="text"
             placeholder="Ej: Pizza Napolitana"
             {...register("detalle", {
@@ -131,7 +135,7 @@ const EditarProducto = () => {
               },
               maxLength: {
                 value: 300,
-                message: "La cantidad maxima de caracteres es de 3 digitos",
+                message: "La cantidad maxima de caracteres es de 300 digitos",
               },
             })}
           />
@@ -162,6 +166,7 @@ const EditarProducto = () => {
           <Form.Control
             type="text"
             placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
+            maxLength={300}
             {...register("imagen", {
               required: "La imagen es obligatoria",
             })}
