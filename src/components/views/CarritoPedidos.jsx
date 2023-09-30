@@ -106,7 +106,7 @@ const CarritoPedidos = ({ carrito, setCarrito, usuarioLogueado }) => {
                 <aside>
                   <Container className="d-flex justify-content-center align-items-center flex-column">
                     <img
-                      src="../../src/assets/18.png"
+                      src="../../../src/assets/18.png"
                       alt="logoRB"
                       className="logoConSombra"
                     />
