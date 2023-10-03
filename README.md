@@ -40,8 +40,8 @@ Creamos el archivo .env y agregamos las siguientes variables de entorno:
 ## Para vercel
 Creamos el archivo .env y agregamos las siguientes variables de entorno:
 - VITE_API_PRODUCTO=https://backend-proyecto-mern.vercel.app/rolling-bites/productos 
-- VITE_API_USUARIO=https://backend-proyecto-mern.vercel.app/auth/usuarios 
-- VITE_API_PEDIDOS=https://backend-proyecto-mern.vercel.app/pedidos
+- VITE_API_USUARIO=https://backend-proyecto-mern.vercel.app/rolling-bites/auth/usuarios 
+- VITE_API_PEDIDOS=https://backend-proyecto-mern.vercel.app/rolling-bites/pedidos
 
 ## Autores
 
