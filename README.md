@@ -43,6 +43,14 @@ Creamos el archivo .env y agregamos las siguientes variables de entorno:
 - VITE_API_USUARIO=https://backend-proyecto-mern.vercel.app/rolling-bites/auth/usuarios 
 - VITE_API_PEDIDOS=https://backend-proyecto-mern.vercel.app/rolling-bites/pedidos
 
+## Credenciales
+Para ingresar como administrador
+- Email = nico@rollingcode.com
+- Contraseña = 123456aA 
+
+Para ingresar como usuario
+- Email = usuario@rollingcode.com
+- Contraseña = 123456aA
 ## Autores
 
 1. Garat Marisa: [GitHub](https://github.com/Maoi11)
