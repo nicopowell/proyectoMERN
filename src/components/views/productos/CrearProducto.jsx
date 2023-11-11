@@ -75,7 +75,7 @@ const CrearProducto = () => {
                     <Form.Label>Precio*</Form.Label>
                     <Form.Control
                         min={1}
-                        max={10000}
+                        max={10000000000000000000}
                         type="number"
                         placeholder="Ej: 50"
                         {...register("precio", {
@@ -85,9 +85,9 @@ const CrearProducto = () => {
                                 message: "El precio minimo es de $1",
                             },
                             max: {
-                                value: 10000,
-                                message: "El precio maximo es de $10000",
-                            },
+                                value:10000000000000000000,
+                                message:"El precio maximo es $10000000000000000000",
+                            }
                         })}
                     />
                     <Form.Text className="text-danger">{errors.precio?.message}</Form.Text>
