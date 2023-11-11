@@ -104,7 +104,7 @@ const EditarProducto = () => {
             type="number"
             placeholder="Ej: 50"
             min={1}
-            max={10000000000000000000}
+            max={1000000000000000}
             {...register("precio", {
               required: "El precio del producto es obligatorio",
               min: {
@@ -112,8 +112,8 @@ const EditarProducto = () => {
                 message: "El precio minimo es de $1",
               },
               max: {
-                value:10000000000000000000,
-                message:"El precio maximo es de $10000000000000000000"
+                value:1000000000000000,
+                message:"El precio maximo es de $1000000000000000"
               }
             })}
           />
