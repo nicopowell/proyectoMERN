@@ -104,17 +104,12 @@ const EditarProducto = () => {
             type="number"
             placeholder="Ej: 50"
             min={1}
-            max={10000}
             {...register("precio", {
               required: "El precio del producto es obligatorio",
               min: {
                 value: 100,
                 message: "El precio minimo es de $100",
-              },
-              max: {
-                value: 10000,
-                message: "El precio maximo es de $10000",
-              },
+              }
             })}
           />
           <Form.Text className="text-danger">
