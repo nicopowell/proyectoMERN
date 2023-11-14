@@ -24,12 +24,12 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
   const borrarPedido = () => {
     Swal.fire({
       title: "¿Estás seguro?",
-      text: "Una vez eliminado, no podrás recuperar este pedido.",
+      text: "Una vez borrado, no podrás recuperar este pedido.",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#d96c06",
       cancelButtonColor: "#3085d6",
-      confirmButtonText: "Sí, eliminarlo",
+      confirmButtonText: "Sí, borrarlo",
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {

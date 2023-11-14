@@ -19,13 +19,13 @@ const ItemUsuario = ({ usuario, numeroDeUsuario, setUsuarios }) => {
 
     const borrarUsuario = () => {
         Swal.fire({
-          title: "¿Estás seguro?",
-          text: "Una vez eliminado, no podrás recuperar este usuario.",
+          title: `¿Está seguro de borrar el usuario ${usuario.nombreUsuario}?`,
+          text: "No se puede revertir este paso",
           icon: "warning",
           showCancelButton: true,
-          confirmButtonColor: "#d96c06",
-          cancelButtonColor: "#3085d6",
-          confirmButtonText: "Sí, eliminarlo",
+          confirmButtonColor: "#00afb9",
+          cancelButtonColor: "#d96c06",
+          confirmButtonText: "Borrar",
           cancelButtonText: "Cancelar",
         }).then((result) => {
           if (result.isConfirmed) {
