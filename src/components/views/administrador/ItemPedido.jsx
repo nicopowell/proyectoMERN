@@ -23,13 +23,13 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
 
     const borrarPedido = () => {
         Swal.fire({
-            title: `¿Está seguro de borrar el pedido?`,
-          text: "No se puede revertir este paso",
+            title: "¿Estás seguro?",
+            text: "Una vez eliminado, no podrás recuperar este pedido.",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#00afb9",
-            cancelButtonColor: "#d96c06",
-            confirmButtonText: "Borrar",
+            confirmButtonColor: "#d96c06",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Sí, eliminarlo",
             cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
@@ -70,12 +70,16 @@ const ItemPedido = ({ pedido, numeroDePedido, setPedidos }) => {
             </td>
             <td>{estado}</td>
             <td className="text-center">
-                <Button variant="primary my-1 mx-1" onClick={cambiarEstado}>
-                    {estado === "Pendiente" ? "Confirmar" : "Cancelar"}
-                </Button>
-                <Button variant="danger" onClick={borrarPedido}>
-                    Borrar
-                </Button>
+              { estado !== "Entregado" &&
+                <>
+                    <Button variant="primary my-1 mx-1" onClick={cambiarEstado}>
+                        {estado === "Pendiente" ? "Confirmar" : "Cancelar"}
+                    </Button>
+                    <Button variant="danger" onClick={borrarPedido}>
+                        Borrar
+                    </Button>
+                </>
+              }
             </td>
         </tr>
     );
